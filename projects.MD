@@ -13,3 +13,5 @@
 6. https://github.com/YJlang/keybaegg : KeyBaeGG - 키보드 워리어들의 전투력과 업적을 관리하는 게임화된 랭킹 시스템. (full stack) (개인프로젝트) (외주)
 
 7. https://github.com/YJlang/hamkae : 함께줍줍 - 멋쟁이사자처럼 전국 대학 연합 IT 창업 동아리 13기 해커톤 프로젝트 - 환경 보호 서비스 (팀프로젝트)
+
+8. 
