@@ -1,0 +1,74 @@
+[
+  {
+    "slug": "profile-photo",
+    "title": "프로필 사진",
+    "type": "profile",
+    "src": "images/프로필사진.png",
+    "public": true,
+    "needsOptimization": true,
+    "note": "첫 화면 또는 About 섹션에서 사용할 수 있다."
+  },
+  {
+    "slug": "award-2020",
+    "title": "상장 2020",
+    "type": "award",
+    "src": "images/상장2020.png",
+    "public": "review",
+    "needsOptimization": true,
+    "note": "상세 수상명, 발급 기관, 공개 가능 여부 확인 필요."
+  },
+  {
+    "slug": "award-2021",
+    "title": "상장 2021",
+    "type": "award",
+    "src": "images/상장2021.png",
+    "public": "review",
+    "needsOptimization": true,
+    "note": "상세 수상명, 발급 기관, 공개 가능 여부 확인 필요."
+  },
+  {
+    "slug": "award-2025",
+    "title": "상장 2025",
+    "type": "award",
+    "src": "images/상장2025.png",
+    "public": "review",
+    "needsOptimization": true,
+    "note": "상세 수상명, 발급 기관, 공개 가능 여부 확인 필요."
+  },
+  {
+    "slug": "scholarship-grade",
+    "title": "성적장학금",
+    "type": "academic-proof",
+    "src": "images/성적장학금.png",
+    "public": "review",
+    "needsOptimization": false,
+    "note": "개인정보 포함 여부 확인 필요."
+  },
+  {
+    "slug": "major-competency-certification",
+    "title": "전공역량인증",
+    "type": "academic-proof",
+    "src": "images/전공역량인증.png",
+    "public": "review",
+    "needsOptimization": true,
+    "note": "개인정보 포함 여부 확인 필요."
+  },
+  {
+    "slug": "major-elective-grades",
+    "title": "전선성적",
+    "type": "academic-proof",
+    "src": "images/전선성적.png",
+    "public": false,
+    "needsOptimization": true,
+    "note": "성적 정보는 공개 사이트에 직접 노출하지 않는 것을 기본값으로 둔다."
+  },
+  {
+    "slug": "major-required-grades",
+    "title": "전필성적",
+    "type": "academic-proof",
+    "src": "images/전필성적.png",
+    "public": false,
+    "needsOptimization": true,
+    "note": "성적 정보는 공개 사이트에 직접 노출하지 않는 것을 기본값으로 둔다."
+  }
+]

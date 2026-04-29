@@ -1,0 +1,61 @@
+{
+  "directions": [
+    {
+      "slug": "aix",
+      "name": "AIX",
+      "question": "AI가 사용자 업무와 의사결정을 어떻게 보조할 수 있는가?",
+      "relatedProjects": ["pulse", "persona-lab", "blog-auto"],
+      "portfolioEmphasis": "AI 기능, LLM Agent, 자동화 흐름, 의사결정 지원"
+    },
+    {
+      "slug": "cx-ux",
+      "name": "CX / UX",
+      "question": "고객 여정, 페르소나, 서비스 경험을 어떻게 구조화하고 개선할 수 있는가?",
+      "relatedProjects": ["persona-lab", "pulse"],
+      "portfolioEmphasis": "고객 분석, 페르소나, 여정 지도, UX/CX 판단"
+    },
+    {
+      "slug": "hci",
+      "name": "HCI",
+      "question": "사람과 AI/소프트웨어 시스템이 상호작용할 때 어떤 인터페이스와 피드백이 필요한가?",
+      "relatedProjects": ["persona-lab", "blog-auto"],
+      "portfolioEmphasis": "사용자 피드백, 인터페이스 구조, AI 보조 도구의 사용성"
+    },
+    {
+      "slug": "business-it",
+      "name": "Business IT / MIS",
+      "question": "데이터와 소프트웨어가 비즈니스 운영 문제를 어떻게 줄일 수 있는가?",
+      "relatedProjects": ["pulse", "persona-lab", "gacha"],
+      "portfolioEmphasis": "외식업 SaaS, 고객 분석, 운영 효율, 의사결정 지원"
+    },
+    {
+      "slug": "agentic-software-development",
+      "name": "Agentic Software Development",
+      "question": "MCP, Skill, LLM Agent를 활용한 개발/업무 자동화는 어떻게 설계되어야 하는가?",
+      "relatedProjects": ["persona-lab", "blog-auto"],
+      "portfolioEmphasis": "MCP, Skill, LLM Agent, 자동화 도구, 생산성"
+    },
+    {
+      "slug": "web-security-devops",
+      "name": "Web Security / DevOps",
+      "question": "웹 시스템의 신뢰성, 배포, 운영, 보안 관점을 어떻게 강화할 수 있는가?",
+      "relatedProjects": ["pulse", "skusku-back", "gacha"],
+      "portfolioEmphasis": "백엔드 아키텍처, 배포/운영, 보안 관심사, 시스템 신뢰성"
+    }
+  ],
+  "labs": [
+    {
+      "slug": "kookmin-aims-lab",
+      "status": "exploring",
+      "name": "AIMS Lab",
+      "institution": "국민대 Business IT 전문대학원",
+      "url": "https://aims.kookmin.ac.kr/",
+      "relatedDirections": ["aix", "cx-ux", "business-it"],
+      "relatedProjects": ["pulse", "persona-lab"],
+      "fitMemo": "현재 관심 후보. 포트폴리오 전체를 이 랩에만 맞추지는 않고, AIX/CX/Business IT 축의 한 후보로 관리한다.",
+      "portfolioEmphasis": "고객 분석, AI 응용, 비즈니스 IT 문제 해결",
+      "public": true
+    }
+  ],
+  "candidateStatuses": ["exploring", "priority", "paused", "preparing", "archived"]
+}

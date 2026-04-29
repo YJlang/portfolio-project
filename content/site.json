@@ -1,0 +1,31 @@
+{
+  "version": "0.1.0",
+  "phase": "content-modeling",
+  "homepage": {
+    "featuredProjectSlugs": ["pulse", "persona-lab", "blog-auto"],
+    "primarySections": [
+      "hero",
+      "featured-work",
+      "project-index",
+      "experience",
+      "research-direction",
+      "proof",
+      "contact"
+    ],
+    "contactPolicy": {
+      "preferPublicEmail": true,
+      "showPhoneByDefault": false
+    }
+  },
+  "routes": [
+    { "path": "/", "purpose": "현재의 정체성과 대표 작업" },
+    { "path": "/work", "purpose": "프로젝트와 실험 전체 인덱스" },
+    { "path": "/work/[slug]", "purpose": "대표 프로젝트 상세 case study" },
+    { "path": "/writing", "purpose": "글, 연구 노트, 회고, 기술 메모" },
+    { "path": "/about", "purpose": "학력, 경력, 활동, 수상, 인증, 가치관" },
+    { "path": "/research-fit", "purpose": "관심 연구 분야와 연구실 후보별 맞춤 내러티브" },
+    { "path": "/archive", "purpose": "오래되었지만 성장 기록으로 남길 작업" }
+  ],
+  "projectStatuses": ["featured", "index", "archive"],
+  "privacyLevels": ["public", "review", "private"]
+}

@@ -1,0 +1,170 @@
+[
+  {
+    "slug": "pulse",
+    "name": "PULSE",
+    "status": "featured",
+    "type": "team",
+    "category": ["Product", "Backend", "AI/Agent", "Research"],
+    "summary": "외식업 자영업자들을 위한 마케팅 웹 SaaS 졸업작품 프로젝트",
+    "repository": "https://github.com/YJlang/PULSE",
+    "stack": ["React", "Spring Boot", "FastAPI", "AI", "3-tier Architecture"],
+    "role": {
+      "label": "팀 프로젝트",
+      "detail": "담당 역할과 기여 범위는 case study 작성 시 보강 필요"
+    },
+    "caseStudy": {
+      "priority": 1,
+      "problem": "외식업 자영업자가 마케팅 업무를 수행할 때 겪는 반복 작업과 의사결정 부담을 줄이는 문제로 정리할 수 있다.",
+      "system": "React 프론트엔드, Spring Boot 백엔드, FastAPI 기반 AI 계층을 분리한 3-tier Architecture 프로젝트로 정리한다.",
+      "uxCxInsight": "자영업자의 실제 업무 흐름과 마케팅 의사결정 맥락을 중심으로 설명을 보강한다.",
+      "result": "졸업작품 프로젝트 결과, 데모, 배포 여부, 팀 내 구체 기여를 추가해야 한다.",
+      "reflection": ""
+    },
+    "public": true,
+    "needsMoreDetail": true
+  },
+  {
+    "slug": "persona-lab",
+    "name": "personaLab",
+    "status": "featured",
+    "type": "personal",
+    "category": ["Research", "AI/Agent", "Product", "UX/CX"],
+    "summary": "LLM Agent를 활용한 고객 분석 페르소나 여정 자동 생성 및 여정 히트맵 시각화 웹서비스",
+    "repository": "https://github.com/YJlang/personaLab",
+    "stack": ["LLM Agent", "Customer Analysis", "Persona", "Journey Map", "Heatmap"],
+    "role": {
+      "label": "개인 프로젝트",
+      "detail": "문제 정의부터 구현까지 end-to-end 경험을 강조한다."
+    },
+    "caseStudy": {
+      "priority": 2,
+      "problem": "고객 분석과 페르소나/여정 정리가 시간이 많이 들고 반복적인 작업이라는 문제에서 출발한다.",
+      "system": "LLM Agent를 통해 고객 분석 페르소나와 여정을 생성하고, 여정 히트맵으로 시각화하는 흐름을 설명한다.",
+      "uxCxInsight": "AIX, CX, HCI 관심사와 가장 직접적으로 연결되는 프로젝트로, 사용자 이해와 AI 보조 분석의 접점을 강조한다.",
+      "result": "데모 화면, 생성 결과 예시, 사용 흐름, 한계와 개선 방향을 추가해야 한다.",
+      "reflection": ""
+    },
+    "public": true,
+    "needsMoreDetail": true
+  },
+  {
+    "slug": "blog-auto",
+    "name": "BlogAuto",
+    "status": "featured",
+    "type": "personal",
+    "category": ["Product", "Automation", "Desktop"],
+    "summary": "Velog 유저를 타겟으로 한 블로그 초안 자동 생성 및 자동 포스팅 Windows 응용프로그램",
+    "repository": "https://github.com/YJlang/BlogAuto",
+    "stack": ["Rust", "Tauri", "Windows App", "Automation"],
+    "role": {
+      "label": "개인 프로젝트",
+      "detail": "반복 작업 자동화와 데스크톱 앱 구현 역량을 강조한다."
+    },
+    "caseStudy": {
+      "priority": 3,
+      "problem": "Velog 글쓰기의 빈 페이지 문제와 포스팅 반복 작업을 줄이는 문제로 정리한다.",
+      "system": "Rust와 Tauri 기반 Windows 앱으로 초안 생성과 자동 포스팅 흐름을 구현한 프로젝트로 설명한다.",
+      "uxCxInsight": "글 작성자의 반복 업무를 줄이고 시작 장벽을 낮추는 생산성 도구 관점으로 설명한다.",
+      "result": "실제 화면, 자동화 범위, 사용 시나리오, 한계를 추가해야 한다.",
+      "reflection": ""
+    },
+    "public": true,
+    "needsMoreDetail": true
+  },
+  {
+    "slug": "skusku-back",
+    "name": "SKUSKU_Back",
+    "status": "index",
+    "type": "team",
+    "category": ["Backend", "Team Project"],
+    "summary": "멋쟁이사자처럼 전국 대학 연합 IT창업 동아리 성결대학교 웹 프로젝트 백엔드",
+    "repository": "https://github.com/SKU-LikeLion14th/SKUSKU_Back",
+    "stack": ["Spring Boot"],
+    "role": {
+      "label": "팀 프로젝트",
+      "detail": "백엔드 담당"
+    },
+    "caseStudy": {
+      "priority": null,
+      "problem": "",
+      "system": "",
+      "uxCxInsight": "",
+      "result": "",
+      "reflection": ""
+    },
+    "public": true,
+    "needsMoreDetail": true
+  },
+  {
+    "slug": "gacha",
+    "name": "gacha",
+    "status": "index",
+    "type": "team",
+    "category": ["Backend", "Public Data", "Hackathon"],
+    "summary": "2025 간지톤 협업 프로젝트: 공공데이터를 활용한 여행지 추천 웹서비스",
+    "repository": "https://github.com/YJlang/gacha",
+    "stack": ["Backend", "Public Data"],
+    "role": {
+      "label": "팀 프로젝트",
+      "detail": "Backend 담당"
+    },
+    "caseStudy": {
+      "priority": null,
+      "problem": "",
+      "system": "",
+      "uxCxInsight": "",
+      "result": "",
+      "reflection": ""
+    },
+    "public": true,
+    "needsMoreDetail": true
+  },
+  {
+    "slug": "keybaegg",
+    "name": "KeyBaeGG",
+    "status": "index",
+    "type": "personal",
+    "category": ["Full Stack", "Gamification", "Freelance"],
+    "summary": "키보드 워리어들의 전투력과 업적을 관리하는 게임화된 랭킹 시스템",
+    "repository": "https://github.com/YJlang/keybaegg",
+    "stack": ["Full Stack"],
+    "role": {
+      "label": "개인 프로젝트 / 외주",
+      "detail": "full stack 구현 및 외주 경험"
+    },
+    "caseStudy": {
+      "priority": null,
+      "problem": "",
+      "system": "",
+      "uxCxInsight": "",
+      "result": "",
+      "reflection": ""
+    },
+    "public": true,
+    "needsMoreDetail": true
+  },
+  {
+    "slug": "hamkae",
+    "name": "함께줍줍",
+    "status": "archive",
+    "type": "team",
+    "category": ["Hackathon", "Team Project", "Environment"],
+    "summary": "멋쟁이사자처럼 전국 대학 연합 IT 창업 동아리 13기 해커톤 환경 보호 서비스",
+    "repository": "https://github.com/YJlang/hamkae",
+    "stack": [],
+    "role": {
+      "label": "팀 프로젝트",
+      "detail": "구체 역할 보강 필요"
+    },
+    "caseStudy": {
+      "priority": null,
+      "problem": "",
+      "system": "",
+      "uxCxInsight": "",
+      "result": "",
+      "reflection": ""
+    },
+    "public": true,
+    "needsMoreDetail": true
+  }
+]

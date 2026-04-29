@@ -1,0 +1,77 @@
+{
+  "person": {
+    "name": {
+      "ko": "윤준하",
+      "en": "Junho Yoon"
+    },
+    "birthYear": 2002,
+    "headline": "AIX, CX, HCI, UX/UI 관점으로 사용자와 비즈니스 문제를 이해하고, 백엔드와 Agentic Software Development로 제품을 구현하는 개발자",
+    "summary": "성결대학교 미디어소프트웨어학과 4학년에 재학 중인 개발자로, 백엔드 개발을 기반으로 AI, 고객 경험, HCI, UX/UI가 만나는 지점에 관심을 두고 있다. LLM Agent 기반 고객 분석, 블로그 자동화, 외식업 마케팅 SaaS처럼 사용자의 반복 업무를 줄이고 의사결정을 돕는 제품에 집중하고 있다.",
+    "education": [
+      {
+        "school": "성결대학교",
+        "department": "미디어소프트웨어학과",
+        "status": "4학년 1학기 재학 중",
+        "public": true
+      }
+    ],
+    "militaryService": {
+      "status": "대한민국 육군 병장 만기전역",
+      "public": true
+    }
+  },
+  "interests": [
+    "AIX",
+    "CX",
+    "HCI",
+    "UX/UI",
+    "Web Security",
+    "Software Library and Framework",
+    "MCP",
+    "Skill for Agentic Software Development",
+    "Team Project",
+    "Open Source",
+    "DevOps"
+  ],
+  "contacts": [
+    {
+      "type": "email",
+      "label": "Primary email",
+      "value": "sean111400@naver.com",
+      "public": true
+    },
+    {
+      "type": "email",
+      "label": "Secondary email",
+      "value": "wnsgk314@gmail.com",
+      "public": true
+    },
+    {
+      "type": "phone",
+      "label": "Mobile",
+      "value": "010-4604-6774",
+      "public": false,
+      "note": "공개 웹사이트 배포 전 노출 여부를 반드시 재확인한다."
+    },
+    {
+      "type": "github",
+      "label": "GitHub",
+      "value": "https://github.com/YJlang",
+      "public": true
+    }
+  ],
+  "externalReferences": [
+    {
+      "type": "figma",
+      "label": "참고용 기존 포트폴리오",
+      "url": "https://www.figma.com/proto/VIM8tDqpuzgyZjHreaj7r7/%EC%B5%9C%EC%A2%85%ED%8F%AC%ED%8F%B4?node-id=7-8287&t=CW0zplIQXMUZYUrd-1",
+      "public": false
+    }
+  ],
+  "profileImage": {
+    "src": "images/프로필사진.png",
+    "alt": "윤준하 프로필 사진",
+    "public": true,
+    "needsOptimization": true
+  }
+}
