@@ -967,13 +967,35 @@ h3 {
 
 .proof-item {
   display: grid;
-  gap: 6px;
+  gap: 8px;
+  overflow: hidden;
   border-radius: 16px;
   padding: 16px;
 }
 
+.proof-item img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  filter: saturate(0.86) contrast(1.04);
+}
+
 .proof-item strong {
   color: var(--text-strong);
+}
+
+.proof-item p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.proof-item .proof-meta {
+  color: var(--accent-2);
+  font-weight: 850;
 }
 
 .proof-item small {

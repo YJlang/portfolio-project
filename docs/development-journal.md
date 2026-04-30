@@ -446,3 +446,42 @@
 
 - `content/projects.json` JSON 파싱 성공.
 - 각 프로젝트의 `subAgentOrchestration.status` 값을 확인했다.
+
+## 2026-04-30 Proof Asset Registration Pass
+
+### Goal
+
+- 상장 이미지를 직접 확인하고, 어떤 상인지 포트폴리오 데이터에 등록한다.
+- 원본 증빙은 보존하되 공개 UI에는 개인정보 리스크를 줄인 썸네일을 사용한다.
+
+### Work
+
+- `images/상장2020.png`, `images/상장2021.png`, `images/상장2025.png`, `images/상장2026.png`를 시각적으로 확인했다.
+- 2020 교내 SW개발 아이디어 대회 장려상, 2021 사용자 조사 기반 웹/앱서비스 기획 경진대회 최우수상, 2025-1 VR/AR/Game 경진대회 최우수상, 2025-2 사용자 경험 디자인 소논문 경진대회 최우수상으로 정리했다.
+- `content/proof-assets.json`에 발급기관, 날짜, 수상명, 증명 가치, 개인정보 리스크, 추천 사용처를 추가했다.
+- `images/optimized/`에 공개 검토용 WebP 썸네일을 생성했다.
+- 문서번호, 학번/학급 등 민감한 영역은 썸네일에서 마스킹했다.
+- Experience / Proof 섹션에서 증빙 썸네일과 메타데이터가 보이도록 UI를 연결했다.
+
+### Decisions
+
+- 상장 원본은 `src`로 보존하고, 공개 UI에는 `thumbnailSrc` 역할의 최적화 이미지를 사용한다.
+- 상장류는 모두 `public: "review"` 상태로 둔다. 실제 배포 전에는 공개 가능 여부와 마스킹 상태를 다시 확인한다.
+- 2026 사용자 경험 디자인 소논문 경진대회 최우수상은 HCI/UX/CX 연구 적합성 증빙으로 우선도가 높다.
+
+### Changed Files
+
+- `content/proof-assets.json`
+- `src/App.tsx`
+- `src/styles.css`
+- `src/types.ts`
+- `content/site.json`
+- `docs/content-model.md`
+- `docs/development-journal.md`
+- `images/optimized/*.webp`
+
+### Verification
+
+- `content/proof-assets.json` JSON 파싱 성공.
+- `npm run build` 성공.
+- 원본 상장 대비 공개용 썸네일 용량이 약 18-31KB 수준으로 줄어든 것을 확인했다.

@@ -6,34 +6,79 @@
     "src": "images/프로필사진.png",
     "public": true,
     "needsOptimization": true,
-    "note": "첫 화면 또는 About 섹션에서 사용할 수 있다."
+    "description": "포트폴리오 첫 화면과 About 섹션에서 사용할 수 있는 프로필 이미지입니다.",
+    "proves": "공개 프로필과 개인 브랜딩의 시각적 식별성을 보강합니다.",
+    "privacyRisk": "낮음. 공개 프로필 사진으로 사용 가능하지만 웹 최적화본 생성이 필요합니다.",
+    "recommendedUse": "Hero 이미지, About 프로필, OG 이미지 후보",
+    "note": "첫 화면 또는 About 섹션에서 사용할 수 있습니다."
   },
   {
-    "slug": "award-2020",
-    "title": "상장 2020",
+    "slug": "award-2020-sw-idea",
+    "title": "2020 교내 SW개발 아이디어 대회 장려상",
     "type": "award",
     "src": "images/상장2020.png",
+    "thumbnailSrc": "images/optimized/award-2020-sw-idea-thumb.webp",
     "public": "review",
     "needsOptimization": true,
-    "note": "상세 수상명, 발급 기관, 공개 가능 여부 확인 필요."
+    "issuer": "별내고등학교",
+    "date": "2020-06-25",
+    "award": "장려상 3위",
+    "description": "2020학년도 교내 SW개발 아이디어 대회에서 우수한 성적을 거두어 받은 장려상입니다.",
+    "proves": "고등학교 시절부터 소프트웨어 아이디어와 개발 문제에 관심을 가지고 대회 경험을 쌓았음을 보여줍니다.",
+    "privacyRisk": "문서번호, 학년/반, 이름, 학교 직인이 보입니다. 공개 전 문서번호와 학급 정보는 가리는 편이 좋습니다.",
+    "recommendedUse": "성장 기록 또는 Archive형 수상 증빙",
+    "note": "상장 문구상 '교내 SW개발 아이디어 대회 장려상(3위)'으로 확인됩니다."
   },
   {
-    "slug": "award-2021",
-    "title": "상장 2021",
+    "slug": "award-2021-service-planning",
+    "title": "사용자 조사를 통한 웹/앱서비스 기획 경진대회 최우수상",
     "type": "award",
     "src": "images/상장2021.png",
+    "thumbnailSrc": "images/optimized/award-2021-service-planning-thumb.webp",
     "public": "review",
     "needsOptimization": true,
-    "note": "상세 수상명, 발급 기관, 공개 가능 여부 확인 필요."
+    "issuer": "성결대학교 공과대학 미디어소프트웨어학과",
+    "date": "2021-05-26",
+    "award": "최우수상",
+    "description": "성결대학교 공과대학 미디어소프트웨어학과에서 주최한 사용자 조사 기반 웹/앱서비스 기획 경진대회 최우수상입니다.",
+    "proves": "사용자 조사, 서비스 기획, UX/CX 문제 정의에 대한 초기 역량을 보여줍니다.",
+    "privacyRisk": "학번, 이름, 학과장 직인, 문서번호가 보입니다. 공개 전 학번과 문서번호는 마스킹이 필요합니다.",
+    "recommendedUse": "UX/CX, HCI, 서비스 기획 역량 증빙",
+    "note": "상장 문구상 소정의 장학금을 함께 수여한 최우수상으로 확인됩니다."
   },
   {
-    "slug": "award-2025",
-    "title": "상장 2025",
+    "slug": "award-2025-vr-ar-game",
+    "title": "2025-1 VR/AR/Game 경진대회 최우수상",
     "type": "award",
     "src": "images/상장2025.png",
+    "thumbnailSrc": "images/optimized/award-2025-vr-ar-game-thumb.webp",
     "public": "review",
     "needsOptimization": true,
-    "note": "상세 수상명, 발급 기관, 공개 가능 여부 확인 필요."
+    "issuer": "성결대학교 교수학습지원센터",
+    "date": "2025-08-08",
+    "award": "최우수상",
+    "description": "성결대학교 IT공과대학 미디어소프트웨어학과 주최 2025-1 경진대회 공모전 중 VR/AR/Game 경진대회 최우수상입니다.",
+    "proves": "전공 프로젝트 기반 구현 역량과 인터랙티브/게임형 콘텐츠 제작 경험을 보여줍니다.",
+    "privacyRisk": "학번, 이름, 센터장 직인, 문서번호가 보입니다. 공개 전 학번과 문서번호 마스킹이 필요합니다.",
+    "recommendedUse": "전공 역량, 인터랙션/게임형 프로젝트 증빙",
+    "note": "상장 문구상 '2025-1 경진대회 공모전 - VR/AR/Game 경진대회' 최우수상으로 확인됩니다."
+  },
+  {
+    "slug": "award-2026-ux-paper",
+    "title": "2025-2 사용자 경험 디자인 소논문 경진대회 최우수상",
+    "type": "award",
+    "src": "images/상장2026.png",
+    "thumbnailSrc": "images/optimized/award-2026-ux-paper-thumb.webp",
+    "public": "review",
+    "needsOptimization": true,
+    "issuer": "성결대학교 교수학습지원센터",
+    "date": "2026-01-21",
+    "award": "최우수상",
+    "description": "성결대학교 IT공과대학 미디어소프트웨어학과 주최 2025-2 사용자 경험 디자인 소논문 경진대회 최우수상입니다.",
+    "proves": "UX 디자인, 사용자 경험 분석, 소논문 작성 역량을 직접적으로 보여주는 핵심 증빙입니다.",
+    "privacyRisk": "학번, 이름, 센터장 직인, 문서번호가 보입니다. 공개 전 학번과 문서번호 마스킹이 필요합니다.",
+    "recommendedUse": "HCI/UX/CX 연구 적합성, 논문/리서치 역량 증빙",
+    "note": "상장 문구상 '사용자 경험 디자인 소논문 경진대회' 최우수상으로 확인됩니다."
   },
   {
     "slug": "scholarship-grade",
@@ -42,6 +87,10 @@
     "src": "images/성적장학금.png",
     "public": "review",
     "needsOptimization": false,
+    "description": "학업 성실성과 성과를 보강하는 장학금 증빙입니다.",
+    "proves": "전공 학습 성과와 꾸준함을 보여줍니다.",
+    "privacyRisk": "개인정보와 세부 성적 정보 포함 여부 확인 필요.",
+    "recommendedUse": "공개용 요약 텍스트 또는 마스킹된 썸네일",
     "note": "개인정보 포함 여부 확인 필요."
   },
   {
@@ -51,6 +100,10 @@
     "src": "images/전공역량인증.png",
     "public": "review",
     "needsOptimization": true,
+    "description": "전공 역량 인증 관련 증빙입니다.",
+    "proves": "학과 기준의 전공 역량 충족 여부를 보여줍니다.",
+    "privacyRisk": "개인정보 포함 여부 확인 필요.",
+    "recommendedUse": "전공 역량 섹션의 보조 증빙",
     "note": "개인정보 포함 여부 확인 필요."
   },
   {
@@ -60,7 +113,11 @@
     "src": "images/전선성적.png",
     "public": false,
     "needsOptimization": true,
-    "note": "성적 정보는 공개 사이트에 직접 노출하지 않는 것을 기본값으로 둔다."
+    "description": "전공 선택 과목 성적 증빙입니다.",
+    "proves": "전공 선택 과목 이수와 성과를 보여줄 수 있습니다.",
+    "privacyRisk": "세부 성적과 개인정보가 포함될 수 있으므로 공개 사이트에 직접 노출하지 않습니다.",
+    "recommendedUse": "비공개 지원 자료 또는 마스킹 후 별도 제출 자료",
+    "note": "성적 정보는 공개 사이트에 직접 노출하지 않는 것을 기본값으로 둡니다."
   },
   {
     "slug": "major-required-grades",
@@ -69,6 +126,10 @@
     "src": "images/전필성적.png",
     "public": false,
     "needsOptimization": true,
-    "note": "성적 정보는 공개 사이트에 직접 노출하지 않는 것을 기본값으로 둔다."
+    "description": "전공 필수 과목 성적 증빙입니다.",
+    "proves": "전공 필수 과목 이수와 성과를 보여줄 수 있습니다.",
+    "privacyRisk": "세부 성적과 개인정보가 포함될 수 있으므로 공개 사이트에 직접 노출하지 않습니다.",
+    "recommendedUse": "비공개 지원 자료 또는 마스킹 후 별도 제출 자료",
+    "note": "성적 정보는 공개 사이트에 직접 노출하지 않는 것을 기본값으로 둡니다."
   }
 ]

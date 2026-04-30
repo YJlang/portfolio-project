@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "phase": "agentic-engineering-metadata",
+  "phase": "proof-asset-registration",
   "homepage": {
     "featuredProjectSlugs": ["pulse", "persona-lab", "blog-auto"],
     "primarySections": [

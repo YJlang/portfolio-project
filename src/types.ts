@@ -64,8 +64,16 @@ export interface ProofAsset {
   title: string;
   type: string;
   src: string;
+  thumbnailSrc?: string;
   public: PublicState;
   needsOptimization: boolean;
+  issuer?: string;
+  date?: string;
+  award?: string;
+  description?: string;
+  proves?: string;
+  privacyRisk?: string;
+  recommendedUse?: string;
   note: string;
 }
 

@@ -6,12 +6,23 @@ import proofAssets from '../content/proof-assets.json';
 import research from '../content/research.json';
 import site from '../content/site.json';
 import profilePhoto from '../images/프로필사진.png';
+import award2020Thumb from '../images/optimized/award-2020-sw-idea-thumb.webp';
+import award2021Thumb from '../images/optimized/award-2021-service-planning-thumb.webp';
+import award2025Thumb from '../images/optimized/award-2025-vr-ar-game-thumb.webp';
+import award2026Thumb from '../images/optimized/award-2026-ux-paper-thumb.webp';
 import type { Contact, Project, ProofAsset, ResearchDirection } from './types';
 
 const typedProjects = projects as Project[];
 const typedProofAssets = proofAssets as ProofAsset[];
 const typedResearchDirections = research.directions as ResearchDirection[];
 const publicContacts = (profile.contacts as Contact[]).filter((contact) => contact.public);
+const proofImageMap: Record<string, string> = {
+  'profile-photo': profilePhoto,
+  'award-2020-sw-idea': award2020Thumb,
+  'award-2021-service-planning': award2021Thumb,
+  'award-2025-vr-ar-game': award2025Thumb,
+  'award-2026-ux-paper': award2026Thumb,
+};
 const featuredProjects = typedProjects
   .filter((project) => site.homepage.featuredProjectSlugs.includes(project.slug))
   .sort((a, b) => (a.caseStudy.priority ?? 99) - (b.caseStudy.priority ?? 99));
@@ -440,10 +451,19 @@ function App() {
             ))}
           </div>
           <aside className="proof-strip" aria-label="Proof assets">
-            {visibleProofs.slice(0, 5).map((asset) => (
+            {visibleProofs.slice(0, 8).map((asset) => (
               <div className="proof-item" key={asset.slug}>
+                {proofImageMap[asset.slug] ? (
+                  <img src={proofImageMap[asset.slug]} alt={`${asset.title} 증빙 이미지`} loading="lazy" />
+                ) : null}
                 <span>{asset.type}</span>
                 <strong>{asset.title}</strong>
+                {asset.award || asset.date ? (
+                  <p className="proof-meta">
+                    {[asset.award, asset.date].filter(Boolean).join(' · ')}
+                  </p>
+                ) : null}
+                {asset.issuer ? <p>{asset.issuer}</p> : null}
                 <small>{asset.public === 'review' ? '공개 검토 필요' : '공개 가능'}</small>
               </div>
             ))}
