@@ -4,167 +4,554 @@
     "name": "PULSE",
     "status": "featured",
     "type": "team",
-    "category": ["Product", "Backend", "AI/Agent", "Research"],
-    "summary": "외식업 자영업자들을 위한 마케팅 웹 SaaS 졸업작품 프로젝트",
+    "category": ["Product", "Backend", "AI/Agent", "Research", "Marketing SaaS"],
+    "summary": "외식업 자영업자를 위한 AI 마케팅 자동화 서비스입니다. 리뷰 수집, 고객 인사이트 분석, 리뷰 답변, 홍보 콘텐츠 기획까지 이어지는 졸업작품 풀스택 프로젝트입니다.",
+    "intent": "사장님이 매일 감으로 처리하던 고객 리뷰 분석과 SNS 마케팅 의사결정을 데이터 기반 루틴으로 바꾸고, AI가 실행 가능한 다음 행동까지 제안하도록 만드는 것이 핵심 의도입니다.",
     "repository": "https://github.com/YJlang/PULSE",
-    "stack": ["React", "Spring Boot", "FastAPI", "AI", "3-tier Architecture"],
-    "role": {
-      "label": "팀 프로젝트",
-      "detail": "담당 역할과 기여 범위는 case study 작성 시 보강 필요"
+    "stack": [
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Recharts",
+      "Three.js",
+      "Spring Boot",
+      "Java 21",
+      "Spring Security",
+      "JPA",
+      "MySQL",
+      "FastAPI",
+      "Python",
+      "Playwright",
+      "Kiwi",
+      "BERTopic",
+      "SentenceTransformer",
+      "MongoDB",
+      "OpenAI",
+      "Google GenAI"
+    ],
+  "role": {
+    "label": "졸업작품 / 풀스택 팀 프로젝트",
+    "detail": "React 프론트엔드, Spring Boot 비즈니스 API, FastAPI AI 서버가 분리된 3-tier 구조를 바탕으로 서비스 흐름과 AI 분석 파이프라인을 설명합니다. 정확한 개인 담당 범위는 추후 본인 기록으로 더 세밀하게 보강할 예정입니다."
+  },
+  "agenticEngineering": {
+    "summary": "리뷰 수집, 토픽 분석, LLM 인사이트, 홍보 콘텐츠 제안이 이어지는 AI 활용 하네스를 갖춘 대표 프로젝트입니다.",
+    "mcpServers": [
+      {
+        "name": "GitHub MCP / GitHub CLI",
+        "usage": "루트 레포와 프론트엔드, Spring, FastAPI 서브모듈 구조를 추적해 풀스택 경계를 분석했습니다.",
+        "scope": "portfolio-analysis"
+      },
+      {
+        "name": "Local filesystem / shell",
+        "usage": "서브모듈의 README, Gradle, package, Python endpoint/service 파일을 읽어 기술 근거를 정리했습니다.",
+        "scope": "portfolio-analysis"
+      }
+    ],
+    "agentSkills": [
+      {
+        "name": "github-deep-research",
+        "usage": "서브모듈 기반 레포 구조와 기술 스택을 프로젝트 스토리로 재구성하는 기준으로 사용합니다."
+      },
+      {
+        "name": "portfolio-architect",
+        "usage": "PULSE를 장기 대표 case study로 확장하기 위한 문제, 시스템, UX/CX 서사를 분리합니다."
+      },
+      {
+        "name": "AI Harness Engineering",
+        "usage": "리뷰 데이터, 분석 모델, LLM 출력, 사용자의 마케팅 의사결정을 연결하는 검증 가능한 AI 활용 흐름으로 설명합니다."
+      }
+    ],
+    "subAgentOrchestration": {
+      "status": "partial",
+      "label": "AI pipeline orchestration",
+      "detail": "FastAPI AI 서버가 크롤링, 형태소 분석, 토픽 모델링, LLM 인사이트 생성을 순차 파이프라인으로 묶습니다. Codex SubAgent 기반 병렬 오케스트레이션 근거는 아직 프로젝트 코드에서 확인되지 않았습니다."
     },
+    "notes": [
+      "향후 PULSE case study에서 실제 프롬프트, 실패 케이스, 품질 검증 루틴을 추가하면 AI Harness Engineering 역량이 더 선명해집니다."
+    ]
+  },
+  "highlights": [
+      "PULSE 루트 레포가 프론트엔드, Spring 백엔드, FastAPI AI 서버를 서브모듈로 묶는 구조입니다.",
+      "FastAPI 서버는 Playwright 리뷰 수집, Kiwi 형태소 분석, BERTopic/임베딩 기반 토픽 분석, LLM 인사이트 생성을 담당합니다.",
+      "Spring 서버는 회원/매장/리뷰 관리와 FastAPI 연동, 리뷰 답변 생성 요청 같은 제품 API 경계를 담당합니다.",
+      "프론트엔드는 분석 대시보드, 리뷰 관리, 홍보 콘텐츠 생성 화면을 통해 Understand -> Create -> Action 흐름을 만듭니다.",
+      "MySQL은 사용자/매장/구조화 데이터를, MongoDB는 리뷰 원문과 분석 로그를 보관하는 역할로 분리합니다."
+    ],
     "caseStudy": {
       "priority": 1,
-      "problem": "외식업 자영업자가 마케팅 업무를 수행할 때 겪는 반복 작업과 의사결정 부담을 줄이는 문제로 정리할 수 있다.",
-      "system": "React 프론트엔드, Spring Boot 백엔드, FastAPI 기반 AI 계층을 분리한 3-tier Architecture 프로젝트로 정리한다.",
-      "uxCxInsight": "자영업자의 실제 업무 흐름과 마케팅 의사결정 맥락을 중심으로 설명을 보강한다.",
-      "result": "졸업작품 프로젝트 결과, 데모, 배포 여부, 팀 내 구체 기여를 추가해야 한다.",
-      "reflection": ""
+      "problem": "외식업 자영업자는 리뷰를 읽고 고객 반응을 해석하고 홍보 콘텐츠까지 만드는 반복 업무를 혼자 감당해야 합니다.",
+      "system": "React/Vite 프론트엔드, Spring Boot API 서버, FastAPI AI 서버를 분리하고, 리뷰 수집-분석-인사이트-콘텐츠 추천으로 이어지는 파이프라인을 구성했습니다.",
+      "uxCxInsight": "단순히 AI 결과를 보여주는 서비스가 아니라 사장님의 실제 마케팅 루틴을 줄이는 방향으로 리뷰, 고객 페르소나, 홍보 실행을 한 화면 흐름 안에 묶는 점이 중요합니다.",
+      "result": "회원가입부터 분석 요청, 대시보드, 리뷰 관리, AI 답변 생성, 홍보 영상 프롬프트 추천까지 이어지는 end-to-end 서비스 구조가 확인됩니다.",
+      "reflection": "향후 포트폴리오에서는 본인 담당 코드, 데모 화면, 졸업작품 결과물, 실제 사용자 시나리오를 연결해 가장 깊은 대표 케이스 스터디로 확장하겠습니다."
     },
+    "evidence": [
+      "README.md",
+      ".gitmodules",
+      "pulse_FE/MD/tech.md",
+      "pulse_python/app/api/endpoints.py",
+      "pulse_python/app/services/analysis_service.py",
+      "pulse_spring/build.gradle",
+      "pulse_spring/src/main/java/com/example/pulse_backend/controller"
+    ],
     "public": true,
-    "needsMoreDetail": true
+    "needsMoreDetail": false
   },
   {
     "slug": "persona-lab",
     "name": "personaLab",
     "status": "featured",
     "type": "personal",
-    "category": ["Research", "AI/Agent", "Product", "UX/CX"],
-    "summary": "LLM Agent를 활용한 고객 분석 페르소나 여정 자동 생성 및 여정 히트맵 시각화 웹서비스",
+    "category": ["Research", "AI/Agent", "Product", "UX/CX", "HCI"],
+    "summary": "AI 페르소나가 실제 웹사이트를 탐색하고 UX 리포트를 생성하는 synthetic user research 플랫폼입니다.",
+    "intent": "사용자 조사와 고객 여정 분석을 반복 가능한 AI 실험으로 바꾸어, 여러 페르소나가 같은 제품을 어떻게 다르게 경험하는지 관찰하려는 프로젝트입니다.",
     "repository": "https://github.com/YJlang/personaLab",
-    "stack": ["LLM Agent", "Customer Analysis", "Persona", "Journey Map", "Heatmap"],
-    "role": {
-      "label": "개인 프로젝트",
-      "detail": "문제 정의부터 구현까지 end-to-end 경험을 강조한다."
+    "stack": [
+      "Spring Boot 4",
+      "Java 21",
+      "React 19",
+      "TypeScript",
+      "Vite 7",
+      "Python",
+      "Playwright",
+      "OpenAI GPT-4o",
+      "DSPy",
+      "Redis",
+      "MySQL",
+      "JWT"
+    ],
+  "role": {
+    "label": "개인 프로젝트",
+    "detail": "제품 문제 정의부터 백엔드, 프론트엔드, 에이전트 워커, UX 리포트 구조까지 end-to-end로 설계한 프로젝트로 정리합니다."
+  },
+  "agenticEngineering": {
+    "summary": "AI 페르소나가 브라우저를 조작하고 UX 리포트를 남기는 실험형 Agentic Software 프로젝트입니다.",
+    "mcpServers": [
+      {
+        "name": "GitHub MCP / GitHub CLI",
+        "usage": "Spring Boot, React, Python Agent Worker의 분리 구조와 README/설정 파일을 분석했습니다.",
+        "scope": "portfolio-analysis"
+      },
+      {
+        "name": "Playwright-compatible browser automation",
+        "usage": "프로젝트 내부에서 실제 웹 탐색과 스크린샷 기반 행동 결정을 수행하는 브라우저 자동화 계층으로 확인됩니다.",
+        "scope": "project-runtime"
+      }
+    ],
+    "agentSkills": [
+      {
+        "name": "open-source-analysis",
+        "usage": "백엔드, 프론트엔드, agent-worker 경계를 읽고 시스템 설명으로 재구성하는 기준으로 사용합니다."
+      },
+      {
+        "name": "visual-asset-reader",
+        "usage": "향후 스크린샷, 히트맵, 감정 타임라인 증빙을 읽고 case study 자료로 정리할 때 사용할 수 있습니다."
+      },
+      {
+        "name": "AI Harness Engineering",
+        "usage": "페르소나, 시나리오, 관찰 로그, 행동 선택, 리포트 생성을 하나의 실험 하네스로 묶는 관점입니다."
+      }
+    ],
+    "subAgentOrchestration": {
+      "status": "used",
+      "label": "Persona agent orchestration",
+      "detail": "Redis 큐와 Python worker가 테스트 작업을 받아 Playwright 브라우저를 조작합니다. 여러 페르소나/시나리오를 분리 실행할 수 있는 구조라 SubAgent형 실험 오케스트레이션으로 확장 가능합니다."
     },
+    "notes": [
+      "Codex SubAgent를 직접 호출하는 프로젝트는 아니지만, 제품 도메인 자체가 AI agent worker 오케스트레이션에 가깝습니다."
+    ]
+  },
+  "highlights": [
+      "Spring Boot 백엔드, React 프론트엔드, Python Agent Worker가 분리된 구조입니다.",
+      "Redis 큐를 통해 테스트 작업을 워커에 전달하고, 워커는 Playwright 브라우저를 조작하며 결과를 백엔드에 콜백합니다.",
+      "GPT-4o Vision/DSPy 기반 에이전트가 스크린샷을 보고 CLICK, INPUT, SCROLL, HOVER, DONE 같은 행동을 선택합니다.",
+      "감정 타임라인, 클릭 히트맵, 스크롤 패턴, CJM 형태의 리포트로 UX/CX 분석 결과를 시각화하는 방향입니다."
+    ],
     "caseStudy": {
       "priority": 2,
-      "problem": "고객 분석과 페르소나/여정 정리가 시간이 많이 들고 반복적인 작업이라는 문제에서 출발한다.",
-      "system": "LLM Agent를 통해 고객 분석 페르소나와 여정을 생성하고, 여정 히트맵으로 시각화하는 흐름을 설명한다.",
-      "uxCxInsight": "AIX, CX, HCI 관심사와 가장 직접적으로 연결되는 프로젝트로, 사용자 이해와 AI 보조 분석의 접점을 강조한다.",
-      "result": "데모 화면, 생성 결과 예시, 사용 흐름, 한계와 개선 방향을 추가해야 한다.",
-      "reflection": ""
+      "problem": "전통적인 UX 리서치는 시간과 비용이 크고, 동일한 시나리오를 여러 페르소나로 반복 실험하기 어렵습니다.",
+      "system": "백엔드가 테스트 조건과 페르소나를 관리하고, Python 워커가 실제 브라우저 탐색을 수행한 뒤, 프론트엔드가 여정과 인사이트를 리포트로 보여줍니다.",
+      "uxCxInsight": "사용자 이해를 사람이 직접 작성한 가정에만 의존하지 않고, 에이전트 행동 로그와 시각적 증거를 함께 보는 HCI/CX 실험 도구로 확장할 수 있습니다.",
+      "result": "AI 페르소나 기반 웹 탐색, 작업 큐, 시각 기반 행동 결정, UX 리포트 생성 흐름이 코드베이스에서 확인됩니다.",
+      "reflection": "향후 실제 테스트 URL별 리포트 예시와 실패/성공 행동 로그를 추가하면 연구 지망 포트폴리오에서 강한 증거가 됩니다."
     },
+    "evidence": [
+      "README.md",
+      "agent-worker/main.py",
+      "agent-worker/dspy_modules.py",
+      "personalab/build.gradle",
+      "personalab-frontend/package.json"
+    ],
     "public": true,
-    "needsMoreDetail": true
+    "needsMoreDetail": false
   },
   {
     "slug": "blog-auto",
     "name": "BlogAuto",
     "status": "featured",
     "type": "personal",
-    "category": ["Product", "Automation", "Desktop"],
-    "summary": "Velog 유저를 타겟으로 한 블로그 초안 자동 생성 및 자동 포스팅 Windows 응용프로그램",
+    "category": ["Product", "Automation", "Desktop", "AI/Agent", "Writing"],
+    "summary": "사진과 짧은 기록을 바탕으로 블로그 초안을 만들고, 사용자가 검토한 뒤 Velog/Tistory 게시 흐름을 자동화하는 Windows 데스크톱 앱입니다.",
+    "intent": "글쓰기의 빈 페이지 부담과 플랫폼 게시 반복 작업을 줄여, 기록을 꾸준히 남기게 만드는 local-first 글쓰기 에이전트를 목표로 합니다.",
     "repository": "https://github.com/YJlang/BlogAuto",
-    "stack": ["Rust", "Tauri", "Windows App", "Automation"],
-    "role": {
-      "label": "개인 프로젝트",
-      "detail": "반복 작업 자동화와 데스크톱 앱 구현 역량을 강조한다."
+    "stack": [
+      "Tauri 2",
+      "Rust",
+      "React 19",
+      "Vite",
+      "TypeScript",
+      "OpenAI",
+      "Playwright",
+      "Node Worker",
+      "Velog Automation"
+    ],
+  "role": {
+    "label": "개인 프로젝트",
+    "detail": "Tauri 앱 셸, Node 워커, LLM 초안 생성, Playwright 기반 게시 자동화 흐름을 분리해 설계한 생산성 도구로 정리합니다."
+  },
+  "agenticEngineering": {
+    "summary": "사용자 자료를 글쓰기 맥락으로 바꾸고, 사람이 승인한 뒤 게시 자동화를 수행하는 writing automation 하네스입니다.",
+    "mcpServers": [
+      {
+        "name": "GitHub MCP / GitHub CLI",
+        "usage": "Tauri, worker, OpenAI draft, Velog publisher 파일을 확인해 자동화 경계를 분석했습니다.",
+        "scope": "portfolio-analysis"
+      },
+      {
+        "name": "Browser automation runtime",
+        "usage": "프로젝트 내부에서 Playwright 기반 Velog 게시 자동화 흐름을 담당합니다.",
+        "scope": "project-runtime"
+      }
+    ],
+    "agentSkills": [
+      {
+        "name": "velog-auto-posting",
+        "usage": "Velog 글쓰기/게시 자동화의 안전한 사람 검토 흐름을 설명하는 참고 패턴으로 사용합니다."
+      },
+      {
+        "name": "frontend-engineering",
+        "usage": "데스크톱 앱 UI, worker, automation 책임을 분리해 장기 유지 가능한 구조로 설명합니다."
+      },
+      {
+        "name": "AI Harness Engineering",
+        "usage": "초안 생성, 수정 요청, 게시 전 검증, 최종 승인 단계를 하나의 human-in-the-loop 하네스로 정리합니다."
+      }
+    ],
+    "subAgentOrchestration": {
+      "status": "partial",
+      "label": "Single worker automation",
+      "detail": "Node worker가 LLM 초안 생성과 브라우저 게시 자동화를 수행합니다. 다중 SubAgent 병렬 구조보다는 단일 worker가 사용자의 승인 흐름을 보조하는 구조입니다."
     },
+    "notes": [
+      "향후 블로그 초안 품질 평가, 이미지 OCR, 게시 전 링크 검증을 별도 agent 단계로 분리하면 SubAgent 오케스트레이션 설명이 강화됩니다."
+    ]
+  },
+  "highlights": [
+      "Tauri/React UI와 Node 기반 automation worker를 분리해 데스크톱 앱과 브라우저 자동화 책임을 나눴습니다.",
+      "OpenAI를 이용해 초안 생성과 수정 요청을 처리하고, 이미지/참고 문서/사용자 프로필 정보를 글쓰기 맥락으로 사용합니다.",
+      "Velog publisher는 로그인 프로필 확인, 이미지 업로드, 에디터 입력, 게시 전 검증을 자동화합니다.",
+      "최종 게시 버튼은 사람이 확인하도록 남겨 자동화와 사용자 통제 사이의 경계를 둡니다."
+    ],
     "caseStudy": {
       "priority": 3,
-      "problem": "Velog 글쓰기의 빈 페이지 문제와 포스팅 반복 작업을 줄이는 문제로 정리한다.",
-      "system": "Rust와 Tauri 기반 Windows 앱으로 초안 생성과 자동 포스팅 흐름을 구현한 프로젝트로 설명한다.",
-      "uxCxInsight": "글 작성자의 반복 업무를 줄이고 시작 장벽을 낮추는 생산성 도구 관점으로 설명한다.",
-      "result": "실제 화면, 자동화 범위, 사용 시나리오, 한계를 추가해야 한다.",
-      "reflection": ""
+      "problem": "개인 기록은 시작이 어렵고, 초안 작성 후 플랫폼에 옮겨 게시하는 반복 과정도 꾸준함을 방해합니다.",
+      "system": "Tauri 데스크톱 앱에서 사용자의 기록과 자료를 받고, Node 워커가 LLM 초안 생성과 Playwright 게시 자동화를 담당합니다.",
+      "uxCxInsight": "사용자를 완전히 대체하는 자동화가 아니라, 작성자는 검토와 최종 승인에 집중하고 시스템은 반복 동작을 줄이는 협업형 흐름을 지향합니다.",
+      "result": "초안 생성, 수정, 프로필 기반 세션 관리, Velog 에디터 자동 입력, 게시 전 검증까지 이어지는 구현 흐름이 확인됩니다.",
+      "reflection": "포트폴리오에서는 개인 블로그 링크와 함께 실제 작성/게시 루틴을 보여주면 Agentic Software Development 역량을 자연스럽게 설명할 수 있습니다."
     },
+    "evidence": [
+      "PLAN.MD",
+      "package.json",
+      "src-tauri/Cargo.toml",
+      "worker/index.mjs",
+      "worker/openai-draft.mjs",
+      "worker/velog-publisher.mjs"
+    ],
     "public": true,
-    "needsMoreDetail": true
+    "needsMoreDetail": false
   },
   {
     "slug": "skusku-back",
     "name": "SKUSKU_Back",
     "status": "index",
     "type": "team",
-    "category": ["Backend", "Team Project"],
-    "summary": "멋쟁이사자처럼 전국 대학 연합 IT창업 동아리 성결대학교 웹 프로젝트 백엔드",
+    "category": ["Backend", "Team Project", "Education Platform", "AI"],
+    "summary": "멋쟁이사자처럼 대학 운영을 위한 백엔드 플랫폼입니다. 강의 자료, 과제, 제출, 피드백, 퀴즈, 프로젝트 갤러리, 일정, 파일 업로드를 관리합니다.",
+    "intent": "동아리 운영에서 반복되는 공지, 과제 제출, 피드백, 자료 공유를 하나의 관리형 백엔드 API로 묶는 것이 목적입니다.",
     "repository": "https://github.com/SKU-LikeLion14th/SKUSKU_Back",
-    "stack": ["Spring Boot"],
-    "role": {
-      "label": "팀 프로젝트",
-      "detail": "백엔드 담당"
+    "stack": [
+      "Spring Boot 3",
+      "Java 21",
+      "JPA",
+      "MySQL",
+      "Redis",
+      "OAuth2",
+      "JWT",
+      "AWS S3",
+      "CloudFront",
+      "Google Gemini",
+      "SpringDoc"
+    ],
+  "role": {
+    "label": "팀 프로젝트 / 백엔드",
+    "detail": "동아리 운영 서비스의 인증, 파일, 과제/퀴즈/자료 API와 운영 안정성 관점에서 설명합니다."
+  },
+  "agenticEngineering": {
+    "summary": "운영 플랫폼의 백엔드에 Gemini 기반 서술형 퀴즈 채점 기능이 연결된 AI 보조형 교육 서비스입니다.",
+    "mcpServers": [
+      {
+        "name": "GitHub MCP / GitHub CLI",
+        "usage": "README, walkthrough, build 설정을 확인해 API 범위와 Gemini 사용 맥락을 분석했습니다.",
+        "scope": "portfolio-analysis"
+      }
+    ],
+    "agentSkills": [
+      {
+        "name": "open-source-analysis",
+        "usage": "백엔드 도메인, 인증, 파일, AI 채점 기능을 프로젝트 설명으로 구조화하는 기준으로 사용합니다."
+      },
+      {
+        "name": "AI Harness Engineering",
+        "usage": "서술형 답안, 평가 기준, Gemini 응답을 운영자가 신뢰할 수 있는 채점 보조 흐름으로 설명합니다."
+      }
+    ],
+    "subAgentOrchestration": {
+      "status": "not-used",
+      "label": "No SubAgent orchestration",
+      "detail": "현재 확인된 구조는 Gemini API를 기능 단위로 호출하는 방식이며, 다중 Agent나 MCP 기반 SubAgent 오케스트레이션 근거는 없습니다."
     },
+    "notes": [
+      "AI 채점 결과의 기준, 예외 처리, 운영자 검수 화면이 보강되면 교육 운영 AI 하네스로 더 명확해집니다."
+    ]
+  },
+  "highlights": [
+      "Admin과 Baby Lion 역할을 나누고, 백엔드/프론트엔드/디자인 트랙 데이터를 관리합니다.",
+      "OAuth2 + JWT 인증, Redis 기반 상태 관리, AWS S3/CloudFront 파일 제공 구조를 사용합니다.",
+      "Google Gemini를 이용한 서술형 퀴즈 채점 흐름이 포함되어 있습니다."
+    ],
     "caseStudy": {
       "priority": null,
-      "problem": "",
-      "system": "",
-      "uxCxInsight": "",
-      "result": "",
-      "reflection": ""
+      "problem": "동아리 교육 운영에는 자료 배포, 과제 제출, 피드백, 일정 관리가 반복적으로 발생합니다.",
+      "system": "Spring Boot 기반 REST API에 인증, 파일 업로드, 과제/퀴즈/캘린더/프로젝트 도메인을 구성했습니다.",
+      "uxCxInsight": "운영자와 참여자 역할이 다르므로 권한과 자료 흐름을 명확히 나누는 것이 핵심입니다.",
+      "result": "Swagger 문서와 walkthrough를 통해 주요 API와 OAuth2 상태 관리 개선 이력이 확인됩니다.",
+      "reflection": "추후 실제 담당 API와 운영 중 발생한 이슈를 연결하면 백엔드 역량 증거가 더 강해집니다."
     },
+    "evidence": ["README.md", "WALKTHROUGH.md", "build.gradle"],
     "public": true,
-    "needsMoreDetail": true
+    "needsMoreDetail": false
   },
   {
     "slug": "gacha",
     "name": "gacha",
     "status": "index",
     "type": "team",
-    "category": ["Backend", "Public Data", "Hackathon"],
-    "summary": "2025 간지톤 협업 프로젝트: 공공데이터를 활용한 여행지 추천 웹서비스",
+    "category": ["Backend", "Public Data", "Hackathon", "Travel"],
+    "summary": "공공데이터 기반 농어촌 체험마을 추천 서비스의 백엔드입니다. 여행지 뽑기, 컬렉션, 추억 기록 API를 제공합니다.",
+    "intent": "공공데이터를 단순 조회가 아니라 사용자가 뽑고 모으고 기록하는 여행 경험으로 바꾸는 해커톤 백엔드 프로젝트입니다.",
     "repository": "https://github.com/YJlang/gacha",
-    "stack": ["Backend", "Public Data"],
-    "role": {
-      "label": "팀 프로젝트",
-      "detail": "Backend 담당"
+    "stack": ["Spring Boot 3", "Java 21", "JPA", "MySQL", "H2", "JWT", "Validation", "Apache Commons CSV"],
+  "role": {
+    "label": "팀 프로젝트 / 백엔드",
+    "detail": "인증, 여행지 데이터, 가챠 추첨, 컬렉션, 메모리 CRUD와 파일 업로드 API 중심으로 정리합니다."
+  },
+  "agenticEngineering": {
+    "summary": "공공데이터 기반 백엔드 프로젝트로, 현재 확인된 범위에서는 AI/MCP/Agent 사용보다 데이터 모델링과 API 설계가 중심입니다.",
+    "mcpServers": [
+      {
+        "name": "GitHub MCP / GitHub CLI",
+        "usage": "README, API 문서, CSV 리소스, Gradle 설정을 확인해 서비스 구조를 분석했습니다.",
+        "scope": "portfolio-analysis"
+      }
+    ],
+    "agentSkills": [
+      {
+        "name": "open-source-analysis",
+        "usage": "공공데이터, API 도메인, 해커톤 맥락을 포트폴리오 설명으로 정리하는 기준으로 사용합니다."
+      }
+    ],
+    "subAgentOrchestration": {
+      "status": "not-used",
+      "label": "No Agent orchestration",
+      "detail": "현재 코드베이스 분석 기준으로 프로젝트 런타임에 MCP 서버, Agent Skill, SubAgent 오케스트레이션을 사용한 근거는 확인되지 않았습니다."
     },
+    "notes": [
+      "이 프로젝트는 AI보다 공공데이터를 사용자 경험으로 바꾸는 백엔드 설계 사례로 분류합니다."
+    ]
+  },
+  "highlights": [
+      "전국 농어촌체험휴양마을 공공데이터 CSV를 서비스 데이터로 활용합니다.",
+      "뽑기 상태, 여행지 상세, 컬렉션 통계, 추억 기록 CRUD API가 분리되어 있습니다.",
+      "JWT 인증과 이미지 업로드를 포함한 백엔드 구조를 갖춥니다."
+    ],
     "caseStudy": {
       "priority": null,
-      "problem": "",
-      "system": "",
-      "uxCxInsight": "",
-      "result": "",
-      "reflection": ""
+      "problem": "공공데이터 여행 정보는 유용하지만 사용자에게는 탐색 동기와 개인화된 기록 경험이 부족할 수 있습니다.",
+      "system": "Spring Boot API가 CSV 기반 여행지 데이터를 가져와 가챠/컬렉션/메모리 도메인으로 제공합니다.",
+      "uxCxInsight": "추천을 게임화하면 사용자가 낯선 지역 정보를 더 가볍게 탐색할 수 있습니다.",
+      "result": "인증, 뽑기, 마을 조회, 컬렉션, 추억 기록 API 명세가 확인됩니다.",
+      "reflection": "추후 프론트 화면이나 해커톤 결과물을 연결하면 사용자 경험 의도가 더 잘 보입니다."
     },
+    "evidence": ["README.md", "API 문서", "build.gradle", "src/main/resources/*.csv"],
     "public": true,
-    "needsMoreDetail": true
+    "needsMoreDetail": false
   },
   {
     "slug": "keybaegg",
     "name": "KeyBaeGG",
     "status": "index",
     "type": "personal",
-    "category": ["Full Stack", "Gamification", "Freelance"],
-    "summary": "키보드 워리어들의 전투력과 업적을 관리하는 게임화된 랭킹 시스템",
+    "category": ["Full Stack", "Gamification", "Freelance", "Production"],
+    "summary": "키보드 배틀 성과를 티어, 점수, 랭킹, 전적, 업적으로 관리하는 게임화된 풀스택 웹 서비스입니다.",
+    "intent": "커뮤니티 활동 데이터를 게임 랭킹처럼 보여주어 참여 동기와 경쟁 재미를 만드는 것이 목적입니다.",
     "repository": "https://github.com/YJlang/keybaegg",
-    "stack": ["Full Stack"],
-    "role": {
-      "label": "개인 프로젝트 / 외주",
-      "detail": "full stack 구현 및 외주 경험"
+    "stack": [
+      "React 19",
+      "TypeScript",
+      "Tailwind CSS",
+      "Spring Boot 3",
+      "Java 21",
+      "Spring Security",
+      "JWT",
+      "JPA",
+      "MySQL",
+      "GCP VM",
+      "Nginx",
+      "Let's Encrypt"
+    ],
+  "role": {
+    "label": "개인 프로젝트 / 외주",
+    "detail": "풀스택 구현, 인증, 랭킹/업적 도메인, 배포 경험을 함께 보여줄 수 있는 프로젝트로 정리합니다."
+  },
+  "agenticEngineering": {
+    "summary": "실서비스형 풀스택/배포 프로젝트로, 현재 확인된 핵심은 AI Agent보다 요구사항 구현과 운영 안정성입니다.",
+    "mcpServers": [
+      {
+        "name": "GitHub MCP / GitHub CLI",
+        "usage": "프론트엔드, Spring Boot 백엔드, 배포 문서를 확인해 운영형 풀스택 구조를 분석했습니다.",
+        "scope": "portfolio-analysis"
+      }
+    ],
+    "agentSkills": [
+      {
+        "name": "open-source-analysis",
+        "usage": "랭킹, 업적, 인증, 배포 구성을 실무형 프로젝트 설명으로 정리하는 기준으로 사용합니다."
+      },
+      {
+        "name": "frontend-engineering",
+        "usage": "React와 Spring Boot 책임 분리, 배포/운영 경험을 포트폴리오에 맞게 설명합니다."
+      }
+    ],
+    "subAgentOrchestration": {
+      "status": "not-used",
+      "label": "No Agent orchestration",
+      "detail": "현재 확인된 코드와 문서 기준으로 MCP 서버, Agent Skill, SubAgent 오케스트레이션이 프로젝트 런타임에 포함된 근거는 없습니다."
     },
+    "notes": [
+      "AI 활용 프로젝트와 구분해, 실서비스 요구사항 구현과 배포 경험을 보여주는 프로젝트로 유지합니다."
+    ]
+  },
+  "highlights": [
+      "SS/S/A/B/C/D 티어, 포인트, 전적, 승률, 연승, 업적 시스템을 구현합니다.",
+      "관리자 인증과 사용자 프로필/랭킹 화면을 포함합니다.",
+      "GCP VM, Nginx reverse proxy, Let's Encrypt, MySQL 운영 구성이 기록되어 있습니다."
+    ],
     "caseStudy": {
       "priority": null,
-      "problem": "",
-      "system": "",
-      "uxCxInsight": "",
-      "result": "",
-      "reflection": ""
+      "problem": "커뮤니티 활동 성과는 흩어져 있으면 참여자에게 동기와 비교 기준을 주기 어렵습니다.",
+      "system": "React 프론트엔드와 Spring Boot 백엔드가 랭킹, 전적, 업적, 관리자 기능을 제공합니다.",
+      "uxCxInsight": "티어와 업적은 사용자가 자신의 상태를 빠르게 이해하고 다음 행동을 선택하게 만드는 게임화 장치입니다.",
+      "result": "도메인, DB 테이블, API, 배포 도메인까지 정리된 풀스택 프로젝트 구조가 확인됩니다.",
+      "reflection": "외주/실서비스 맥락, 요구사항 변경, 운영 경험을 추가하면 실무형 프로젝트로 강하게 보일 수 있습니다."
     },
+    "evidence": ["README.md", "build.gradle", "frontend/package.json"],
     "public": true,
-    "needsMoreDetail": true
+    "needsMoreDetail": false
   },
   {
     "slug": "hamkae",
     "name": "함께줍줍",
     "status": "archive",
     "type": "team",
-    "category": ["Hackathon", "Team Project", "Environment"],
-    "summary": "멋쟁이사자처럼 전국 대학 연합 IT 창업 동아리 13기 해커톤 환경 보호 서비스",
+    "category": ["Hackathon", "Team Project", "Environment", "AI Vision", "Backend"],
+    "summary": "쓰레기 위치 제보, 수거 인증, AI 이미지 검증, 포인트 보상으로 이어지는 환경 보호 해커톤 서비스입니다.",
+    "intent": "지역 환경 문제 해결 행동을 지도, 인증, 보상으로 연결해 사용자가 쓰레기 수거에 참여하도록 돕는 것이 목표입니다.",
     "repository": "https://github.com/YJlang/hamkae",
-    "stack": [],
-    "role": {
-      "label": "팀 프로젝트",
-      "detail": "구체 역할 보강 필요"
+    "links": [
+      {
+        "label": "해커톤 회고록",
+        "url": "https://velog.io/@wnsgk111400/%EB%A9%8B%EC%9F%81%EC%9D%B4-%EC%82%AC%EC%9E%90%EC%B2%98%EB%9F%BC-13%EA%B8%B0-%EB%AC%B4%EB%B0%95-2%EC%9D%BC-%ED%95%B4%EC%BB%A4%ED%86%A4-%ED%9A%8C%EA%B3%A0%EB%A1%9D-%ED%95%A8%EA%BB%98%EC%A4%8D%EC%A4%8D-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8",
+        "type": "retrospective"
+      }
+    ],
+    "stack": [
+      "Spring Boot 3",
+      "Java 21",
+      "JPA",
+      "MySQL",
+      "JWT",
+      "BCrypt",
+      "OpenAI GPT-4o Vision",
+      "React 19",
+      "Vite 7",
+      "Tailwind CSS",
+      "Kakao Maps",
+      "AWS",
+      "Nginx"
+    ],
+  "role": {
+    "label": "팀 프로젝트 / 백엔드·AI 검증·배포·PM",
+    "detail": "README 기준 백엔드, AI 검증, AWS 서버/배포, PM 역할을 맡은 프로젝트로 정리합니다."
+  },
+  "agenticEngineering": {
+    "summary": "GPT-4o Vision을 before/after 이미지 검증에 활용한 사회문제 해결형 AI Vision 프로젝트입니다.",
+    "mcpServers": [
+      {
+        "name": "GitHub MCP / GitHub CLI",
+        "usage": "README, DBML, Gradle 설정을 확인해 백엔드, AI 검증, 배포 역할을 분석했습니다.",
+        "scope": "portfolio-analysis"
+      }
+    ],
+    "agentSkills": [
+      {
+        "name": "visual-asset-reader",
+        "usage": "향후 before/after 인증 이미지, 해커톤 자료, UI 캡처를 증빙으로 정리할 때 사용할 수 있습니다."
+      },
+      {
+        "name": "portfolio-architect",
+        "usage": "아카이브 프로젝트이지만 AI Vision 검증 경험을 연구/제품 서사에 재사용할 수 있게 분류합니다."
+      },
+      {
+        "name": "AI Harness Engineering",
+        "usage": "이미지 입력, 검증 기준, 포인트 보상, 사용자 행동 루프를 하나의 AI 검증 하네스로 설명합니다."
+      }
+    ],
+    "subAgentOrchestration": {
+      "status": "partial",
+      "label": "Vision verification pipeline",
+      "detail": "GPT-4o Vision을 단일 검증 단계로 호출하는 구조입니다. 다중 SubAgent 구조는 아니지만, 제보-인증-검증-보상 흐름에서 AI가 한 단계를 담당합니다."
     },
+    "notes": [
+      "해커톤 회고록과 연결해 AI 검증 기준, 실패 케이스, 사용자 통제 지점을 추가하면 설득력이 높아집니다."
+    ]
+  },
+  "highlights": [
+      "사용자가 쓰레기 위치를 제보하고 청소 후 사진을 올리면 AI가 before/after를 검증합니다.",
+      "검증된 활동은 포인트로 누적되고 디지털 온누리 상품권 보상 흐름으로 이어집니다.",
+      "Kakao Maps 마커, 사진 업로드, 포인트 이력, 리워드 핀 도메인을 포함합니다."
+    ],
     "caseStudy": {
       "priority": null,
-      "problem": "",
-      "system": "",
-      "uxCxInsight": "",
-      "result": "",
-      "reflection": ""
+      "problem": "환경 보호 행동은 좋은 의도만으로 지속되기 어렵고, 참여 증명과 보상 구조가 필요합니다.",
+      "system": "Spring Boot 백엔드와 React 프론트엔드, GPT-4o Vision 이미지 검증, Kakao Maps 기반 위치 경험을 연결했습니다.",
+      "uxCxInsight": "사용자의 행동을 지도 위 문제 발견, 인증, 보상으로 이어지는 짧은 루프로 설계했습니다.",
+      "result": "해커톤 README에서 역할, 기술 스택, DB 구조, 배포 환경, 핵심 기능이 확인됩니다.",
+      "reflection": "아카이브 프로젝트로 두되, AI 검증과 사회문제 해결 경험은 연구/제품 서사에 재사용할 수 있습니다."
     },
+    "evidence": ["README.md", "DBML", "build.gradle"],
     "public": true,
-    "needsMoreDetail": true
+    "needsMoreDetail": false
   }
 ]

@@ -2,11 +2,11 @@
   "person": {
     "name": {
       "ko": "윤준하",
-      "en": "Junho Yoon"
+      "en": "Junha Yoon"
     },
     "birthYear": 2002,
     "headline": "AIX, CX, HCI, UX/UI 관점으로 사용자와 비즈니스 문제를 이해하고, 백엔드와 Agentic Software Development로 제품을 구현하는 개발자",
-    "summary": "성결대학교 미디어소프트웨어학과 4학년에 재학 중인 개발자로, 백엔드 개발을 기반으로 AI, 고객 경험, HCI, UX/UI가 만나는 지점에 관심을 두고 있다. LLM Agent 기반 고객 분석, 블로그 자동화, 외식업 마케팅 SaaS처럼 사용자의 반복 업무를 줄이고 의사결정을 돕는 제품에 집중하고 있다.",
+    "summary": "성결대학교 미디어소프트웨어학과 4학년에 재학 중인 학부생입니다. 백엔드 개발을 기반으로 AI, 고객 경험, HCI, UX/UI가 만나는 지점에 관심을 두고 있습니다. LLM Agent 기반 고객 분석, 블로그 자동화, 외식업 마케팅 SaaS처럼 사용자의 반복 업무를 줄이고 의사결정을 돕는 제품에 집중하고 있습니다.",
     "education": [
       {
         "school": "성결대학교",
@@ -57,6 +57,12 @@
       "type": "github",
       "label": "GitHub",
       "value": "https://github.com/YJlang",
+      "public": true
+    },
+    {
+      "type": "blog",
+      "label": "Velog",
+      "value": "https://velog.io/@wnsgk111400/series",
       "public": true
     }
   ],

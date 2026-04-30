@@ -23,6 +23,18 @@
 | `frontend-web-design` | `.agents/skills/frontend-web-design/SKILL.md` | 포트폴리오 웹 UI의 시각 방향, 레이아웃, 반응형 디자인, 상호작용. |
 | `beautiful-ui` | `.agents/skills/beautiful-ui/SKILL.md` | semantic HTML, 접근성, 타이포그래피, 모바일 레이아웃 품질 기준. |
 | `frontend-engineering` | `.agents/skills/frontend-engineering/SKILL.md` | React/Vite/TypeScript 구현, 콘텐츠 데이터 분리, 성능, 배포, 장기 유지보수. |
+| `windows-korean-powershell` | `.agents/skills/windows-korean-powershell/SKILL.md` | Windows PowerShell에서 한글/UTF-8/CP949 출력, 한국어 파일명, JSON/Markdown 검증을 안정적으로 다루는 지침. |
+| `visual-asset-reader` | `.agents/skills/visual-asset-reader/SKILL.md` | 증빙 이미지, 스크린샷, 프로필 사진, UI 레퍼런스, 문서 사진을 읽고 OCR/판독/공개 위험을 정리하는 지침. |
+
+## SkillsMP Search Notes
+
+2026-04-30에 SkillsMP MCP로 관련 skill을 검색했다.
+
+- 이미지/OCR 후보는 `image-ocr`, `vision-analysis`, `vision-reader`, `ocr` 등이 있었다.
+- `vision-analysis`는 MiniMax MCP와 API 키 의존성이 있어 현재 저장소 기본 skill로는 부적합했다.
+- `vision-reader`는 OpenClaw/중국어 중심 지침과 macOS OCR 의존성이 섞여 있어 그대로 쓰기보다 저장소용 지침으로 재작성했다.
+- `image-ocr`는 OCR 도구 선택 기준이 좋아 참고했지만, MCP 설치 호출이 deprecation 메시지로 실패해 repo-scoped skill로 직접 등록했다.
+- PowerShell 한글/CP949/UTF-8을 정면으로 다루는 적합한 공개 skill은 찾지 못해 `windows-korean-powershell`을 새로 작성했다.
 
 ## Why `.agents/skills` Instead Of `.codex/skills`
 

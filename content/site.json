@@ -1,10 +1,13 @@
 {
   "version": "0.1.0",
-  "phase": "content-modeling",
+  "phase": "agentic-engineering-metadata",
   "homepage": {
     "featuredProjectSlugs": ["pulse", "persona-lab", "blog-auto"],
     "primarySections": [
       "hero",
+      "about",
+      "skills",
+      "archiving",
       "featured-work",
       "project-index",
       "experience",

@@ -1,4 +1,4 @@
-# Junho Yoon Portfolio
+# Junha Yoon Portfolio
 
 윤준하의 개인 포트폴리오 웹사이트를 만들고, 앞으로 꾸준히 업데이트하기 위한 저장소다.
 
@@ -6,10 +6,10 @@
 
 ## Current Status
 
-- 단계: `First website build ready`
-- 현재 목표: 대표 프로젝트 case study 확장 준비
+- 단계: `Immersive interaction redesign`
+- 현재 목표: 3D 레퍼런스를 반영한 몰입형 UI 리팩토링 완료, 증빙/논문 등록 준비
 - 우선 방향: AIX, CX, HCI, UX/UI, Backend, Agentic Software Development가 연결되는 장기 포트폴리오
-- 다음 큰 작업: PULSE, personaLab, BlogAuto case study 초안 작성
+- 다음 큰 작업: 증빙 이미지와 KCI 등재 논문 등록 후 PULSE case study 완성
 
 ## Repository Map
 
@@ -25,6 +25,7 @@
 | `docs/content-model.md` | 콘텐츠 데이터 구조와 업데이트 규칙 |
 | `docs/portfolio-blueprint.md` | 포트폴리오 기획서와 장기 구조 |
 | `docs/portfolio-references.md` | 디자인/웹/스킬 레퍼런스 조사 |
+| `docs/project-research.md` | GitHub 레포 분석 기반 프로젝트 해석 메모 |
 | `docs/codex-skills.md` | 이 저장소에 포함된 Codex skills 설명 |
 | `docs/development-journal.md` | 일기형 작업 현황 기록 |
 
@@ -84,7 +85,8 @@
 - [ ] PULSE case study 초안 작성
 - [ ] personaLab case study 초안 작성
 - [ ] BlogAuto case study 초안 작성
-- [ ] 프로젝트별 문제, 역할, 시스템, UX/CX insight, 결과 정리
+- [x] 프로젝트별 문제, 역할, 시스템, UX/CX insight, 결과 정리
+- [x] GitHub 레포 분석 메모 정리
 - [ ] 프로젝트별 이미지/데모/링크 정리
 
 완료 기준:
@@ -143,7 +145,7 @@
 
 ## Current Next Steps
 
-1. PULSE case study 초안을 작성한다.
-2. personaLab case study 초안을 작성한다.
-3. BlogAuto case study 초안을 작성한다.
+1. 증빙 이미지와 KCI 등재 논문 정보를 등록한다.
+2. PULSE case study를 완성한다.
+3. personaLab, BlogAuto case study 초안을 이어서 보강한다.
 4. 대표 프로젝트별 이미지, 데모 링크, 본인 역할을 보강한다.

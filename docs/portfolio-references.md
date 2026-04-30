@@ -110,3 +110,67 @@
 - 애니메이션과 특수 효과는 유지보수 비용을 만든다. 대표성을 높이는 효과만 남긴다.
 - 배포는 자동화한다. GitHub push 이후 Vercel/Netlify/GitHub Pages로 자동 배포되는 구조가 장기 운영에 적합하다.
 - 공개 정보와 비공개 정보는 처음부터 분리한다. 전화번호, 성적표 원본, 민감한 증빙 이미지는 공개 여부를 매번 점검한다.
+
+## 6. CDG Portfolio Reference 적용 메모
+
+링크: https://cdg-portfolio.com/?utm_source=boottent&utm_medium=referral
+
+관찰:
+
+- 첫 화면에서 이름과 직무 방향을 짧고 강하게 보여준다.
+- `About me`, `Skills`, `Archiving`, `Projects`, `Career`처럼 채용자가 익숙하게 훑을 수 있는 섹션 구조를 사용한다.
+- About 섹션은 이름, 생년월일, 위치, 연락처, 이메일, 학력처럼 빠른 확인 항목을 제공한다.
+- Projects 섹션에는 `주요 프로젝트만 보기` 필터가 있어 프로젝트가 많아져도 대표 작업과 전체 아카이브를 분리할 수 있다.
+- 각 프로젝트는 기간, 한 줄 설명, 핵심 bullet, 링크, 기술 스택을 반복 구조로 보여준다.
+
+적용 방향:
+
+- 그대로 복제하지 않고, 우리 포트폴리오의 장기 확장 구조에 맞춰 `About`, `Skills`, `Archiving` 섹션을 추가했다.
+- `Projects` 섹션에는 대표 프로젝트 필터를 추가하되, 데이터 소스는 계속 `content/projects.json`을 사용한다.
+- About의 전화번호 직접 노출 방식은 따르지 않는다. 기존 공개 정책대로 전화번호와 민감 증빙은 기본 비노출이다.
+- `Career`는 현재 경력보다 활동/운영/학업 근거가 더 중요하므로 `Experience / Proof`로 유지한다.
+
+## 7. Interaction Design Redesign Pass
+
+작성일: 2026-04-30
+
+### 참고한 최근 레퍼런스
+
+- Everyday UX, `What a UX design portfolio looks like in 2026`: AI 시대의 포트폴리오는 결과 화면보다 문제 해결 방식, AI stack, 실험 방식, 의사결정 과정을 분명히 보여줘야 한다는 관점을 참고했다.
+- Creative Bloq, `15 brilliant design portfolio examples, and why they work`: 좋은 포트폴리오는 화려한 장식보다 명확한 구조, 프로젝트 맥락, 고유한 art direction, 작업이 돋보이는 방식을 갖춰야 한다는 점을 참고했다.
+- Designlab, `10 UX/UI Design Portfolio Examples to Inspire You`: UX/UI 포트폴리오도 visual design과 UX best practice를 함께 갖춰야 하며, 역할에 맞는 프로젝트 선택과 case study 구성이 중요하다는 점을 참고했다.
+- UX Engineer, `Top 10 UX Engineer Portfolios`: UX Engineer 포트폴리오는 디자인과 개발 역량이 함께 드러나야 하며, project examples, case studies, social proof를 균형 있게 보여줘야 한다는 관점을 참고했다.
+- Webflow made-in-webflow microinteraction examples: smooth scroll, hover, transition, project interaction 같은 미세 상호작용을 과하지 않게 적용하는 방향만 참고했다.
+
+### 이번 디자인 적용 방향
+
+- 본문 톤은 존댓말로 통일한다.
+- 첫 화면은 이름, 방향성, 대표 프로젝트, 연락 CTA를 유지하되 프로젝트 진입점을 더 선명하게 둔다.
+- 카드 나열 느낌을 줄이고, 프로젝트는 `Problem / System / UX-CX` 판단 구조가 보이는 case-study rail로 바꾼다.
+- Interaction은 hover lift, anchor jump, details disclosure, nav pill hover 정도로 제한한다.
+- 컬러는 beige 일변도에서 벗어나 neutral + ink + teal + warm accent 조합으로 정리한다.
+- 과한 3D, 파티클, 장식용 애니메이션은 쓰지 않는다.
+
+## 8. 3D Developer Portfolio Reference Pass
+
+작성일: 2026-04-30
+
+### 참고한 레퍼런스
+
+- GitHub: `syedharif/project_3D_developer_portfolio`
+- 링크: https://github.com/syedharif/project_3D_developer_portfolio
+
+### 레퍼런스에서 읽은 패턴
+
+- 첫 화면을 단순 소개가 아니라 interactive stage처럼 구성한다.
+- 배경, hero, skills, projects, contact가 하나의 몰입형 흐름으로 이어진다.
+- 3D/Spline, particle, smooth reveal, project modal 같은 장치를 사용해 개발자 포트폴리오의 기술적 인상을 강화한다.
+- 단, 시각 효과가 강한 만큼 콘텐츠가 약하면 포트폴리오가 템플릿처럼 보일 위험이 있다.
+
+### 현재 포트폴리오 적용 원칙
+
+- 원천 콘텐츠와 연락처 데이터는 유지한다. 변경 범위는 `src/App.tsx`, `src/styles.css` 중심의 UI 표현이다.
+- Spline/Three.js 의존성을 즉시 추가하지 않고, CSS 3D perspective, pointer-reactive background, hover lift로 가볍게 적용한다.
+- 첫 화면에는 이름, 방향성, 연락 CTA, 대표 프로젝트 진입점을 유지한다.
+- 한글 제목에는 `word-break: keep-all`, `line-break: strict`, 안정적인 한국어 폰트 스택을 적용해 음절 단위 줄바꿈을 막는다.
+- 모바일에서는 3D overlay를 세로 흐름으로 풀어 겹침과 가독성 문제를 줄인다.
