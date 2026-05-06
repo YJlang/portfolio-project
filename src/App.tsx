@@ -15,6 +15,7 @@ import majorCompetencyCertification from '../images/전공역량인증.png';
 import majorElectiveGrades from '../images/전선성적.png';
 import majorRequiredGrades from '../images/전필성적.png';
 import pulseDemoVideo from '../images/PULSE_demo.mp4';
+import skuskuHomePreview from '../images/optimized/skusku-home-preview.jpg';
 import type { Contact, Project, ProofAsset, ResearchDirection } from './types';
 
 const typedProjects = projects as Project[];
@@ -34,6 +35,9 @@ const proofImageMap: Record<string, string> = {
 };
 const projectVideoMap: Record<string, string> = {
   'images/PULSE_demo.mp4': pulseDemoVideo,
+};
+const projectImageMap: Record<string, string> = {
+  'images/optimized/skusku-home-preview.jpg': skuskuHomePreview,
 };
 const featuredProjects = typedProjects
   .filter((project) => site.homepage.featuredProjectSlugs.includes(project.slug))
@@ -384,6 +388,19 @@ function App() {
                           />
                         </div>
                         <figcaption>{project.demoVideo.caption}</figcaption>
+                      </figure>
+                    ) : null}
+
+                    {project.previewImage ? (
+                      <figure className="project-preview">
+                        <div className="project-preview-frame">
+                          <img
+                            src={projectImageMap[project.previewImage.src]}
+                            alt={project.previewImage.alt}
+                            loading="lazy"
+                          />
+                        </div>
+                        <figcaption>{project.previewImage.caption}</figcaption>
                       </figure>
                     ) : null}
 

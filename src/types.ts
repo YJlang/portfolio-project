@@ -22,6 +22,11 @@ export interface Project {
     label: string;
     caption: string;
   };
+  previewImage?: {
+    src: string;
+    alt: string;
+    caption: string;
+  };
   links?: Array<{
     label: string;
     url: string;

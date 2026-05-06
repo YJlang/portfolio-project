@@ -575,3 +575,48 @@
 
 - PULSE case study 본문을 담당 범위, 데모 장면, 결과 중심으로 확장한다.
 - 이후 personaLab, BlogAuto case study를 같은 밀도로 보강한다.
+
+## 2026-05-06 SKUSKU Operations Evidence
+
+### Goal
+
+- SKUSKU_Back을 코드 기여 프로젝트가 아니라 실제 서비스 운영/관리/유지보수 경험으로 다시 포지셔닝한다.
+- `https://sku-sku.com` 메인 화면을 확인하고 포트폴리오용 스크린샷으로 프로젝트 카드에 연결한다.
+
+### Work
+
+- `https://sku-sku.com`에 직접 접속해 메인 화면을 확인했다.
+- 데스크톱 히어로 화면을 캡처하고 `images/optimized/skusku-home-preview.jpg`로 1200x675 프리뷰 이미지를 생성했다.
+- `content/projects.json`의 `skusku-back` 항목을 `SKUSKU 운영`으로 재정리했다.
+- SKUSKU 설명에 성결대학교 멋쟁이사자처럼 아기사자들이 실제로 이용하는 서비스라는 점을 반영했다.
+- 역할 문구를 `운영 관리 / 유지보수`로 바꾸고, 직접 코드 구현 기여로 소개하지 않도록 조정했다.
+- 프로젝트 카드에 `Live Service` 링크와 메인 화면 프리뷰 이미지를 표시할 수 있도록 `previewImage` 필드를 추가했다.
+
+### Decisions
+
+- SKUSKU는 구현 역량보다 실사용 서비스 운영 경험, 사용자 대상 서비스 관리, 유지보수 커뮤니케이션 경험으로 보여준다.
+- 운영 중인 서비스 화면은 외부 사용자가 서비스 실재성을 바로 이해할 수 있는 시각 자료로 사용한다.
+- 스크린샷은 원본 그대로 크게 쓰지 않고 카드형 프리뷰에 맞춰 경량화한 이미지를 사용한다.
+
+### Changed Files
+
+- `content/projects.json`
+- `content/site.json`
+- `src/App.tsx`
+- `src/styles.css`
+- `src/types.ts`
+- `README.md`
+- `docs/development-journal.md`
+- `images/optimized/skusku-home-preview.jpg`
+
+### Verification
+
+- `content/projects.json`, `content/site.json` JSON 파싱을 확인했다.
+- `npm run build`로 TypeScript/Vite 빌드 성공을 확인했다.
+- Playwright 데스크톱에서 SKUSKU 카드 제목, 프리뷰 이미지, `Live Service` 링크가 표시되는 것을 확인했다.
+- Playwright 모바일 390px에서 SKUSKU 프리뷰 이미지가 화면 폭을 넘지 않는 것을 확인했다.
+
+### Next
+
+- SKUSKU 운영 중 실제로 맡은 정기 업무, 이슈 대응, 사용자 안내 사례를 기록한다.
+- PULSE case study 본문을 데모 영상 장면과 연결해 확장한다.

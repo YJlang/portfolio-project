@@ -269,13 +269,25 @@
   },
   {
     "slug": "skusku-back",
-    "name": "SKUSKU_Back",
+    "name": "SKUSKU 운영",
     "status": "index",
-    "type": "team",
-    "category": ["Backend", "Team Project", "Education Platform", "AI"],
-    "summary": "멋쟁이사자처럼 대학 운영을 위한 백엔드 플랫폼입니다. 강의 자료, 과제, 제출, 피드백, 퀴즈, 프로젝트 갤러리, 일정, 파일 업로드를 관리합니다.",
-    "intent": "동아리 운영에서 반복되는 공지, 과제 제출, 피드백, 자료 공유를 하나의 관리형 백엔드 API로 묶는 것이 목적입니다.",
+    "type": "operations",
+    "category": ["Service Operations", "Maintenance", "Education Platform", "LIKELION"],
+    "summary": "성결대학교 멋쟁이사자처럼 아기사자들이 실제로 사용하는 교육 운영 서비스입니다. 코드 구현 기여보다는 현재 서비스 관리, 운영 유지보수, 안정적인 사용 흐름을 챙기는 역할로 참여하고 있습니다.",
+    "intent": "강의 자료, 과제 제출, 피드백, 커뮤니티 운영처럼 동아리 교육에서 반복되는 흐름을 실제 사용자들이 안정적으로 이용할 수 있게 관리하는 것이 핵심입니다.",
     "repository": "https://github.com/SKU-LikeLion14th/SKUSKU_Back",
+    "links": [
+      {
+        "label": "Live Service",
+        "url": "https://sku-sku.com",
+        "type": "production"
+      }
+    ],
+    "previewImage": {
+      "src": "images/optimized/skusku-home-preview.jpg",
+      "alt": "LIKELION SKU SKUSKU 서비스 메인 화면",
+      "caption": "성결대학교 멋쟁이사자처럼 아기사자들이 이용하는 SKUSKU 운영 서비스 메인 화면입니다."
+    },
     "stack": [
       "Spring Boot 3",
       "Java 21",
@@ -289,52 +301,24 @@
       "Google Gemini",
       "SpringDoc"
     ],
-  "role": {
-    "label": "팀 프로젝트 / 백엔드",
-    "detail": "동아리 운영 서비스의 인증, 파일, 과제/퀴즈/자료 API와 운영 안정성 관점에서 설명합니다."
-  },
-  "agenticEngineering": {
-    "summary": "운영 플랫폼의 백엔드에 Gemini 기반 서술형 퀴즈 채점 기능이 연결된 AI 보조형 교육 서비스입니다.",
-    "mcpServers": [
-      {
-        "name": "GitHub MCP / GitHub CLI",
-        "usage": "README, walkthrough, build 설정을 확인해 API 범위와 Gemini 사용 맥락을 분석했습니다.",
-        "scope": "portfolio-analysis"
-      }
-    ],
-    "agentSkills": [
-      {
-        "name": "open-source-analysis",
-        "usage": "백엔드 도메인, 인증, 파일, AI 채점 기능을 프로젝트 설명으로 구조화하는 기준으로 사용합니다."
-      },
-      {
-        "name": "AI Harness Engineering",
-        "usage": "서술형 답안, 평가 기준, Gemini 응답을 운영자가 신뢰할 수 있는 채점 보조 흐름으로 설명합니다."
-      }
-    ],
-    "subAgentOrchestration": {
-      "status": "not-used",
-      "label": "No SubAgent orchestration",
-      "detail": "현재 확인된 구조는 Gemini API를 기능 단위로 호출하는 방식이며, 다중 Agent나 MCP 기반 SubAgent 오케스트레이션 흐름은 확인되지 않았습니다."
+    "role": {
+      "label": "운영 관리 / 유지보수",
+      "detail": "직접 코드 구현 기여 프로젝트로 소개하지 않고, 성결대학교 멋쟁이사자처럼 교육 운영 서비스의 관리와 운영 유지보수를 맡고 있는 경험으로 설명합니다."
     },
-    "notes": [
-      "AI 채점 결과의 기준, 예외 처리, 운영자 검수 화면이 보강되면 교육 운영 AI 하네스로 더 명확해집니다."
-    ]
-  },
-  "highlights": [
-      "Admin과 Baby Lion 역할을 나누고, 백엔드/프론트엔드/디자인 트랙 데이터를 관리합니다.",
-      "OAuth2 + JWT 인증, Redis 기반 상태 관리, AWS S3/CloudFront 파일 제공 구조를 사용합니다.",
-      "Google Gemini를 이용한 서술형 퀴즈 채점 흐름이 포함되어 있습니다."
+    "highlights": [
+      "현재 성결대학교 멋쟁이사자처럼 아기사자들이 실제로 이용하는 서비스입니다.",
+      "코드 작성 기여보다 서비스 운영, 계정/사용 흐름 관리, 이슈 확인, 유지보수 커뮤니케이션을 중심으로 참여하고 있습니다.",
+      "교육 운영 현장에서 자료, 과제, 커뮤니티 기능이 안정적으로 쓰이도록 관리하는 경험입니다."
     ],
     "caseStudy": {
       "priority": null,
-      "problem": "동아리 교육 운영에는 자료 배포, 과제 제출, 피드백, 일정 관리가 반복적으로 발생합니다.",
-      "system": "Spring Boot 기반 REST API에 인증, 파일 업로드, 과제/퀴즈/캘린더/프로젝트 도메인을 구성했습니다.",
-      "uxCxInsight": "운영자와 참여자 역할이 다르므로 권한과 자료 흐름을 명확히 나누는 것이 핵심입니다.",
-      "result": "Swagger 문서와 walkthrough를 통해 주요 API와 OAuth2 상태 관리 개선 이력이 확인됩니다.",
-      "reflection": "추후 실제 담당 API와 운영 중 발생한 이슈를 연결하면 백엔드 역량 증거가 더 강해집니다."
+      "problem": "동아리 교육 운영에는 자료 배포, 과제 제출, 피드백, 일정 관리가 반복적으로 발생하고, 실제 참여자들이 쓰는 서비스는 작은 불편도 운영 부담으로 이어집니다.",
+      "system": "SKUSKU는 성결대학교 멋쟁이사자처럼 교육 운영을 위해 운영되는 웹 서비스이며, 백엔드 저장소는 인증, 자료, 과제, 퀴즈, 파일 관리 흐름을 포함합니다.",
+      "uxCxInsight": "운영자는 교육 진행 상황을 관리해야 하고, 아기사자들은 과제와 자료를 빠르게 찾아야 하므로 서비스의 안정성과 안내 흐름이 중요합니다.",
+      "result": "현재 `https://sku-sku.com`에서 실제 사용자에게 제공되는 서비스이며, 운영 관리와 유지보수 관점의 경험을 보여주는 프로젝트로 정리했습니다.",
+      "reflection": "앞으로 운영 중 발견한 이슈, 개선 요청, 대응 기록을 정리하면 코드 작성과는 다른 실사용 서비스 운영 역량을 더 선명하게 보여줄 수 있습니다."
     },
-    "evidence": ["README.md", "WALKTHROUGH.md", "build.gradle"],
+    "evidence": ["https://sku-sku.com", "README.md", "WALKTHROUGH.md", "build.gradle"],
     "public": true,
     "needsMoreDetail": false
   },

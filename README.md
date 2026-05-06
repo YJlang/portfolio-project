@@ -6,8 +6,8 @@
 
 ## Current Status
 
-- 단계: `PULSE demo and copy polish`
-- 현재 목표: PULSE 데모 영상 반영과 공개 화면 문구 정돈 완료, case study 확장 준비
+- 단계: `SKUSKU operations evidence`
+- 현재 목표: 실사용 서비스 운영 경험과 프로젝트별 시각 자료 보강
 - 우선 방향: AIX, CX, HCI, UX/UI, Backend, Agentic Software Development가 연결되는 장기 포트폴리오
 - 다음 큰 작업: PULSE case study 완성, 대표 프로젝트별 데모/이미지/본인 역할 보강
 

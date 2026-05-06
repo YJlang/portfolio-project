@@ -795,11 +795,13 @@ h3 {
   color: var(--muted);
 }
 
-.project-demo {
+.project-demo,
+.project-preview {
   margin: 24px 0;
 }
 
-.project-demo-frame {
+.project-demo-frame,
+.project-preview-frame {
   position: relative;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.16);
@@ -810,7 +812,8 @@ h3 {
   box-shadow: 0 28px 90px rgba(0, 0, 0, 0.28);
 }
 
-.project-demo-frame::before {
+.project-demo-frame::before,
+.project-preview-frame::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -821,7 +824,8 @@ h3 {
     linear-gradient(0deg, rgba(7, 8, 13, 0.28), transparent 32%);
 }
 
-.project-demo video {
+.project-demo video,
+.project-preview img {
   display: block;
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -829,7 +833,8 @@ h3 {
   background: #05070a;
 }
 
-.project-demo figcaption {
+.project-demo figcaption,
+.project-preview figcaption {
   margin-top: 10px;
   color: var(--muted);
   font-size: 0.92rem;
