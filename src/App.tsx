@@ -562,10 +562,10 @@ function App() {
             <div className="academic-proof-heading">
               <p className="eyebrow">Academic Record</p>
               <h3 id="academic-proof-title">전공을 어떻게 쌓아왔는지 남긴 기록</h3>
-              <p>
+              {/* <p>
                 성적 원본을 크게 펼치기보다, 백엔드와 HCI 관심사가 어디서 쌓였는지 읽히는 부분만
                 골라 카드로 남겼습니다.
-              </p>
+              </p> */}
             </div>
             <div className="academic-proof-grid">
               {academicProofs.map((asset) => (
@@ -599,7 +599,7 @@ function App() {
             <p className="eyebrow">Research Direction</p>
             <h2 id="research-title">지금 계속 붙잡고 있는 연구 질문</h2>
             <p>
-              연구실 후보는 바뀔 수 있습니다. 그래도 사용자 이해, AI/Agent, HCI, 제품 개발이라는 축은
+              연구 관심 분야이지만 연구실, 연구기관 등에서 연구하고 싶은 환경은 바뀔 수 있습니다. 사용자 이해, AI/Agent, HCI, 제품 개발이라는 축은
               계속 남기고 싶어 이 기준으로 정리했습니다.
             </p>
           </div>
