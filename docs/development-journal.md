@@ -620,3 +620,92 @@
 
 - SKUSKU 운영 중 실제로 맡은 정기 업무, 이슈 대응, 사용자 안내 사례를 기록한다.
 - PULSE case study 본문을 데모 영상 장면과 연결해 확장한다.
+
+## 2026-05-06 Research Publication Section
+
+### Goal
+
+- `images/논문.png`와 KCI 논문 상세 페이지를 바탕으로 논문/연구 섹션을 별도로 만든다.
+- 단순 논문 링크가 아니라 연구 질문, 데이터, 방법, 검증, 기여가 읽히는 포트폴리오 섹션으로 구성한다.
+
+### Work
+
+- KCI 페이지에서 논문 등재 정보, 저널, 발행기관, 연구 분야, 초록, 키워드, 서지 정보를 확인했다.
+- `images/논문.png`를 확인하고, 웹용 미리보기 이미지 `images/optimized/research-paper-review-framework.jpg`를 생성했다.
+- `content/research.json`에 `publications` 배열을 추가하고 논문 메타데이터와 연구 내용을 구조화했다.
+- `src/types.ts`에 `ResearchPublication` 타입을 추가했다.
+- `src/App.tsx`에 `Publication` 섹션을 추가해 논문 이미지, KCI/DOI 링크, 연구 질문, 데이터/방법, 검증, 기여, 주요 지표를 렌더링했다.
+- `src/styles.css`에 논문 섹션 전용 레이아웃과 반응형 스타일을 추가했다.
+
+### Decisions
+
+- 저널 급지는 KCI 페이지 기준 `KCI 등재`로 표기한다.
+- 논문은 AIX/CX/HCI 관심사와 PULSE/personaLab의 문제의식을 연결하는 연구 성과로 배치한다.
+- 논문 이미지는 원본을 직접 축소하지 않고, 최적화된 미리보기 이미지를 별도 생성해 사용한다.
+
+### Changed Files
+
+- `content/research.json`
+- `content/site.json`
+- `src/App.tsx`
+- `src/styles.css`
+- `src/types.ts`
+- `README.md`
+- `docs/development-journal.md`
+- `images/optimized/research-paper-review-framework.jpg`
+
+### Verification
+
+- JSON 파싱을 확인할 예정이다.
+- `npm run build`로 TypeScript/Vite 빌드를 확인할 예정이다.
+- Playwright로 데스크톱/모바일에서 논문 이미지, KCI 링크, DOI 링크, 지표 카드가 보이는지 확인할 예정이다.
+
+### Next
+
+- PULSE case study에서 이 논문의 프레임워크가 제품 문제와 어떻게 연결되는지 서사를 보강한다.
+- 논문 원문 PDF 또는 DOI 접근성이 안정적인지 배포 전 다시 확인한다.
+
+## 2026-05-06 Human Voice Copy Refactor
+
+### Goal
+
+- 화면 본문, 카드 코멘트, 연구/증빙 설명에서 AI가 만든 설명서 같은 말투를 줄인다.
+- `~보여줍니다`, `~확인됩니다`, `~하는 편이 좋습니다`처럼 포트폴리오 주인보다 해설자가 앞에 나오는 문장을 걷어낸다.
+- 작업이 끝나면 README와 phase를 최신화하고 GitHub Pages까지 반영한다.
+
+### Work
+
+- Hero, About, Skills, Projects, Academic Record, Research, Publication, Contact 섹션의 고정 문구를 더 개인적인 기록 톤으로 바꿨다.
+- `content/proof-assets.json`의 수상/성적/전공역량 카드 설명을 “증빙 자료” 말투에서 “내가 어떤 맥락으로 남긴 기록인지”가 보이는 문장으로 고쳤다.
+- `content/research.json`의 KCI 논문 설명을 연구 보고서 요약보다 PULSE, personaLab, AIX/CX/HCI 관심사와 이어지는 개인 연구 서사에 가깝게 다듬었다.
+- `content/projects.json`의 대표 프로젝트와 SKUSKU 운영 경험 문구를 일부 정리해 직접 기여 범위와 실제 사용자 맥락이 더 자연스럽게 읽히도록 했다.
+- `content/site.json` phase를 `human-voice-copy-refactor`로 업데이트했다.
+
+### Decisions
+
+- 모든 문장을 억지로 반말이나 구어체로 바꾸지는 않았다. 포트폴리오의 신뢰감은 유지하되, 화면에 보이는 설명은 “윤준하가 자기 작업을 정리한 말”처럼 읽히는 쪽을 선택했다.
+- 성적/수상 이미지는 계속 요약본 중심으로 쓰고, 민감한 원본은 크게 노출하지 않는 방향을 유지한다.
+- 개발 저널의 과거 항목에 남아 있는 `공개 검토 필요`, `분석 근거` 같은 표현은 당시 작업 기록이라 그대로 둔다. 실제 웹 화면과 현재 콘텐츠 데이터에서는 노출되지 않게 관리한다.
+
+### Changed Files
+
+- `src/App.tsx`
+- `content/profile.json`
+- `content/projects.json`
+- `content/proof-assets.json`
+- `content/research.json`
+- `content/site.json`
+- `README.md`
+- `docs/development-journal.md`
+
+### Verification
+
+- `content/*.json` 파싱 성공.
+- `npm run build`로 TypeScript/Vite 빌드 성공.
+- 화면 노출 대상 파일(`src`, `content`, `README.md`)에서 `보여줍니다`, `확인됩니다`, `좋습니다`, `공개 검토 필요`, `분석 근거 보기`, `원본은 보관 중` 표현이 남아 있지 않은 것을 확인했다.
+
+### Next
+
+- PULSE case study를 데모 영상 장면, 담당 범위, 졸업작품 결과 중심으로 완성한다.
+- personaLab과 BlogAuto의 실제 화면/데모/본인 담당 범위를 보강한다.
+- 논문 섹션과 PULSE 리뷰 분석 서사를 더 직접적으로 연결한다.

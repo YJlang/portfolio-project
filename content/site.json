@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "phase": "skusku-operations-evidence",
+  "phase": "human-voice-copy-refactor",
   "homepage": {
     "featuredProjectSlugs": ["pulse", "persona-lab", "blog-auto"],
     "primarySections": [
@@ -12,6 +12,7 @@
       "project-index",
       "experience",
       "research-direction",
+      "publication",
       "proof",
       "contact"
     ],

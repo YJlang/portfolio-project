@@ -6,8 +6,8 @@
 
 ## Current Status
 
-- 단계: `SKUSKU operations evidence`
-- 현재 목표: 실사용 서비스 운영 경험과 프로젝트별 시각 자료 보강
+- 단계: `Human voice copy refactor`
+- 현재 목표: 화면 본문과 코멘트를 윤준하 본인이 정리한 기록처럼 자연스럽게 다듬기
 - 우선 방향: AIX, CX, HCI, UX/UI, Backend, Agentic Software Development가 연결되는 장기 포트폴리오
 - 다음 큰 작업: PULSE case study 완성, 대표 프로젝트별 데모/이미지/본인 역할 보강
 
@@ -146,7 +146,7 @@
 
 ## Current Next Steps
 
-1. PULSE case study를 완성한다.
-2. PULSE, personaLab, BlogAuto의 스크린샷/데모 링크/본인 담당 범위를 보강한다.
-3. personaLab, BlogAuto case study 초안을 이어서 보강한다.
-4. 모바일/데스크톱 시각 QA, Lighthouse, 개인정보 공개 범위 점검을 진행한다.
+1. PULSE case study를 데모 영상 장면, 담당 범위, 졸업작품 결과 중심으로 완성한다.
+2. personaLab과 BlogAuto의 스크린샷/데모 링크/본인 담당 범위를 보강한다.
+3. 논문/연구 섹션과 PULSE의 리뷰 분석 서사를 더 직접적으로 연결한다.
+4. 수상/성적 증빙 이미지의 공개용 마스킹 여부와 모바일/데스크톱 시각 QA를 최종 점검한다.

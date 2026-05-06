@@ -16,10 +16,12 @@ import majorElectiveGrades from '../images/전선성적.png';
 import majorRequiredGrades from '../images/전필성적.png';
 import pulseDemoVideo from '../images/PULSE_demo.mp4';
 import skuskuHomePreview from '../images/optimized/skusku-home-preview.jpg';
-import type { Contact, Project, ProofAsset, ResearchDirection } from './types';
+import researchPaperPreview from '../images/optimized/research-paper-review-framework.jpg';
+import type { Contact, Project, ProofAsset, ResearchDirection, ResearchPublication } from './types';
 
 const typedProjects = projects as Project[];
 const typedProofAssets = proofAssets as ProofAsset[];
+const typedResearchPublications = research.publications as ResearchPublication[];
 const typedResearchDirections = research.directions as ResearchDirection[];
 const publicContacts = (profile.contacts as Contact[]).filter((contact) => contact.public);
 const proofImageMap: Record<string, string> = {
@@ -38,6 +40,9 @@ const projectVideoMap: Record<string, string> = {
 };
 const projectImageMap: Record<string, string> = {
   'images/optimized/skusku-home-preview.jpg': skuskuHomePreview,
+};
+const publicationImageMap: Record<string, string> = {
+  'images/optimized/research-paper-review-framework.jpg': researchPaperPreview,
 };
 const featuredProjects = typedProjects
   .filter((project) => site.homepage.featuredProjectSlugs.includes(project.slug))
@@ -173,6 +178,7 @@ function App() {
           <a href="#work">Work</a>
           <a href="#experience">Records</a>
           <a href="#research">Research</a>
+          <a href="#publication">Paper</a>
           <a href="#contact">Contact</a>
         </nav>
       </header>
@@ -182,7 +188,7 @@ function App() {
           <div className="hero-copy">
             <p className="eyebrow">AIX / CX / HCI / Backend</p>
             <h1 id="hero-title">{profile.person.name.ko}</h1>
-            <p className="hero-headline">{profile.person.headline}입니다.</p>
+            <p className="hero-headline">{profile.person.headline}</p>
             <p className="hero-summary">{profile.person.summary}</p>
             <div className="hero-actions" aria-label="Primary actions">
               <a className="button primary" href="#work">
@@ -233,10 +239,10 @@ function App() {
             </span>
             <div>
               <p className="eyebrow">About Me</p>
-              <h2 id="about-title">지금의 목표가 바뀌어도 유지되는 기본 프로필입니다.</h2>
+              <h2 id="about-title">목표가 바뀌어도 남는 기준</h2>
               <p>
-                한 번 쓰고 버리는 자기소개가 아니라, 연구실 지원, 취업, 개인 브랜딩, 외주 경험까지
-                계속 재조합할 수 있는 장기 포트폴리오 기반으로 정리하고 있습니다.
+                한 번 쓰고 버리는 자기소개보다, 연구실 지원과 취업, 개인 브랜딩, 외주 경험까지
+                필요할 때 다시 꺼내 쓸 수 있는 기록으로 모아두고 있어요.
               </p>
             </div>
           </div>
@@ -257,10 +263,10 @@ function App() {
             </span>
             <div>
               <p className="eyebrow">Skills</p>
-              <h2 id="skills-title">기술 스택보다 먼저 사고의 방향이 보이도록 구성했습니다.</h2>
+              <h2 id="skills-title">기술 이름보다 먼저, 내가 푸는 문제</h2>
               <p>
-                단순한 기술 나열을 넘어서 연구 관심, 구현 스택, 작업 방식을 함께 보여드리도록
-                정리했습니다.
+                백엔드에서 시작했지만 관심은 늘 사용자와 의사결정 쪽으로 이어졌어요.
+                그래서 스택도 연구 관심, 구현 경험, 작업 방식이 같이 읽히도록 묶어두었어요.
               </p>
             </div>
           </div>
@@ -285,9 +291,10 @@ function App() {
             </span>
             <div>
               <p className="eyebrow">Archiving</p>
-              <h2 id="archiving-title">작업과 학습이 계속 쌓이는 공개 경로입니다.</h2>
+              <h2 id="archiving-title">작업과 학습이 쌓이는 곳</h2>
               <p>
-                GitHub, Velog, 이메일을 중심으로 공개 가능한 기록과 연락 경로를 연결했습니다.
+                GitHub에는 코드와 실험을, Velog에는 공부와 회고를 남깁니다. 연락은 공개 가능한
+                이메일과 링크만 이곳에 모아두었어요.
               </p>
             </div>
           </div>
@@ -312,10 +319,10 @@ function App() {
           <div className="section-heading split-heading">
             <div>
               <p className="eyebrow">Projects</p>
-              <h2 id="work-title">프로젝트는 결과물보다 판단의 흐름이 먼저 보이도록 재구성했습니다.</h2>
+              <h2 id="work-title">무엇을 만들었는지보다, 왜 그렇게 만들었는지</h2>
               <p>
-                PULSE는 서브모듈까지 풀스택으로 분석했고, 개인/팀 프로젝트는 README와 코드 구조를
-                바탕으로 의도, 시스템, UX/CX 포인트를 보강했습니다.
+                PULSE는 서브모듈까지 직접 열어 흐름을 다시 잡았고, 다른 프로젝트도 README와 코드 구조를
+                기준으로 문제, 시스템, UX/CX 판단을 다시 써 내려갔어요.
               </p>
             </div>
             <label className="toggle-control">
@@ -492,7 +499,7 @@ function App() {
         <section className="section compact" aria-labelledby="project-index-title">
           <div className="section-heading">
             <p className="eyebrow">Project Index</p>
-            <h2 id="project-index-title">계속 확장되는 작업 목록입니다.</h2>
+            <h2 id="project-index-title">계속 늘어나는 작업 목록</h2>
           </div>
           <div className="index-table" role="list">
             {indexProjects.map((project) => (
@@ -517,9 +524,10 @@ function App() {
         <section className="section two-column" id="experience" aria-labelledby="experience-title">
           <div className="section-heading">
             <p className="eyebrow">Experience / Records</p>
-            <h2 id="experience-title">작업과 학업 기록을 한곳에 모았습니다.</h2>
+            <h2 id="experience-title">활동과 학업 기록</h2>
             <p>
-              활동과 증빙은 첫 화면을 무겁게 만들지 않되, 필요한 순간에 맥락을 확인할 수 있게 정리했습니다.
+              첫 화면을 상장 모음처럼 만들고 싶지는 않았어요. 대신 내 관심사와 역량을 설명하는 데
+              필요한 기록만 골라 맥락을 붙였어요.
             </p>
           </div>
           <div className="stack-list">
@@ -553,10 +561,10 @@ function App() {
           <section className="academic-proof-section" aria-labelledby="academic-proof-title">
             <div className="academic-proof-heading">
               <p className="eyebrow">Academic Record</p>
-              <h3 id="academic-proof-title">전공 기반성과 성실성을 보여주는 학업 증빙입니다.</h3>
+              <h3 id="academic-proof-title">전공을 어떻게 쌓아왔는지 남긴 기록</h3>
               <p>
-                성적 정보는 민감할 수 있어 원본을 크게 내세우기보다, 전공 역량과 관련 과목 흐름이 읽히는
-                요약 카드로 정리했습니다.
+                성적 원본을 크게 펼치기보다, 백엔드와 HCI 관심사가 어디서 쌓였는지 읽히는 부분만
+                골라 카드로 남겼어요.
               </p>
             </div>
             <div className="academic-proof-grid">
@@ -578,7 +586,7 @@ function App() {
                         ))}
                       </ul>
                     ) : null}
-                    <small>{asset.public === 'review' ? '원본은 보관 중' : '공개 자료'}</small>
+                    <small>{asset.public === 'review' ? '원본 보관' : '공개 자료'}</small>
                   </div>
                 </article>
               ))}
@@ -589,10 +597,10 @@ function App() {
         <section className="section" id="research" aria-labelledby="research-title">
           <div className="section-heading">
             <p className="eyebrow">Research Direction</p>
-            <h2 id="research-title">특정 연구실에 고정되지 않는 관심 축입니다.</h2>
+            <h2 id="research-title">지금 계속 붙잡고 있는 연구 질문</h2>
             <p>
-              연구실 후보는 바뀔 수 있지만, 포트폴리오는 사용자 이해, AI/Agent, HCI, 제품 개발이라는
-              큰 축을 중심으로 재조합되도록 설계했습니다.
+              연구실 후보는 바뀔 수 있어요. 그래도 사용자 이해, AI/Agent, HCI, 제품 개발이라는 축은
+              계속 남기고 싶어 이 기준으로 정리했어요.
             </p>
           </div>
           <div className="research-grid">
@@ -606,13 +614,113 @@ function App() {
           </div>
         </section>
 
+        <section className="section publication-section" id="publication" aria-labelledby="publication-title">
+          <div className="section-heading">
+            <p className="eyebrow">Publication</p>
+            <h2 id="publication-title">온라인 리뷰를 고객 인사이트로 바꿔본 연구</h2>
+            <p>
+              소상공인이 리뷰를 읽고도 바로 움직이기 어려운 지점을 문제로 봤고, 리뷰 문장을 고객 세분화,
+              페르소나, 고객여정지도로 바꾸는 과정을 논문으로 정리했어요.
+            </p>
+          </div>
+
+          {typedResearchPublications.map((paper) => (
+            <article className="publication-card" key={paper.slug}>
+              <figure className="publication-visual">
+                <img src={publicationImageMap[paper.imageSrc]} alt={`${paper.title} 논문 첫 페이지`} loading="lazy" />
+              </figure>
+
+              <div className="publication-body">
+                <div className="publication-kicker">
+                  <span>{paper.journalRank}</span>
+                  <span>{paper.journalAbbr}</span>
+                  <span>{paper.issue}</span>
+                </div>
+                <h3>{paper.title}</h3>
+                <p className="publication-title-en">{paper.titleEn}</p>
+                <p className="publication-summary">{paper.summary}</p>
+
+                <dl className="publication-meta">
+                  <div>
+                    <dt>Journal</dt>
+                    <dd>
+                      {paper.journal} / {paper.journalEn}
+                    </dd>
+                  </div>
+                  <div>
+                    <dt>Authors</dt>
+                    <dd>{paper.authors.join(', ')}</dd>
+                  </div>
+                  <div>
+                    <dt>Publisher</dt>
+                    <dd>{paper.publisher}</dd>
+                  </div>
+                  <div>
+                    <dt>Field</dt>
+                    <dd>{paper.field}</dd>
+                  </div>
+                </dl>
+
+                <div className="publication-actions" aria-label={`${paper.title} links`}>
+                  <a className="repo-link accent-link" href={paper.kciUrl} target="_blank" rel="noreferrer">
+                    KCI 상세 보기
+                  </a>
+                  <a className="repo-link" href={`https://doi.org/${paper.doi}`} target="_blank" rel="noreferrer">
+                    DOI
+                  </a>
+                </div>
+              </div>
+
+              <div className="publication-analysis">
+                <section>
+                  <span>Question</span>
+                  <p>{paper.researchQuestion}</p>
+                </section>
+                <section>
+                  <span>Data / Method</span>
+                  <p>{paper.method}</p>
+                </section>
+                <section>
+                  <span>Validation</span>
+                  <p>{paper.validation}</p>
+                </section>
+                <section>
+                  <span>Contribution</span>
+                  <p>{paper.contribution}</p>
+                </section>
+              </div>
+
+              <div className="publication-metrics" aria-label={`${paper.title} metrics`}>
+                {paper.metrics.map((metric) => (
+                  <div key={metric.label}>
+                    <strong>{metric.value}</strong>
+                    <span>{metric.label}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="publication-bottom">
+                <div>
+                  <strong>Portfolio Fit</strong>
+                  <p>{paper.portfolioFit}</p>
+                </div>
+                <div className="stack-tags" aria-label={`${paper.title} keywords`}>
+                  {paper.keywords.map((keyword) => (
+                    <span key={keyword}>{keyword}</span>
+                  ))}
+                </div>
+              </div>
+            </article>
+          ))}
+        </section>
+
         <section className="contact-section" id="contact" aria-labelledby="contact-title">
           <div>
             <p className="eyebrow">Contact</p>
-            <h2 id="contact-title">다음 프로젝트와 연구 이야기로 이어가겠습니다.</h2>
+            <h2 id="contact-title">다음 이야기는 여기서 이어질 수 있어요</h2>
             <p>
-              공개 포트폴리오에서는 이메일과 공개 링크 중심으로 연락 경로를 열어두고, 민감한 정보는
-              배포 전 다시 확인하겠습니다.
+              공개 포트폴리오에는 이메일과 공개 링크만 남겼어요. 연구, 제품, 팀 프로젝트 이야기는
+              언제든 편하게 이어갈 수 있어요.
             </p>
           </div>
           <div className="contact-links">
@@ -631,7 +739,7 @@ function App() {
       </main>
 
       <footer className="site-footer">
-        <p>장기적으로 업데이트되는 포트폴리오 시스템입니다. 현재 단계: {site.phase}.</p>
+        <p>계속 고쳐 쓰는 포트폴리오. 현재 단계: {site.phase}.</p>
       </footer>
     </div>
   );

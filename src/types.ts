@@ -97,3 +97,35 @@ export interface ResearchDirection {
   relatedProjects: string[];
   portfolioEmphasis: string;
 }
+
+export interface ResearchPublication {
+  slug: string;
+  title: string;
+  titleEn: string;
+  authors: string[];
+  journal: string;
+  journalEn: string;
+  journalAbbr: string;
+  journalRank: string;
+  publisher: string;
+  field: string;
+  issue: string;
+  publishedAt: string;
+  pages: string;
+  doi: string;
+  kciUrl: string;
+  imageSrc: string;
+  summary: string;
+  researchQuestion: string;
+  problem: string;
+  method: string;
+  validation: string;
+  contribution: string;
+  outputs: string[];
+  metrics: Array<{
+    label: string;
+    value: string;
+  }>;
+  keywords: string[];
+  portfolioFit: string;
+}
