@@ -6,10 +6,10 @@
 
 ## Current Status
 
-- 단계: `Immersive interaction redesign`
-- 현재 목표: 3D 레퍼런스를 반영한 몰입형 UI 리팩토링 완료, 증빙/논문 등록 준비
+- 단계: `PULSE demo and copy polish`
+- 현재 목표: PULSE 데모 영상 반영과 공개 화면 문구 정돈 완료, case study 확장 준비
 - 우선 방향: AIX, CX, HCI, UX/UI, Backend, Agentic Software Development가 연결되는 장기 포트폴리오
-- 다음 큰 작업: 증빙 이미지와 KCI 등재 논문 등록 후 PULSE case study 완성
+- 다음 큰 작업: PULSE case study 완성, 대표 프로젝트별 데모/이미지/본인 역할 보강
 
 ## Repository Map
 
@@ -69,7 +69,7 @@
 - [x] Hero 구현
 - [x] Featured Work 구현
 - [x] Project Index 구현
-- [x] Experience / Proof 구현
+- [x] Experience / Records 구현
 - [x] Research Direction 구현
 - [x] Contact 구현
 
@@ -87,6 +87,7 @@
 - [ ] BlogAuto case study 초안 작성
 - [x] 프로젝트별 문제, 역할, 시스템, UX/CX insight, 결과 정리
 - [x] GitHub 레포 분석 메모 정리
+- [x] 학업 증빙 이미지와 공개용 기술스택 보강
 - [ ] 프로젝트별 이미지/데모/링크 정리
 
 완료 기준:
@@ -145,7 +146,7 @@
 
 ## Current Next Steps
 
-1. 증빙 이미지와 KCI 등재 논문 정보를 등록한다.
-2. PULSE case study를 완성한다.
+1. PULSE case study를 완성한다.
+2. PULSE, personaLab, BlogAuto의 스크린샷/데모 링크/본인 담당 범위를 보강한다.
 3. personaLab, BlogAuto case study 초안을 이어서 보강한다.
-4. 대표 프로젝트별 이미지, 데모 링크, 본인 역할을 보강한다.
+4. 모바일/데스크톱 시각 QA, Lighthouse, 개인정보 공개 범위 점검을 진행한다.

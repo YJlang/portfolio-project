@@ -485,3 +485,93 @@
 - `content/proof-assets.json` JSON 파싱 성공.
 - `npm run build` 성공.
 - 원본 상장 대비 공개용 썸네일 용량이 약 18-31KB 수준으로 줄어든 것을 확인했다.
+
+## 2026-05-06 Academic Proof and Stack Refinement
+
+### Goal
+
+- `images/성적장학금.png`, `images/전선성적.png`, `images/전필성적.png`, `images/전공역량인증.png`를 포트폴리오 학업 증빙으로 정돈한다.
+- 공개용 기술스택에 사용자가 명시한 백엔드, 클라우드, AI/Harness, 런타임 기술을 반영하고 React/Vite 표기는 제거한다.
+
+### Work
+
+- 네 개의 학업 증빙 이미지를 직접 확인하고, `content/proof-assets.json`에 `evidenceGroup`, `metric`, `highlights` 필드를 추가했다.
+- 성적 우수 장학금, 전공역량인증, 전공 선택 과목 성적, 전공 필수 과목 성적을 `Academic Evidence` 카드로 화면에 표시했다.
+- 공개용 기술스택을 `content/profile.json`의 `technicalStack`으로 분리했다.
+- 프로젝트별 stack과 설명문에서 React/Vite 중심 표현을 제거하고, 화면 계층 또는 앱 UI처럼 더 넓은 표현으로 조정했다.
+- `src/App.tsx`, `src/styles.css`, `src/types.ts`를 업데이트해 학업 증빙 카드와 새 기술스택 구조를 렌더링했다.
+
+### Decisions
+
+- 성적 이미지는 과목별 등급이 포함되므로 `public: "review"` 상태로 유지한다.
+- 원본 성적 이미지를 크게 전시하기보다, 전공 기반성과 성실성을 설명하는 보조 증빙 카드로 사용한다.
+- 기술스택은 프로젝트 데이터에서 자동 추출하지 않고, 공개용 자기소개 데이터로 관리한다.
+
+### Changed Files
+
+- `content/profile.json`
+- `content/projects.json`
+- `content/proof-assets.json`
+- `content/site.json`
+- `src/App.tsx`
+- `src/styles.css`
+- `src/types.ts`
+- `README.md`
+- `docs/development-journal.md`
+
+### Verification
+
+- `content/profile.json`, `content/projects.json`, `content/proof-assets.json` JSON 파싱을 확인했다.
+- `npm run build`를 실행해 TypeScript/Vite 빌드 성공을 확인했다.
+- `rg -n "React|Vite" content/projects.json src/App.tsx content/profile.json`로 공개용 프로젝트/프로필/화면 코드의 React/Vite 표기 제거를 확인했다.
+
+### Next
+
+- PULSE case study를 먼저 완성한다.
+- PULSE, personaLab, BlogAuto의 스크린샷, 데모 링크, 본인 담당 범위, 결과 자료를 보강한다.
+- 이후 모바일/데스크톱 시각 QA, Lighthouse, 개인정보 공개 범위 점검으로 공개 품질을 마감한다.
+
+## 2026-05-06 PULSE Demo and Copy Polish
+
+### Goal
+
+- `images/PULSE_demo.mp4`를 PULSE 대표 프로젝트 카드에 자동재생 데모로 삽입한다.
+- 화면에 보이는 내부 작업용 문구를 자연스러운 포트폴리오 문장으로 바꾼다.
+- 변경사항을 커밋하고 `main`에 푸시해 GitHub Pages 배포가 다시 돌도록 한다.
+
+### Work
+
+- `content/projects.json`의 PULSE 항목에 `demoVideo` 필드를 추가했다.
+- `src/App.tsx`에서 PULSE 데모 영상을 `autoPlay`, `muted`, `loop`, `playsInline`, `controls`, `preload="metadata"` 설정으로 렌더링했다.
+- 프로젝트 카드 안에서 요약 문장 아래, 문제/시스템/UX-CX 카드 위에 영상 프리뷰를 배치했다.
+- `공개 검토 필요`, `분석 근거 보기`, `Experience / Proof`, `Academic Evidence` 같은 화면 문구를 `요약본`, `참고 자료`, `Experience / Records`, `Academic Record`로 다듬었다.
+- `src/styles.css`에 데모 영상 프레임과 캡션 스타일을 추가했다.
+
+### Decisions
+
+- PULSE 영상은 사용자가 프로젝트 흐름을 바로 파악할 수 있도록 카드 내부에서 조용히 자동재생한다.
+- 자동재생을 위해 영상은 음소거 상태를 기본으로 두고, 사용자가 직접 조작할 수 있게 controls를 유지한다.
+- 내부 검수 상태를 드러내는 문구는 공개 포트폴리오 화면에서 숨기고, 보는 사람에게 의미 있는 표현만 남긴다.
+
+### Changed Files
+
+- `content/projects.json`
+- `src/App.tsx`
+- `src/styles.css`
+- `src/types.ts`
+- `README.md`
+- `docs/development-journal.md`
+- `images/PULSE_demo.mp4`
+
+### Verification
+
+- JSON 파싱을 확인했다.
+- `npm run build`로 TypeScript/Vite 빌드 성공을 확인했다.
+- Playwright로 데스크톱에서 PULSE 영상이 자동재생되는 것을 확인했다.
+- Playwright 모바일 390px에서 영상 프레임이 화면 폭을 넘지 않고, 영상이 뷰포트에 들어오면 재생되는 것을 확인했다.
+- 화면 본문에서 `공개 검토 필요`, `분석 근거 보기`, `Academic Evidence`, `Experience / Proof` 문구가 보이지 않는 것을 확인했다.
+
+### Next
+
+- PULSE case study 본문을 담당 범위, 데모 장면, 결과 중심으로 확장한다.
+- 이후 personaLab, BlogAuto case study를 같은 밀도로 보강한다.

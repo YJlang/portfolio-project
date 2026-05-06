@@ -8,13 +8,12 @@
     "summary": "외식업 자영업자를 위한 AI 마케팅 자동화 서비스입니다. 리뷰 수집, 고객 인사이트 분석, 리뷰 답변, 홍보 콘텐츠 기획까지 이어지는 졸업작품 풀스택 프로젝트입니다.",
     "intent": "사장님이 매일 감으로 처리하던 고객 리뷰 분석과 SNS 마케팅 의사결정을 데이터 기반 루틴으로 바꾸고, AI가 실행 가능한 다음 행동까지 제안하도록 만드는 것이 핵심 의도입니다.",
     "repository": "https://github.com/YJlang/PULSE",
+    "demoVideo": {
+      "src": "images/PULSE_demo.mp4",
+      "label": "PULSE service demo",
+      "caption": "리뷰 분석, 고객 인사이트, 마케팅 실행 흐름을 한 번에 보여주는 PULSE 시연 영상입니다."
+    },
     "stack": [
-      "React",
-      "Vite",
-      "Tailwind CSS",
-      "Framer Motion",
-      "Recharts",
-      "Three.js",
       "Spring Boot",
       "Java 21",
       "Spring Security",
@@ -32,7 +31,7 @@
     ],
   "role": {
     "label": "졸업작품 / 풀스택 팀 프로젝트",
-    "detail": "React 프론트엔드, Spring Boot 비즈니스 API, FastAPI AI 서버가 분리된 3-tier 구조를 바탕으로 서비스 흐름과 AI 분석 파이프라인을 설명합니다. 정확한 개인 담당 범위는 추후 본인 기록으로 더 세밀하게 보강할 예정입니다."
+    "detail": "화면, Spring Boot 비즈니스 API, FastAPI AI 서버가 분리된 3-tier 구조를 바탕으로 서비스 흐름과 AI 분석 파이프라인을 설명합니다. 정확한 개인 담당 범위는 추후 본인 기록으로 더 세밀하게 보강할 예정입니다."
   },
   "agenticEngineering": {
     "summary": "리뷰 수집, 토픽 분석, LLM 인사이트, 홍보 콘텐츠 제안이 이어지는 AI 활용 하네스를 갖춘 대표 프로젝트입니다.",
@@ -44,7 +43,7 @@
       },
       {
         "name": "Local filesystem / shell",
-        "usage": "서브모듈의 README, Gradle, package, Python endpoint/service 파일을 읽어 기술 근거를 정리했습니다.",
+        "usage": "서브모듈의 README, Gradle, package, Python endpoint/service 파일을 읽어 기술 맥락을 정리했습니다.",
         "scope": "portfolio-analysis"
       }
     ],
@@ -65,23 +64,23 @@
     "subAgentOrchestration": {
       "status": "partial",
       "label": "AI pipeline orchestration",
-      "detail": "FastAPI AI 서버가 크롤링, 형태소 분석, 토픽 모델링, LLM 인사이트 생성을 순차 파이프라인으로 묶습니다. Codex SubAgent 기반 병렬 오케스트레이션 근거는 아직 프로젝트 코드에서 확인되지 않았습니다."
+      "detail": "FastAPI AI 서버가 크롤링, 형태소 분석, 토픽 모델링, LLM 인사이트 생성을 순차 파이프라인으로 묶습니다. Codex SubAgent 기반 병렬 오케스트레이션 흐름은 아직 프로젝트 코드에서 확인되지 않았습니다."
     },
     "notes": [
       "향후 PULSE case study에서 실제 프롬프트, 실패 케이스, 품질 검증 루틴을 추가하면 AI Harness Engineering 역량이 더 선명해집니다."
     ]
   },
   "highlights": [
-      "PULSE 루트 레포가 프론트엔드, Spring 백엔드, FastAPI AI 서버를 서브모듈로 묶는 구조입니다.",
+      "PULSE 루트 레포가 화면 계층, Spring 백엔드, FastAPI AI 서버를 서브모듈로 묶는 구조입니다.",
       "FastAPI 서버는 Playwright 리뷰 수집, Kiwi 형태소 분석, BERTopic/임베딩 기반 토픽 분석, LLM 인사이트 생성을 담당합니다.",
       "Spring 서버는 회원/매장/리뷰 관리와 FastAPI 연동, 리뷰 답변 생성 요청 같은 제품 API 경계를 담당합니다.",
-      "프론트엔드는 분석 대시보드, 리뷰 관리, 홍보 콘텐츠 생성 화면을 통해 Understand -> Create -> Action 흐름을 만듭니다.",
+      "분석 대시보드, 리뷰 관리, 홍보 콘텐츠 생성 화면을 통해 Understand -> Create -> Action 흐름을 만듭니다.",
       "MySQL은 사용자/매장/구조화 데이터를, MongoDB는 리뷰 원문과 분석 로그를 보관하는 역할로 분리합니다."
     ],
     "caseStudy": {
       "priority": 1,
       "problem": "외식업 자영업자는 리뷰를 읽고 고객 반응을 해석하고 홍보 콘텐츠까지 만드는 반복 업무를 혼자 감당해야 합니다.",
-      "system": "React/Vite 프론트엔드, Spring Boot API 서버, FastAPI AI 서버를 분리하고, 리뷰 수집-분석-인사이트-콘텐츠 추천으로 이어지는 파이프라인을 구성했습니다.",
+      "system": "화면 계층, Spring Boot API 서버, FastAPI AI 서버를 분리하고, 리뷰 수집-분석-인사이트-콘텐츠 추천으로 이어지는 파이프라인을 구성했습니다.",
       "uxCxInsight": "단순히 AI 결과를 보여주는 서비스가 아니라 사장님의 실제 마케팅 루틴을 줄이는 방향으로 리뷰, 고객 페르소나, 홍보 실행을 한 화면 흐름 안에 묶는 점이 중요합니다.",
       "result": "회원가입부터 분석 요청, 대시보드, 리뷰 관리, AI 답변 생성, 홍보 영상 프롬프트 추천까지 이어지는 end-to-end 서비스 구조가 확인됩니다.",
       "reflection": "향후 포트폴리오에서는 본인 담당 코드, 데모 화면, 졸업작품 결과물, 실제 사용자 시나리오를 연결해 가장 깊은 대표 케이스 스터디로 확장하겠습니다."
@@ -110,9 +109,7 @@
     "stack": [
       "Spring Boot 4",
       "Java 21",
-      "React 19",
       "TypeScript",
-      "Vite 7",
       "Python",
       "Playwright",
       "OpenAI GPT-4o",
@@ -130,7 +127,7 @@
     "mcpServers": [
       {
         "name": "GitHub MCP / GitHub CLI",
-        "usage": "Spring Boot, React, Python Agent Worker의 분리 구조와 README/설정 파일을 분석했습니다.",
+        "usage": "Spring Boot, 화면 계층, Python Agent Worker의 분리 구조와 README/설정 파일을 분석했습니다.",
         "scope": "portfolio-analysis"
       },
       {
@@ -142,7 +139,7 @@
     "agentSkills": [
       {
         "name": "open-source-analysis",
-        "usage": "백엔드, 프론트엔드, agent-worker 경계를 읽고 시스템 설명으로 재구성하는 기준으로 사용합니다."
+        "usage": "백엔드, 화면 계층, agent-worker 경계를 읽고 시스템 설명으로 재구성하는 기준으로 사용합니다."
       },
       {
         "name": "visual-asset-reader",
@@ -163,7 +160,7 @@
     ]
   },
   "highlights": [
-      "Spring Boot 백엔드, React 프론트엔드, Python Agent Worker가 분리된 구조입니다.",
+      "Spring Boot 백엔드, 화면 계층, Python Agent Worker가 분리된 구조입니다.",
       "Redis 큐를 통해 테스트 작업을 워커에 전달하고, 워커는 Playwright 브라우저를 조작하며 결과를 백엔드에 콜백합니다.",
       "GPT-4o Vision/DSPy 기반 에이전트가 스크린샷을 보고 CLICK, INPUT, SCROLL, HOVER, DONE 같은 행동을 선택합니다.",
       "감정 타임라인, 클릭 히트맵, 스크롤 패턴, CJM 형태의 리포트로 UX/CX 분석 결과를 시각화하는 방향입니다."
@@ -198,8 +195,6 @@
     "stack": [
       "Tauri 2",
       "Rust",
-      "React 19",
-      "Vite",
       "TypeScript",
       "OpenAI",
       "Playwright",
@@ -248,7 +243,7 @@
     ]
   },
   "highlights": [
-      "Tauri/React UI와 Node 기반 automation worker를 분리해 데스크톱 앱과 브라우저 자동화 책임을 나눴습니다.",
+      "Tauri 앱 UI와 Node 기반 automation worker를 분리해 데스크톱 앱과 브라우저 자동화 책임을 나눴습니다.",
       "OpenAI를 이용해 초안 생성과 수정 요청을 처리하고, 이미지/참고 문서/사용자 프로필 정보를 글쓰기 맥락으로 사용합니다.",
       "Velog publisher는 로그인 프로필 확인, 이미지 업로드, 에디터 입력, 게시 전 검증을 자동화합니다.",
       "최종 게시 버튼은 사람이 확인하도록 남겨 자동화와 사용자 통제 사이의 경계를 둡니다."
@@ -320,7 +315,7 @@
     "subAgentOrchestration": {
       "status": "not-used",
       "label": "No SubAgent orchestration",
-      "detail": "현재 확인된 구조는 Gemini API를 기능 단위로 호출하는 방식이며, 다중 Agent나 MCP 기반 SubAgent 오케스트레이션 근거는 없습니다."
+      "detail": "현재 확인된 구조는 Gemini API를 기능 단위로 호출하는 방식이며, 다중 Agent나 MCP 기반 SubAgent 오케스트레이션 흐름은 확인되지 않았습니다."
     },
     "notes": [
       "AI 채점 결과의 기준, 예외 처리, 운영자 검수 화면이 보강되면 교육 운영 AI 하네스로 더 명확해집니다."
@@ -375,7 +370,7 @@
     "subAgentOrchestration": {
       "status": "not-used",
       "label": "No Agent orchestration",
-      "detail": "현재 코드베이스 분석 기준으로 프로젝트 런타임에 MCP 서버, Agent Skill, SubAgent 오케스트레이션을 사용한 근거는 확인되지 않았습니다."
+      "detail": "현재 코드베이스 기준으로 프로젝트 런타임에 MCP 서버, Agent Skill, SubAgent 오케스트레이션을 쓰는 흐름은 확인되지 않았습니다."
     },
     "notes": [
       "이 프로젝트는 AI보다 공공데이터를 사용자 경험으로 바꾸는 백엔드 설계 사례로 분류합니다."
@@ -408,9 +403,7 @@
     "intent": "커뮤니티 활동 데이터를 게임 랭킹처럼 보여주어 참여 동기와 경쟁 재미를 만드는 것이 목적입니다.",
     "repository": "https://github.com/YJlang/keybaegg",
     "stack": [
-      "React 19",
       "TypeScript",
-      "Tailwind CSS",
       "Spring Boot 3",
       "Java 21",
       "Spring Security",
@@ -430,7 +423,7 @@
     "mcpServers": [
       {
         "name": "GitHub MCP / GitHub CLI",
-        "usage": "프론트엔드, Spring Boot 백엔드, 배포 문서를 확인해 운영형 풀스택 구조를 분석했습니다.",
+        "usage": "화면 계층, Spring Boot 백엔드, 배포 문서를 확인해 운영형 풀스택 구조를 분석했습니다.",
         "scope": "portfolio-analysis"
       }
     ],
@@ -441,13 +434,13 @@
       },
       {
         "name": "frontend-engineering",
-        "usage": "React와 Spring Boot 책임 분리, 배포/운영 경험을 포트폴리오에 맞게 설명합니다."
+        "usage": "화면 계층과 Spring Boot 책임 분리, 배포/운영 경험을 포트폴리오에 맞게 설명합니다."
       }
     ],
     "subAgentOrchestration": {
       "status": "not-used",
       "label": "No Agent orchestration",
-      "detail": "현재 확인된 코드와 문서 기준으로 MCP 서버, Agent Skill, SubAgent 오케스트레이션이 프로젝트 런타임에 포함된 근거는 없습니다."
+      "detail": "현재 확인된 코드와 문서 기준으로 MCP 서버, Agent Skill, SubAgent 오케스트레이션이 프로젝트 런타임에 포함된 흐름은 확인되지 않았습니다."
     },
     "notes": [
       "AI 활용 프로젝트와 구분해, 실서비스 요구사항 구현과 배포 경험을 보여주는 프로젝트로 유지합니다."
@@ -461,7 +454,7 @@
     "caseStudy": {
       "priority": null,
       "problem": "커뮤니티 활동 성과는 흩어져 있으면 참여자에게 동기와 비교 기준을 주기 어렵습니다.",
-      "system": "React 프론트엔드와 Spring Boot 백엔드가 랭킹, 전적, 업적, 관리자 기능을 제공합니다.",
+      "system": "화면 계층과 Spring Boot 백엔드가 랭킹, 전적, 업적, 관리자 기능을 제공합니다.",
       "uxCxInsight": "티어와 업적은 사용자가 자신의 상태를 빠르게 이해하고 다음 행동을 선택하게 만드는 게임화 장치입니다.",
       "result": "도메인, DB 테이블, API, 배포 도메인까지 정리된 풀스택 프로젝트 구조가 확인됩니다.",
       "reflection": "외주/실서비스 맥락, 요구사항 변경, 운영 경험을 추가하면 실무형 프로젝트로 강하게 보일 수 있습니다."
@@ -494,9 +487,6 @@
       "JWT",
       "BCrypt",
       "OpenAI GPT-4o Vision",
-      "React 19",
-      "Vite 7",
-      "Tailwind CSS",
       "Kakao Maps",
       "AWS",
       "Nginx"
@@ -545,7 +535,7 @@
     "caseStudy": {
       "priority": null,
       "problem": "환경 보호 행동은 좋은 의도만으로 지속되기 어렵고, 참여 증명과 보상 구조가 필요합니다.",
-      "system": "Spring Boot 백엔드와 React 프론트엔드, GPT-4o Vision 이미지 검증, Kakao Maps 기반 위치 경험을 연결했습니다.",
+      "system": "Spring Boot 백엔드, 화면 계층, GPT-4o Vision 이미지 검증, Kakao Maps 기반 위치 경험을 연결했습니다.",
       "uxCxInsight": "사용자의 행동을 지도 위 문제 발견, 인증, 보상으로 이어지는 짧은 루프로 설계했습니다.",
       "result": "해커톤 README에서 역할, 기술 스택, DB 구조, 배포 환경, 핵심 기능이 확인됩니다.",
       "reflection": "아카이브 프로젝트로 두되, AI 검증과 사회문제 해결 경험은 연구/제품 서사에 재사용할 수 있습니다."

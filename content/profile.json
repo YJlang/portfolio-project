@@ -33,6 +33,40 @@
     "Open Source",
     "DevOps"
   ],
+  "technicalStack": [
+    {
+      "title": "Backend / Data",
+      "items": [
+        "Spring Boot",
+        "Node.js",
+        "RDB",
+        "NoSQL"
+      ]
+    },
+    {
+      "title": "Cloud / Ops",
+      "items": [
+        "AWS/GCP",
+        "Docker"
+      ]
+    },
+    {
+      "title": "AI / Harness",
+      "items": [
+        "Python3 / Transformer",
+        "Use of AI / Harness Engineering"
+      ]
+    },
+    {
+      "title": "Product Runtime",
+      "items": [
+        "Flutter",
+        "Rust",
+        "Lua",
+        "C# (Unity)"
+      ]
+    }
+  ],
   "contacts": [
     {
       "type": "email",

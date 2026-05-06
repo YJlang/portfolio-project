@@ -17,6 +17,11 @@ export interface Project {
   summary: string;
   intent?: string;
   repository: string;
+  demoVideo?: {
+    src: string;
+    label: string;
+    caption: string;
+  };
   links?: Array<{
     label: string;
     url: string;
@@ -63,6 +68,7 @@ export interface ProofAsset {
   slug: string;
   title: string;
   type: string;
+  evidenceGroup?: string;
   src: string;
   thumbnailSrc?: string;
   public: PublicState;
@@ -70,6 +76,8 @@ export interface ProofAsset {
   issuer?: string;
   date?: string;
   award?: string;
+  metric?: string;
+  highlights?: string[];
   description?: string;
   proves?: string;
   privacyRisk?: string;

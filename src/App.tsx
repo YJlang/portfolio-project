@@ -10,6 +10,11 @@ import award2020Thumb from '../images/optimized/award-2020-sw-idea-thumb.webp';
 import award2021Thumb from '../images/optimized/award-2021-service-planning-thumb.webp';
 import award2025Thumb from '../images/optimized/award-2025-vr-ar-game-thumb.webp';
 import award2026Thumb from '../images/optimized/award-2026-ux-paper-thumb.webp';
+import scholarshipGrade from '../images/성적장학금.png';
+import majorCompetencyCertification from '../images/전공역량인증.png';
+import majorElectiveGrades from '../images/전선성적.png';
+import majorRequiredGrades from '../images/전필성적.png';
+import pulseDemoVideo from '../images/PULSE_demo.mp4';
 import type { Contact, Project, ProofAsset, ResearchDirection } from './types';
 
 const typedProjects = projects as Project[];
@@ -22,12 +27,21 @@ const proofImageMap: Record<string, string> = {
   'award-2021-service-planning': award2021Thumb,
   'award-2025-vr-ar-game': award2025Thumb,
   'award-2026-ux-paper': award2026Thumb,
+  'scholarship-grade': scholarshipGrade,
+  'major-competency-certification': majorCompetencyCertification,
+  'major-elective-grades': majorElectiveGrades,
+  'major-required-grades': majorRequiredGrades,
+};
+const projectVideoMap: Record<string, string> = {
+  'images/PULSE_demo.mp4': pulseDemoVideo,
 };
 const featuredProjects = typedProjects
   .filter((project) => site.homepage.featuredProjectSlugs.includes(project.slug))
   .sort((a, b) => (a.caseStudy.priority ?? 99) - (b.caseStudy.priority ?? 99));
 const indexProjects = typedProjects.filter((project) => project.status !== 'featured');
 const visibleProofs = typedProofAssets.filter((asset) => asset.public === true || asset.public === 'review');
+const awardProofs = visibleProofs.filter((asset) => asset.type === 'award');
+const academicProofs = visibleProofs.filter((asset) => asset.type === 'academic-proof');
 
 const aboutFacts = [
   { label: '이름', value: profile.person.name.ko },
@@ -51,6 +65,11 @@ type ShellStyle = CSSProperties & {
   '--my': string;
 };
 
+interface SkillGroup {
+  title: string;
+  items: string[];
+}
+
 function App() {
   const [showFeaturedOnly, setShowFeaturedOnly] = useState(false);
   const [pointer, setPointer] = useState({ x: 50, y: 28 });
@@ -68,29 +87,57 @@ function App() {
     return () => window.removeEventListener('pointermove', updatePointer);
   }, []);
 
+  useEffect(() => {
+    const previewVideos = Array.from(
+      document.querySelectorAll<HTMLVideoElement>('video[data-autoplay-preview="true"]'),
+    );
+
+    if (!previewVideos.length) {
+      return undefined;
+    }
+
+    const playVideo = (video: HTMLVideoElement) => {
+      video.muted = true;
+      void video.play().catch(() => undefined);
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const video = entry.target as HTMLVideoElement;
+
+          if (entry.isIntersecting) {
+            playVideo(video);
+          } else {
+            video.pause();
+          }
+        });
+      },
+      { threshold: 0.36 },
+    );
+
+    previewVideos.forEach((video) => {
+      observer.observe(video);
+      if (video.getBoundingClientRect().top < window.innerHeight) {
+        playVideo(video);
+      }
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   const shellStyle = {
     '--mx': `${pointer.x}%`,
     '--my': `${pointer.y}%`,
   } as ShellStyle;
 
   const skillGroups = useMemo(() => {
-    const stacks = Array.from(new Set(typedProjects.flatMap((project) => project.stack).filter(Boolean)));
-    const agenticStack = [
-      'AI Harness Engineering',
-      'MCP Server Integration',
-      'Agent Skill Design',
-      'SubAgent Orchestration',
-    ];
-
     return [
       {
         title: 'Research / Product',
         items: profile.interests.slice(0, 5),
       },
-      {
-        title: 'Engineering Stack',
-        items: Array.from(new Set([...agenticStack, ...stacks])).slice(0, 14),
-      },
+      ...(profile.technicalStack as SkillGroup[]),
       {
         title: 'Working Mode',
         items: ['Team Project', 'Open Source', 'DevOps', 'Automation', 'Case Study'],
@@ -120,7 +167,7 @@ function App() {
           <a href="#skills">Skills</a>
           <a href="#archiving">Archive</a>
           <a href="#work">Work</a>
-          <a href="#experience">Proof</a>
+          <a href="#experience">Records</a>
           <a href="#research">Research</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -283,7 +330,6 @@ function App() {
                 project.highlights?.length
                   ? project.highlights
                   : [project.caseStudy.problem, project.caseStudy.system, project.caseStudy.result].filter(Boolean);
-
               return (
                 <article className="project-feature" id={`project-${project.slug}`} key={project.slug}>
                   <div className="project-rank" aria-hidden="true">
@@ -321,6 +367,25 @@ function App() {
 
                     <p className="project-summary">{project.summary}</p>
                     {project.intent && <p className="project-intent">{project.intent}</p>}
+
+                    {project.demoVideo ? (
+                      <figure className="project-demo">
+                        <div className="project-demo-frame">
+                          <video
+                            src={projectVideoMap[project.demoVideo.src]}
+                            aria-label={project.demoVideo.label}
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            controls
+                            preload="metadata"
+                            data-autoplay-preview="true"
+                          />
+                        </div>
+                        <figcaption>{project.demoVideo.caption}</figcaption>
+                      </figure>
+                    ) : null}
 
                     <div className="project-decision-grid" aria-label={`${project.name} case study summary`}>
                       <section>
@@ -392,7 +457,7 @@ function App() {
 
                     {project.evidence?.length ? (
                       <details className="project-details">
-                        <summary>분석 근거 보기</summary>
+                        <summary>참고 자료</summary>
                         <ul>
                           {project.evidence.map((item) => (
                             <li key={item}>{item}</li>
@@ -434,10 +499,10 @@ function App() {
 
         <section className="section two-column" id="experience" aria-labelledby="experience-title">
           <div className="section-heading">
-            <p className="eyebrow">Experience / Proof</p>
-            <h2 id="experience-title">작업, 운영, 학업의 근거를 정돈했습니다.</h2>
+            <p className="eyebrow">Experience / Records</p>
+            <h2 id="experience-title">작업과 학업 기록을 한곳에 모았습니다.</h2>
             <p>
-              활동과 증빙은 첫 화면을 무겁게 만들지 않되, 신뢰를 보강하는 근거로 보여드리겠습니다.
+              활동과 증빙은 첫 화면을 무겁게 만들지 않되, 필요한 순간에 맥락을 확인할 수 있게 정리했습니다.
             </p>
           </div>
           <div className="stack-list">
@@ -450,8 +515,8 @@ function App() {
               </article>
             ))}
           </div>
-          <aside className="proof-strip" aria-label="Proof assets">
-            {visibleProofs.slice(0, 8).map((asset) => (
+          <aside className="proof-strip" aria-label="Portfolio records">
+            {awardProofs.map((asset) => (
               <div className="proof-item" key={asset.slug}>
                 {proofImageMap[asset.slug] ? (
                   <img src={proofImageMap[asset.slug]} alt={`${asset.title} 증빙 이미지`} loading="lazy" />
@@ -464,10 +529,44 @@ function App() {
                   </p>
                 ) : null}
                 {asset.issuer ? <p>{asset.issuer}</p> : null}
-                <small>{asset.public === 'review' ? '공개 검토 필요' : '공개 가능'}</small>
+                <small>{asset.public === 'review' ? '요약본' : '공개 자료'}</small>
               </div>
             ))}
           </aside>
+          <section className="academic-proof-section" aria-labelledby="academic-proof-title">
+            <div className="academic-proof-heading">
+              <p className="eyebrow">Academic Record</p>
+              <h3 id="academic-proof-title">전공 기반성과 성실성을 보여주는 학업 증빙입니다.</h3>
+              <p>
+                성적 정보는 민감할 수 있어 원본을 크게 내세우기보다, 전공 역량과 관련 과목 흐름이 읽히는
+                요약 카드로 정리했습니다.
+              </p>
+            </div>
+            <div className="academic-proof-grid">
+              {academicProofs.map((asset) => (
+                <article className="academic-proof-card interactive-panel" key={asset.slug}>
+                  {proofImageMap[asset.slug] ? (
+                    <figure>
+                      <img src={proofImageMap[asset.slug]} alt={`${asset.title} 증빙 이미지`} loading="lazy" />
+                    </figure>
+                  ) : null}
+                  <div>
+                    <span>{asset.metric ?? asset.type}</span>
+                    <h4>{asset.title}</h4>
+                    {asset.proves ? <p>{asset.proves}</p> : null}
+                    {asset.highlights?.length ? (
+                      <ul>
+                        {asset.highlights.slice(0, 2).map((highlight) => (
+                          <li key={highlight}>{highlight}</li>
+                        ))}
+                      </ul>
+                    ) : null}
+                    <small>{asset.public === 'review' ? '원본은 보관 중' : '공개 자료'}</small>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
         </section>
 
         <section className="section" id="research" aria-labelledby="research-title">

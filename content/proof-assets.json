@@ -82,54 +82,78 @@
   },
   {
     "slug": "scholarship-grade",
-    "title": "성적장학금",
+    "title": "성적 우수 장학금 기준",
     "type": "academic-proof",
+    "evidenceGroup": "academic-record",
     "src": "images/성적장학금.png",
     "public": "review",
     "needsOptimization": false,
-    "description": "학업 성실성과 성과를 보강하는 장학금 증빙입니다.",
-    "proves": "전공 학습 성과와 꾸준함을 보여줍니다.",
-    "privacyRisk": "개인정보와 세부 성적 정보 포함 여부 확인 필요.",
-    "recommendedUse": "공개용 요약 텍스트 또는 마스킹된 썸네일",
-    "note": "개인정보 포함 여부 확인 필요."
+    "metric": "재학생 성적우수 B급 / C급 장학 기준",
+    "highlights": [
+      "학업 성과가 장학 기준과 연결될 수 있음을 보여주는 자료입니다.",
+      "금액과 선발 구간이 보이는 화면이므로 공개 전 맥락 설명과 함께 사용하는 편이 좋습니다."
+    ],
+    "description": "성적 우수 장학금 항목 일부를 캡처한 증빙입니다.",
+    "proves": "학업 성실성과 전공 학습 성과를 보강합니다.",
+    "privacyRisk": "장학 금액과 기준 정보가 보입니다. 개인 식별 정보는 보이지 않지만 공개 전 원본 출처와 공개 가능 범위를 재확인합니다.",
+    "recommendedUse": "학업 성실성 요약 카드의 보조 이미지",
+    "note": "이미지에는 재학생 성적우수 B급, C급 장학 항목이 보입니다."
   },
   {
     "slug": "major-competency-certification",
     "title": "전공역량인증",
     "type": "academic-proof",
+    "evidenceGroup": "academic-record",
     "src": "images/전공역량인증.png",
     "public": "review",
     "needsOptimization": true,
-    "description": "전공 역량 인증 관련 증빙입니다.",
-    "proves": "학과 기준의 전공 역량 충족 여부를 보여줍니다.",
-    "privacyRisk": "개인정보 포함 여부 확인 필요.",
-    "recommendedUse": "전공 역량 섹션의 보조 증빙",
-    "note": "개인정보 포함 여부 확인 필요."
+    "metric": "전공역량 최우수 91.2",
+    "highlights": [
+      "전공역량 영역에서 최우수 등급과 91.2점이 확인됩니다.",
+      "핵심역량 25.9, 비교과 20.7 지표도 함께 보여 전공 중심 강점을 보완합니다."
+    ],
+    "description": "역량인증 포트폴리오 화면의 전공역량 인증 결과입니다.",
+    "proves": "학과 기준의 전공 역량 충족과 우수한 전공 성취를 보여줍니다.",
+    "privacyRisk": "개인 식별 정보는 보이지 않지만 학내 시스템 화면이므로 공개 전 캡처 범위를 재확인합니다.",
+    "recommendedUse": "전공 역량과 학업 성과를 설명하는 핵심 증빙 카드",
+    "note": "전공역량 영역에 최우수 표시와 91.2점이 보입니다."
   },
   {
     "slug": "major-elective-grades",
-    "title": "전선성적",
+    "title": "전공 선택 과목 성적",
     "type": "academic-proof",
+    "evidenceGroup": "course-record",
     "src": "images/전선성적.png",
-    "public": false,
+    "public": "review",
     "needsOptimization": true,
-    "description": "전공 선택 과목 성적 증빙입니다.",
-    "proves": "전공 선택 과목 이수와 성과를 보여줄 수 있습니다.",
-    "privacyRisk": "세부 성적과 개인정보가 포함될 수 있으므로 공개 사이트에 직접 노출하지 않습니다.",
-    "recommendedUse": "비공개 지원 자료 또는 마스킹 후 별도 제출 자료",
-    "note": "성적 정보는 공개 사이트에 직접 노출하지 않는 것을 기본값으로 둡니다."
+    "metric": "전선 이수학점 39 / 요구학점 27",
+    "highlights": [
+      "서버프로그래밍, 앱프로그래밍(2), 자바웹프로그래밍(2), 머신러닝 기초에서 A+가 확인됩니다.",
+      "C/C++프로그래밍, 파이썬프로그래밍 등 구현 기반 과목 이수 흐름을 보여줍니다."
+    ],
+    "description": "전공 선택 영역의 과목명, 학점, 등급, 이수 연도를 보여주는 성적 증빙입니다.",
+    "proves": "백엔드, 앱, 머신러닝, 프로그래밍 과목을 중심으로 전공 선택 과목 성취를 보여줍니다.",
+    "privacyRisk": "세부 과목별 성적이 포함됩니다. 이름과 학번은 보이지 않지만 공개 사이트에서는 리뷰 상태로 유지합니다.",
+    "recommendedUse": "전공 기반 기술 역량을 보강하는 과목 자료",
+    "note": "전선 요구학점 27, 전선 이수학점 39가 보입니다."
   },
   {
     "slug": "major-required-grades",
-    "title": "전필성적",
+    "title": "전공 필수 과목 성적",
     "type": "academic-proof",
+    "evidenceGroup": "course-record",
     "src": "images/전필성적.png",
-    "public": false,
+    "public": "review",
     "needsOptimization": true,
-    "description": "전공 필수 과목 성적 증빙입니다.",
-    "proves": "전공 필수 과목 이수와 성과를 보여줄 수 있습니다.",
-    "privacyRisk": "세부 성적과 개인정보가 포함될 수 있으므로 공개 사이트에 직접 노출하지 않습니다.",
-    "recommendedUse": "비공개 지원 자료 또는 마스킹 후 별도 제출 자료",
-    "note": "성적 정보는 공개 사이트에 직접 노출하지 않는 것을 기본값으로 둡니다."
+    "metric": "전필 이수학점 33 / 요구학점 36",
+    "highlights": [
+      "자료구조및알고리즘, 자바웹프로그래밍(1), 데이터베이스, 앱프로그래밍(1), 게임엔진(1), HCI에서 A+가 확인됩니다.",
+      "HCI와 데이터베이스 과목 성과가 UX/HCI 관심사와 백엔드 기반성을 함께 뒷받침합니다."
+    ],
+    "description": "전공 필수 영역의 핵심 과목 성적 증빙입니다.",
+    "proves": "자료구조, 데이터베이스, 앱/웹 프로그래밍, HCI 등 전공 필수 기반 역량을 보여줍니다.",
+    "privacyRisk": "세부 과목별 성적이 포함됩니다. 이름과 학번은 보이지 않지만 공개 사이트에서는 리뷰 상태로 유지합니다.",
+    "recommendedUse": "전공 기반성과 HCI/백엔드 적합성을 함께 보여주는 과목 자료",
+    "note": "전필 요구학점 36, 전필 이수학점 33이 보입니다."
   }
 ]

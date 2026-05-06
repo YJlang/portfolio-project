@@ -56,6 +56,7 @@ input {
 h1,
 h2,
 h3,
+h4,
 p,
 li,
 dt,
@@ -467,6 +468,7 @@ h3 {
 .project-labels span,
 .stack-tags span,
 .proof-item span,
+.academic-proof-card span,
 .card-kicker,
 .project-decision-grid span {
   color: var(--accent);
@@ -793,6 +795,46 @@ h3 {
   color: var(--muted);
 }
 
+.project-demo {
+  margin: 24px 0;
+}
+
+.project-demo-frame {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 22px;
+  background:
+    linear-gradient(135deg, rgba(88, 212, 200, 0.14), rgba(143, 177, 255, 0.08)),
+    rgba(255, 255, 255, 0.045);
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.28);
+}
+
+.project-demo-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(7, 8, 13, 0.08), transparent 26%),
+    linear-gradient(0deg, rgba(7, 8, 13, 0.28), transparent 32%);
+}
+
+.project-demo video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #05070a;
+}
+
+.project-demo figcaption {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
 .project-decision-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -952,6 +994,106 @@ h3 {
   margin-bottom: 6px;
 }
 
+.academic-proof-section {
+  grid-column: 1 / -1;
+  margin-top: 18px;
+}
+
+.academic-proof-heading {
+  max-width: 760px;
+  margin-bottom: 20px;
+}
+
+.academic-proof-heading h3 {
+  margin-bottom: 10px;
+  font-size: 1.85rem;
+}
+
+.academic-proof-heading p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.academic-proof-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.academic-proof-card {
+  display: grid;
+  grid-template-columns: minmax(130px, 0.7fr) minmax(0, 1fr);
+  gap: 16px;
+  align-items: stretch;
+  overflow: hidden;
+  border-radius: var(--radius);
+  padding: 16px;
+}
+
+.academic-proof-card figure {
+  display: grid;
+  place-items: center;
+  min-height: 168px;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.academic-proof-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.academic-proof-card h4 {
+  margin: 8px 0 10px;
+  color: var(--text-strong);
+  font-size: 1.18rem;
+  line-height: 1.32;
+}
+
+.academic-proof-card p,
+.academic-proof-card li,
+.academic-proof-card small {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.academic-proof-card p {
+  margin: 0 0 12px;
+}
+
+.academic-proof-card ul {
+  display: grid;
+  gap: 7px;
+  margin: 0 0 12px;
+  padding: 0;
+  list-style: none;
+}
+
+.academic-proof-card li {
+  position: relative;
+  padding-left: 15px;
+}
+
+.academic-proof-card li::before {
+  content: "";
+  position: absolute;
+  top: 0.72em;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent-2);
+}
+
+.academic-proof-card small {
+  color: var(--accent-2);
+  font-weight: 850;
+}
+
 .stack-list,
 .proof-strip {
   display: grid;
@@ -1087,6 +1229,7 @@ h3 {
   .fact-grid,
   .skill-grid,
   .archive-grid,
+  .academic-proof-grid,
   .research-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1248,6 +1391,8 @@ h3 {
   .fact-grid,
   .skill-grid,
   .archive-grid,
+  .academic-proof-grid,
+  .academic-proof-card,
   .research-grid {
     grid-template-columns: 1fr;
   }
