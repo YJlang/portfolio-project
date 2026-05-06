@@ -1169,8 +1169,6 @@ h3 {
 }
 
 .publication-visual {
-  position: sticky;
-  top: 96px;
   align-self: start;
   margin: 0;
   overflow: hidden;
