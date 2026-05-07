@@ -90,6 +90,23 @@ export interface ProofAsset {
   note: string;
 }
 
+export interface ExperienceItem {
+  slug: string;
+  title: string;
+  organization: string;
+  period: string;
+  role: string;
+  category: string[];
+  summary: string;
+  media?: {
+    src: string;
+    alt: string;
+    caption: string;
+  };
+  public: boolean;
+  needsMoreDetail: boolean;
+}
+
 export interface ResearchDirection {
   slug: string;
   name: string;
@@ -115,6 +132,12 @@ export interface ResearchPublication {
   doi: string;
   kciUrl: string;
   imageSrc: string;
+  presentationVideo?: {
+    src: string;
+    conference: string;
+    label: string;
+    caption: string;
+  };
   summary: string;
   researchQuestion: string;
   problem: string;

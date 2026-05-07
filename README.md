@@ -6,8 +6,8 @@
 
 ## Current Status
 
-- 단계: `Human voice copy refactor`
-- 현재 목표: 화면 본문과 코멘트를 윤준하 본인이 정리한 기록처럼 자연스럽게 다듬기
+- 단계: `Activity and conference media`
+- 현재 목표: 멋쟁이사자처럼 활동 사진과 2025 IAAI 학술대회 발표 영상을 포트폴리오 맥락에 맞게 반영
 - 우선 방향: AIX, CX, HCI, UX/UI, Backend, Agentic Software Development가 연결되는 장기 포트폴리오
 - 다음 큰 작업: PULSE case study 완성, 대표 프로젝트별 데모/이미지/본인 역할 보강
 
@@ -148,5 +148,5 @@
 
 1. PULSE case study를 데모 영상 장면, 담당 범위, 졸업작품 결과 중심으로 완성한다.
 2. personaLab과 BlogAuto의 스크린샷/데모 링크/본인 담당 범위를 보강한다.
-3. 논문/연구 섹션과 PULSE의 리뷰 분석 서사를 더 직접적으로 연결한다.
+3. 2025 IAAI 발표 영상 용량을 장기 운영 기준에 맞춰 압축본으로 교체할지 점검한다.
 4. 수상/성적 증빙 이미지의 공개용 마스킹 여부와 모바일/데스크톱 시각 QA를 최종 점검한다.

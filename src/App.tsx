@@ -17,10 +17,13 @@ import majorRequiredGrades from '../images/전필성적.png';
 import pulseDemoVideo from '../images/PULSE_demo.mp4';
 import skuskuHomePreview from '../images/optimized/skusku-home-preview.jpg';
 import researchPaperPreview from '../images/optimized/research-paper-review-framework.jpg';
-import type { Contact, Project, ProofAsset, ResearchDirection, ResearchPublication } from './types';
+import likelionActivityMoment from '../images/optimized/likelion-activity-moment.jpg';
+import conferencePresentationVideo from '../images/학회발표영상.mp4';
+import type { Contact, ExperienceItem, Project, ProofAsset, ResearchDirection, ResearchPublication } from './types';
 
 const typedProjects = projects as Project[];
 const typedProofAssets = proofAssets as ProofAsset[];
+const typedExperience = experience as ExperienceItem[];
 const typedResearchPublications = research.publications as ResearchPublication[];
 const typedResearchDirections = research.directions as ResearchDirection[];
 const publicContacts = (profile.contacts as Contact[]).filter((contact) => contact.public);
@@ -43,6 +46,12 @@ const projectImageMap: Record<string, string> = {
 };
 const publicationImageMap: Record<string, string> = {
   'images/optimized/research-paper-review-framework.jpg': researchPaperPreview,
+};
+const experienceImageMap: Record<string, string> = {
+  'images/optimized/likelion-activity-moment.jpg': likelionActivityMoment,
+};
+const publicationVideoMap: Record<string, string> = {
+  'images/학회발표영상.mp4': conferencePresentationVideo,
 };
 const featuredProjects = typedProjects
   .filter((project) => site.homepage.featuredProjectSlugs.includes(project.slug))
@@ -531,8 +540,14 @@ function App() {
             </p>
           </div>
           <div className="stack-list">
-            {experience.map((item) => (
+            {typedExperience.map((item) => (
               <article className="quiet-card interactive-panel" key={item.slug}>
+                {item.media ? (
+                  <figure className="experience-media">
+                    <img src={experienceImageMap[item.media.src]} alt={item.media.alt} loading="lazy" />
+                    <figcaption>{item.media.caption}</figcaption>
+                  </figure>
+                ) : null}
                 <p className="card-kicker">{item.organization}</p>
                 <h3>{item.title}</h3>
                 <p>{item.summary}</p>
@@ -689,6 +704,25 @@ function App() {
                   <p>{paper.contribution}</p>
                 </section>
               </div>
+
+              {paper.presentationVideo ? (
+                <figure className="conference-video">
+                  <div className="conference-video-frame">
+                    <video
+                      src={publicationVideoMap[paper.presentationVideo.src]}
+                      aria-label={`${paper.presentationVideo.conference} ${paper.presentationVideo.label}`}
+                      controls
+                      playsInline
+                      preload="metadata"
+                    />
+                  </div>
+                  <figcaption>
+                    <span>{paper.presentationVideo.conference}</span>
+                    <strong>{paper.presentationVideo.label}</strong>
+                    <p>{paper.presentationVideo.caption}</p>
+                  </figcaption>
+                </figure>
+              ) : null}
 
               <div className="publication-metrics" aria-label={`${paper.title} metrics`}>
                 {paper.metrics.map((metric) => (

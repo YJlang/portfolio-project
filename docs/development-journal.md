@@ -709,3 +709,52 @@
 - PULSE case study를 데모 영상 장면, 담당 범위, 졸업작품 결과 중심으로 완성한다.
 - personaLab과 BlogAuto의 실제 화면/데모/본인 담당 범위를 보강한다.
 - 논문 섹션과 PULSE 리뷰 분석 서사를 더 직접적으로 연결한다.
+
+## 2026-05-07 Activity and Conference Media
+
+### Goal
+
+- `images/멋사활동사진.png`를 멋쟁이사자처럼 활동 기록에 보기 좋게 넣는다.
+- `images/학회발표영상.mp4`를 2025 IAAI 학술대회 발표 영상으로 논문/학회 활동 맥락에 배치한다.
+- 작업 후 커밋, 푸시, GitHub Pages 최신화를 진행한다.
+
+### Work
+
+- 원본 멋사 활동 사진은 약 25MB이고 상단 빈 공간이 많아, 원본은 유지하고 웹용 크롭본 `images/optimized/likelion-activity-moment.jpg`를 생성했다.
+- `content/experience.json`의 멋쟁이사자처럼 항목에 이미지 미디어 필드를 추가했다.
+- `content/experience.json`의 IAAI 항목을 2025 학술대회 발표 활동이 드러나도록 업데이트했다.
+- `content/research.json`의 논문 항목에 `presentationVideo` 필드를 추가했다.
+- `src/App.tsx`에서 Experience 카드 이미지와 Publication 카드 안의 학회 발표 영상 블록을 렌더링했다.
+- `src/styles.css`에 활동 이미지와 학회 발표 영상 전용 반응형 스타일을 추가했다.
+- `content/site.json` phase를 `activity-conference-media`로 업데이트했다.
+
+### Decisions
+
+- 발표 영상은 약 60MB라 자동재생하지 않고, 사용자가 직접 재생하는 controls 방식으로 둔다.
+- 영상은 `preload="metadata"`로 설정해 첫 화면 로딩 부담을 줄인다.
+- 멋사 사진은 원본 대신 16:9 웹용 크롭본을 사용해 사람과 행사 배너가 먼저 보이도록 했다.
+
+### Changed Files
+
+- `content/experience.json`
+- `content/research.json`
+- `content/site.json`
+- `src/App.tsx`
+- `src/styles.css`
+- `src/types.ts`
+- `README.md`
+- `images/optimized/likelion-activity-moment.jpg`
+- `images/학회발표영상.mp4`
+
+### Verification
+
+- `content/experience.json`, `content/research.json`, `content/site.json` JSON 파싱 성공.
+- `npm run build` 성공.
+- Playwright 데스크톱 1440px에서 멋사 이미지와 학회 발표 영상이 렌더링되고 가로 overflow가 없는 것을 확인했다.
+- Playwright 모바일 390px에서 멋사 이미지와 학회 발표 영상이 화면 폭 안에 들어오는 것을 확인했다.
+
+### Next
+
+- 2025 IAAI 발표 영상은 장기 운영을 위해 추후 압축본 또는 짧은 하이라이트 클립으로 교체할지 판단한다.
+- PULSE case study를 담당 범위, 데모 장면, 졸업작품 결과 중심으로 보강한다.
+- personaLab과 BlogAuto의 실제 화면/데모 자료를 추가한다.

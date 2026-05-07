@@ -1112,6 +1112,27 @@ h3 {
   font-weight: 850;
 }
 
+.experience-media {
+  margin: 0 0 18px;
+}
+
+.experience-media img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 22px 58px rgba(0, 0, 0, 0.24);
+}
+
+.experience-media figcaption {
+  margin-top: 9px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
 .proof-item {
   display: grid;
   gap: 8px;
@@ -1278,6 +1299,64 @@ h3 {
   color: var(--muted);
 }
 
+.conference-video {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(320px, 0.62fr) minmax(220px, 0.38fr);
+  gap: 20px;
+  align-items: center;
+  margin: 0;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 24px;
+  background:
+    linear-gradient(135deg, rgba(96, 221, 214, 0.08), transparent 42%),
+    rgba(255, 255, 255, 0.035);
+}
+
+.conference-video-frame {
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  background: #05070a;
+}
+
+.conference-video video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #05070a;
+}
+
+.conference-video figcaption {
+  margin: 0;
+}
+
+.conference-video figcaption span {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.conference-video figcaption strong {
+  display: block;
+  color: var(--text);
+  font-size: clamp(1.25rem, 2vw, 1.85rem);
+  line-height: 1.2;
+}
+
+.conference-video figcaption p {
+  margin-top: 12px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
 .publication-metrics {
   grid-column: 1 / -1;
   display: grid;
@@ -1389,6 +1468,7 @@ h3 {
   .archive-grid,
   .academic-proof-grid,
   .publication-card,
+  .conference-video,
   .publication-metrics,
   .publication-bottom,
   .research-grid {
@@ -1557,6 +1637,7 @@ h3 {
   .publication-card,
   .publication-meta,
   .publication-analysis,
+  .conference-video,
   .publication-metrics,
   .publication-bottom,
   .research-grid {

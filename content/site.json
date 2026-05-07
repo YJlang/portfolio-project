@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "phase": "human-voice-copy-refactor",
+  "phase": "activity-conference-media",
   "homepage": {
     "featuredProjectSlugs": ["pulse", "persona-lab", "blog-auto"],
     "primarySections": [
