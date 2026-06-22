@@ -1,0 +1,40 @@
+[
+  {
+    "slug": "likelion",
+    "title": "멋쟁이사자처럼",
+    "organization": "멋쟁이사자처럼",
+    "period": "13기, 14기",
+    "role": "13기 백엔드파트 아기사자, 14기 백엔드파트 운영진",
+    "category": ["Community", "Backend", "Leadership", "Team Project"],
+    "summary": "전국 대학 연합 IT창업 동아리에서 백엔드 파트 활동과 운영진 경험을 쌓았습니다.",
+    "media": {
+      "src": "images/optimized/likelion-activity-moment.jpg",
+      "alt": "멋쟁이사자처럼 대학 연합 해커톤 활동 단체 사진",
+      "caption": "멋쟁이사자처럼 대학 연합 해커톤 활동 기록."
+    },
+    "public": true,
+    "needsMoreDetail": true
+  },
+  {
+    "slug": "iaai-student-member",
+    "title": "IAAI 학생회원",
+    "organization": "국제문화기술진흥원",
+    "period": "2025",
+    "role": "학생회원 / 학술대회 발표",
+    "category": ["Research", "Academic"],
+    "summary": "2025 IAAI 학술대회에서 온라인 리뷰 기반 고객 분석 프레임워크 논문을 발표한 학회 활동 기록.",
+    "public": true,
+    "needsMoreDetail": true
+  },
+  {
+    "slug": "department-assistant-lead",
+    "title": "학과 조교장",
+    "organization": "성결대학교 미디어소프트웨어학과",
+    "period": "2년",
+    "role": "조교장",
+    "category": ["Operations", "Leadership", "Education Support"],
+    "summary": "학과 기자재 관리, 예산 보조, 전공과목 수업 지원 등 학과 운영 업무를 수행했습니다.",
+    "public": true,
+    "needsMoreDetail": true
+  }
+]
