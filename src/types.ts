@@ -83,6 +83,11 @@ export interface ProofAsset {
   award?: string;
   metric?: string;
   highlights?: string[];
+  keywords?: string[];
+  paper?: string;
+  conference?: string;
+  location?: string;
+  coauthors?: string[];
   description?: string;
   proves?: string;
   privacyRisk?: string;

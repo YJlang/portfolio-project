@@ -7,3 +7,10 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 vite-dev*.log
+
+# OS junk
+.DS_Store
+
+# local-only PDF deliverables and export tooling
+/*.pdf
+/scripts/

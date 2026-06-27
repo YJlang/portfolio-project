@@ -10,6 +10,7 @@ import award2020Thumb from '../images/optimized/award-2020-sw-idea-thumb.webp';
 import award2021Thumb from '../images/optimized/award-2021-service-planning-thumb.webp';
 import award2025Thumb from '../images/optimized/award-2025-vr-ar-game-thumb.webp';
 import award2026Thumb from '../images/optimized/award-2026-ux-paper-thumb.webp';
+import ipactBestPaper from '../images/optimized/award-2026-ipact-best-paper.jpg';
 import scholarshipGrade from '../images/성적장학금.png';
 import majorCompetencyCertification from '../images/전공역량인증.png';
 import majorElectiveGrades from '../images/전선성적.png';
@@ -33,6 +34,7 @@ const proofImageMap: Record<string, string> = {
   'award-2021-service-planning': award2021Thumb,
   'award-2025-vr-ar-game': award2025Thumb,
   'award-2026-ux-paper': award2026Thumb,
+  'award-2026-ipact-best-paper': ipactBestPaper,
   'scholarship-grade': scholarshipGrade,
   'major-competency-certification': majorCompetencyCertification,
   'major-elective-grades': majorElectiveGrades,
@@ -60,6 +62,7 @@ const indexProjects = typedProjects.filter((project) => project.status !== 'feat
 const visibleProofs = typedProofAssets.filter((asset) => asset.public === true || asset.public === 'review');
 const awardProofs = visibleProofs.filter((asset) => asset.type === 'award');
 const academicProofs = visibleProofs.filter((asset) => asset.type === 'academic-proof');
+const researchAward = visibleProofs.find((asset) => asset.type === 'research-award');
 
 const aboutFacts = [
   { label: '이름', value: profile.person.name.ko },
@@ -549,6 +552,75 @@ function App() {
               필요한 기록만 골라 맥락을 붙였습니다.
             </p>
           </div>
+
+          {researchAward ? (
+            <article className="award-highlight" aria-label="대표 연구 수상">
+              {proofImageMap[researchAward.slug] ? (
+                <figure className="award-highlight-media">
+                  <img
+                    src={proofImageMap[researchAward.slug]}
+                    alt={`${researchAward.title} 상장`}
+                    loading="lazy"
+                  />
+                </figure>
+              ) : null}
+              <div className="award-highlight-body">
+                <p className="award-kicker">
+                  {researchAward.metric ? <span>{researchAward.metric}</span> : null}
+                  {researchAward.conference ? <span>{researchAward.conference}</span> : null}
+                </p>
+                <h3>{researchAward.paper ?? researchAward.title}</h3>
+                {researchAward.description ? <p className="award-lead">{researchAward.description}</p> : null}
+                <dl className="award-meta">
+                  {researchAward.award ? (
+                    <div>
+                      <dt>수상</dt>
+                      <dd>{researchAward.award}</dd>
+                    </div>
+                  ) : null}
+                  {researchAward.issuer ? (
+                    <div>
+                      <dt>수여</dt>
+                      <dd>{researchAward.issuer}</dd>
+                    </div>
+                  ) : null}
+                  {researchAward.date ? (
+                    <div>
+                      <dt>일자</dt>
+                      <dd>{researchAward.date}</dd>
+                    </div>
+                  ) : null}
+                  {researchAward.location ? (
+                    <div>
+                      <dt>장소</dt>
+                      <dd>{researchAward.location}</dd>
+                    </div>
+                  ) : null}
+                  {researchAward.coauthors?.length ? (
+                    <div className="award-meta-wide">
+                      <dt>저자</dt>
+                      <dd>{researchAward.coauthors.join(', ')}</dd>
+                    </div>
+                  ) : null}
+                </dl>
+                {researchAward.highlights?.length ? (
+                  <ul className="award-points">
+                    {researchAward.highlights.map((point) => (
+                      <li key={point}>{point}</li>
+                    ))}
+                  </ul>
+                ) : null}
+                {researchAward.keywords?.length ? (
+                  <div className="stack-tags" aria-label="연구 키워드">
+                    {researchAward.keywords.map((keyword) => (
+                      <span key={keyword}>{keyword}</span>
+                    ))}
+                  </div>
+                ) : null}
+              </div>
+            </article>
+          ) : null}
+
           <div className="stack-list">
             {typedExperience.map((item) => (
               <article className="quiet-card interactive-panel" key={item.slug}>
