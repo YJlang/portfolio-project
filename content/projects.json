@@ -6,6 +6,7 @@
     "type": "team",
     "category": ["Product", "Backend", "AI/Agent", "Research", "Marketing SaaS"],
     "summary": "외식업 자영업자를 위한 AI 마케팅 자동화 서비스. 리뷰 수집, 고객 인사이트 분석, 리뷰 답변, 홍보 콘텐츠 기획까지 한 흐름으로 묶은 졸업작품입니다.",
+    "oneLiner": "리뷰 수집·분석부터 리뷰 답변, 홍보 콘텐츠 기획까지 한 흐름으로 묶은 외식업 자영업자용 AI 마케팅 자동화 서비스",
     "intent": "사장님이 매일 감으로 처리하던 리뷰 분석과 SNS 마케팅 판단을 데이터 기반 루틴으로 바꾸고 싶었습니다. AI가 예쁜 문장만 만드는 게 아니라 다음 행동까지 제안하는 쪽에 무게를 뒀습니다.",
     "repository": "https://github.com/YJlang/PULSE",
     "demoVideo": {
@@ -104,6 +105,7 @@
     "type": "personal",
     "category": ["Research", "AI/Agent", "Product", "UX/CX", "HCI"],
     "summary": "AI 페르소나가 실제 웹사이트를 탐색하고 UX 리포트를 남기는 synthetic user research 플랫폼.",
+    "oneLiner": "AI 페르소나가 실제 웹사이트를 탐색하고 UX 리포트를 남기는 synthetic user research 플랫폼",
     "intent": "사용자 조사와 고객 여정 분석을 반복 가능한 AI 실험으로 바꿔보고 싶었습니다. 여러 페르소나가 같은 제품을 어떻게 다르게 경험하는지 관찰하는 데 초점을 뒀습니다.",
     "repository": "https://github.com/YJlang/personaLab",
     "stack": [
@@ -190,6 +192,7 @@
     "type": "personal",
     "category": ["Product", "Automation", "Desktop", "AI/Agent", "Writing"],
     "summary": "사진과 짧은 기록을 바탕으로 블로그 초안을 만들고, 사용자가 확인한 뒤 Velog/Tistory 게시 흐름을 자동화하는 Windows 데스크톱 앱.",
+    "oneLiner": "사진과 짧은 기록으로 블로그 초안을 만들고, 사용자가 확인한 뒤 Velog/Tistory 게시까지 자동화하는 Windows 데스크톱 앱",
     "intent": "글쓰기에서 제일 무거운 빈 페이지 부담과 플랫폼 게시 반복을 줄이고 싶었습니다. 기록을 꾸준히 남기게 돕는 local-first 글쓰기 에이전트를 목표로 잡았습니다.",
     "repository": "https://github.com/YJlang/BlogAuto",
     "stack": [
@@ -274,6 +277,7 @@
     "type": "operations",
     "category": ["Service Operations", "Maintenance", "Education Platform", "LIKELION"],
     "summary": "성결대학교 멋쟁이사자처럼 아기사자들이 실제로 쓰고 있는 교육 운영 서비스. 직접 코드 기여 프로젝트라기보다, 지금은 서비스 관리와 운영 유지보수, 안정적인 사용 흐름을 챙기는 역할로 참여 중입니다.",
+    "oneLiner": "성결대학교 멋쟁이사자처럼 아기사자들이 실제로 쓰는 교육 운영 서비스의 관리와 운영 유지보수",
     "intent": "강의 자료, 과제 제출, 피드백, 커뮤니티 운영처럼 동아리 교육에서 반복되는 흐름이 실제 사용자에게 끊기지 않도록 관리하는 데 초점을 두고 있습니다.",
     "repository": "https://github.com/SKU-LikeLion14th/SKUSKU_Back",
     "links": [
@@ -329,6 +333,7 @@
     "type": "team",
     "category": ["Backend", "Public Data", "Hackathon", "Travel"],
     "summary": "공공데이터 기반 농어촌 체험마을 추천 서비스의 백엔드입니다. 여행지 뽑기, 컬렉션, 추억 기록 API를 제공합니다.",
+    "oneLiner": "여행지 뽑기, 컬렉션, 추억 기록 API를 제공하는 공공데이터 기반 농어촌 체험마을 추천 서비스의 백엔드",
     "intent": "공공데이터를 단순 조회가 아니라 사용자가 뽑고 모으고 기록하는 여행 경험으로 바꾸는 해커톤 백엔드 프로젝트입니다.",
     "repository": "https://github.com/YJlang/gacha",
     "stack": ["Spring Boot 3", "Java 21", "JPA", "MySQL", "H2", "JWT", "Validation", "Apache Commons CSV"],
@@ -384,6 +389,7 @@
     "type": "personal",
     "category": ["Full Stack", "Gamification", "Freelance", "Production"],
     "summary": "키보드 배틀 성과를 티어, 점수, 랭킹, 전적, 업적으로 관리하는 게임화된 풀스택 웹 서비스입니다.",
+    "oneLiner": "키보드 배틀 성과를 티어, 점수, 랭킹, 전적, 업적으로 관리하는 게임화 풀스택 웹 서비스",
     "intent": "커뮤니티 활동 데이터를 게임 랭킹처럼 보여주어 참여 동기와 경쟁 재미를 만드는 것이 목적입니다.",
     "repository": "https://github.com/YJlang/keybaegg",
     "stack": [
@@ -454,6 +460,7 @@
     "type": "team",
     "category": ["Hackathon", "Team Project", "Environment", "AI Vision", "Backend"],
     "summary": "쓰레기 위치 제보, 수거 인증, AI 이미지 검증, 포인트 보상으로 이어지는 환경 보호 해커톤 서비스입니다.",
+    "oneLiner": "쓰레기 위치 제보, 수거 인증, AI 이미지 검증, 포인트 보상으로 이어지는 환경 보호 해커톤 서비스",
     "intent": "지역 환경 문제 해결 행동을 지도, 인증, 보상으로 연결해 사용자가 쓰레기 수거에 참여하도록 돕는 것이 목표입니다.",
     "repository": "https://github.com/YJlang/hamkae",
     "links": [

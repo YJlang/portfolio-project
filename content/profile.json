@@ -18,8 +18,25 @@
     "militaryService": {
       "status": "대한민국 육군 병장 만기전역",
       "public": true
-    }
+    },
+    "affiliation": {
+      "ko": "중앙대학교 응용예술공학과 석박사통합과정",
+      "lab": {
+        "name": "INC Lab",
+        "url": "https://inc.cau.ac.kr"
+      },
+      "public": true
+    },
+    "about": "성결대학교 미디어소프트웨어학과에서 백엔드 개발로 시작했지만, 지금은 AI, 고객 경험(CX), HCI, UX/UI가 만나는 지점에 더 오래 머물고 있습니다. LLM Agent 기반 고객 분석, 블로그 자동화, 외식업 마케팅 SaaS처럼 반복 업무를 줄이고 사람이 더 나은 결정을 내리도록 돕는 시스템을 만들고 연구하고 싶습니다."
   },
+  "researchInterests": [
+    "AIX",
+    "CX",
+    "HCI",
+    "UX/UI",
+    "Web Security",
+    "Agentic Software Development"
+  ],
   "interests": [
     "AIX",
     "CX",

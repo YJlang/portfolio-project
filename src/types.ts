@@ -15,6 +15,8 @@ export interface Project {
   type: 'team' | 'personal' | string;
   category: string[];
   summary: string;
+  /** 홈 프로젝트 목록에 쓰는 한 줄 요약. 없으면 summary를 쓴다. */
+  oneLiner?: string;
   intent?: string;
   repository: string;
   demoVideo?: {
@@ -142,6 +144,7 @@ export interface ResearchPublication {
     conference: string;
     label: string;
     caption: string;
+    fileSize?: string;
   };
   summary: string;
   researchQuestion: string;
