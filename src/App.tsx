@@ -105,10 +105,15 @@ function Section({ id, children }: { id: SectionId; children: ReactNode }) {
 function AuthorList({ authors }: { authors: string[] }) {
   return (
     <>
+      {/* 좁은 화면에서도 이름 하나가 두 줄로 갈라지지 않게 저자 단위로 묶는다. */}
       {authors.map((author, index) => (
         <Fragment key={author}>
           {index > 0 ? ', ' : null}
-          {author === person.name.ko || author === person.name.en ? <strong>{author}</strong> : author}
+          {author === person.name.ko || author === person.name.en ? (
+            <strong className="nowrap">{author}</strong>
+          ) : (
+            <span className="nowrap">{author}</span>
+          )}
         </Fragment>
       ))}
     </>
@@ -119,40 +124,65 @@ function AuthorList({ authors }: { authors: string[] }) {
  * Sections
  * ------------------------------------------------------------------ */
 
-function Intro() {
+/* 데스크톱에서는 왼쪽 sticky 사이드바, 1024px 미만에서는 본문 위 헤더로 접힌다. */
+function ProfileSidebar() {
   return (
-    <section className="intro" aria-labelledby="intro-name">
-      <div className="intro-text">
-        <h1 id="intro-name">
-          {person.name.ko} <span lang="en">{person.name.en}</span>
-        </h1>
-        <p className="intro-identity">{person.headline}</p>
-        <p className="intro-affiliation">
-          {person.affiliation.ko} ·{' '}
-          <ExternalLink href={person.affiliation.lab.url}>{person.affiliation.lab.name}</ExternalLink>
-        </p>
-        <ul className="inline-links intro-links" aria-label="연락처와 외부 링크">
-          {primaryEmail ? (
-            <li>
-              <a href={contactHref(primaryEmail)}>{primaryEmail.value}</a>
-            </li>
-          ) : null}
-          {linkContacts.map((contact) => (
-            <li key={contact.value}>
-              <ExternalLink href={contactHref(contact)}>{contact.label}</ExternalLink>
-            </li>
-          ))}
-        </ul>
-      </div>
+    <header className="sidebar">
       <img
-        className="intro-photo"
+        className="sidebar-photo"
         src={profilePhoto}
         alt={profile.profileImage.alt}
         width="620"
         height="616"
         decoding="async"
       />
-    </section>
+      <h1 className="sidebar-name">
+        {person.name.ko} <span lang="en">{person.name.en}</span>
+      </h1>
+      <p className="sidebar-identity">{person.headline}</p>
+      <p className="sidebar-affiliation">
+        {person.affiliation.ko} ·{' '}
+        <span className="nowrap">
+          <ExternalLink href={person.affiliation.lab.url}>{person.affiliation.lab.name}</ExternalLink>
+        </span>
+      </p>
+      <dl className="sidebar-interests">
+        <dt>관심 분야</dt>
+        <dd>
+          {/* 항목 하나가 두 줄로 갈라지지 않도록 묶고, 가운뎃점은 앞 항목 안에 붙인다. */}
+          {profile.researchInterests.map((interest, index, list) => (
+            <Fragment key={interest}>
+              {index > 0 ? ' ' : null}
+              <span className="nowrap">
+                {interest}
+                {index < list.length - 1 ? ' ·' : null}
+              </span>
+            </Fragment>
+          ))}
+        </dd>
+      </dl>
+      <ul className="sidebar-links" aria-label="연락처와 외부 링크">
+        {primaryEmail ? (
+          <li>
+            <a href={contactHref(primaryEmail)}>{primaryEmail.value}</a>
+          </li>
+        ) : null}
+        {linkContacts.map((contact) => (
+          <li key={contact.value}>
+            <ExternalLink href={contactHref(contact)}>{contact.label}</ExternalLink>
+          </li>
+        ))}
+      </ul>
+      <nav className="sidebar-nav" aria-label="페이지 섹션">
+        <ul>
+          {sections.map((section) => (
+            <li key={section.id}>
+              <a href={`#${section.id}`}>{'navLabel' in section ? section.navLabel : section.label}</a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </header>
   );
 }
 
@@ -160,12 +190,6 @@ function About() {
   return (
     <Section id="about">
       <p className="about-text">{person.about}</p>
-      <dl className="kv-list about-interests">
-        <div>
-          <dt>관심 분야</dt>
-          <dd>{profile.researchInterests.join(' · ')}</dd>
-        </div>
-      </dl>
     </Section>
   );
 }
@@ -385,34 +409,25 @@ function App() {
         본문으로 바로가기
       </a>
       <div className="page">
-        <header className="site-header">
-          <nav aria-label="페이지 섹션">
-            <ul className="site-nav">
-              {sections.map((section) => (
-                <li key={section.id}>
-                  <a href={`#${section.id}`}>{'navLabel' in section ? section.navLabel : section.label}</a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </header>
+        <ProfileSidebar />
 
-        <main id="main-content">
-          <Intro />
-          <About />
-          <Publications />
-          <ResearchProjects />
-          <Projects />
-          <ExperienceAndAwards />
-          <Skills />
-          <ContactSection />
-        </main>
+        <div className="content">
+          <main id="main-content">
+            <About />
+            <Publications />
+            <ResearchProjects />
+            <Projects />
+            <ExperienceAndAwards />
+            <Skills />
+            <ContactSection />
+          </main>
 
-        <footer className="site-footer">
-          <p>
-            © {new Date().getFullYear()} {person.name.ko} <span lang="en">{person.name.en}</span>
-          </p>
-        </footer>
+          <footer className="site-footer">
+            <p>
+              © {new Date().getFullYear()} {person.name.ko} <span lang="en">{person.name.en}</span>
+            </p>
+          </footer>
+        </div>
       </div>
     </>
   );
