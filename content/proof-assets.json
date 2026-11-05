@@ -13,6 +13,19 @@
     "note": "첫 화면 또는 About 섹션에서 사용."
   },
   {
+    "slug": "award-2026-pygeek-best-paper",
+    "title": "PyGeek 2026 Best Paper Award",
+    "type": "research-award",
+    "public": true,
+    "needsOptimization": false,
+    "issuer": "2026 International Conference on PyGeek",
+    "date": "2026-08-20",
+    "award": "Best Paper Award",
+    "paper": "A Factor Decomposition Method for Separating Store Substitution and Embedding Placement Effects in Vector Database Migration",
+    "conference": "2026 International Conference on PyGeek",
+    "note": "텍스트 기록만 공개. 증빙 이미지 없음."
+  },
+  {
     "slug": "award-2026-ipact-best-paper",
     "title": "IPACT 2026 국내학술대회 우수논문상",
     "type": "research-award",

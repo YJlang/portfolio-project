@@ -1,7 +1,38 @@
 {
   "publications": [
     {
+      "slug": "pygeek-2026-vector-db-factor-decomposition",
+      "venueType": "international-conference",
+      "title": "A Factor Decomposition Method for Separating Store Substitution and Embedding Placement Effects in Vector Database Migration",
+      "authors": ["Junha Yoon", "Ohhyeon Gwon", "Junhaeng Lee", "Hyeji Roh", "Soowan Cho", "Suhee Kim", "Sangsoon Lim"],
+      "venue": "2026 International Conference on PyGeek",
+      "venueDetail": "Proceedings pp.73–77 · 구두 발표 2026-08-20",
+      "publishedAt": "2026-08-20",
+      "award": "Best Paper Award",
+      "link": "https://pygeek.acin.kr/proceedings/2026",
+      "linkLabel": "Proceedings"
+    },
+    {
+      "slug": "iwcs-2026-learner-engagement",
+      "venueType": "international-workshop",
+      "title": "Real-Time Learner Engagement Estimation Using Multimodal Behavioral Signals",
+      "authors": ["Junha Yoon", "Ohhyeon Gwon", "Hyeonah Choi", "Sangsoon Lim"],
+      "venue": "IWCS 2026 (International Workshop, Fukuoka, Japan)",
+      "venueDetail": "2026-08-27",
+      "publishedAt": "2026-08-27"
+    },
+    {
+      "slug": "kdcs-2026-facial-engagement-system",
+      "venueType": "domestic-conference",
+      "title": "표정 인식 기반 학습자 몰입도 추정 시스템 설계 및 구현",
+      "authors": ["권오현", "윤준하", "임상순"],
+      "venue": "2026 한국디지털콘텐츠학회 하계종합학술대회 및 대학생논문경진대회",
+      "venueDetail": "2026-07",
+      "publishedAt": "2026-07"
+    },
+    {
       "slug": "online-review-small-business-framework",
+      "venueType": "journal",
       "title": "온라인 리뷰 데이터 기반 소상공인 전략 수립을 위한 고객 분석 프로세스 프레임워크 제안",
       "titleEn": "Proposing a Customer Analysis Process Framework for Small Business Strategy Formulation Based on Online Review Data",
       "authors": ["윤준하", "김정이"],
@@ -40,6 +71,48 @@
       ],
       "keywords": ["온라인 리뷰", "BERTopic", "고객 세분화", "페르소나", "고객여정지도", "소상공인", "DDDM"],
       "portfolioFit": "PULSE의 외식업 리뷰 분석, personaLab의 페르소나/여정 분석, AIX/CX/HCI 관심사가 이 논문에서 한 번 만납니다."
+    }
+  ],
+  "labProjects": [
+    {
+      "slug": "review-evidence-rag-product-evaluation",
+      "title": "리뷰 근거 추적형 RAG 제품평가 시스템",
+      "context": "소비자 리서치 전문기업 산학협력",
+      "period": "2026 ~ 진행 중",
+      "role": "설계·구현",
+      "summary": "소비자·전문가 리뷰를 출처 추적 가능한 RAG로 분석해 제품평가 리포트를 생성하는 시스템. 벡터 DB 전환 연구가 PyGeek 2026 논문으로 이어짐"
+    },
+    {
+      "slug": "exhibition-bizmatching-platform",
+      "title": "전시 비즈매칭 플랫폼 구축 산학과제",
+      "context": "국내 MICE 전문기업 발주",
+      "period": "2026 ~ 진행 중",
+      "role": "개발·운영",
+      "summary": "국제 전시 행사에 실사용된 참가자 비즈매칭 플랫폼의 기능 구현, 배포·운영, AI 매칭 연구"
+    },
+    {
+      "slug": "satellite-forest-fuel-prediction",
+      "title": "위성영상 기반 산림 연료량 예측 연구",
+      "context": "공공기관 위탁 과제(2차년도 참여)",
+      "period": "2026",
+      "role": "모델·실험",
+      "summary": "위성영상 기반 수관연료량 예측 모델의 실험 설계·실행"
+    },
+    {
+      "slug": "lab-paper-reading-ai-service",
+      "title": "연구실 논문 리딩 AI 서비스",
+      "context": "연구실 내부 프로젝트에서 서비스로 확장",
+      "period": "2026-10 ~ 운영 중",
+      "role": "단독 개발·운영",
+      "summary": "논문 대역 번역·요약·질의응답과 워크스페이스 지식그래프를 제공하는 AI 서비스"
+    },
+    {
+      "slug": "inc-lab-website",
+      "title": "연구실 공식 홈페이지 운영",
+      "context": "INC Lab",
+      "period": "2026-06 ~ 지속",
+      "role": "유지보수 전담",
+      "summary": "논문·프로젝트·갤러리 콘텐츠 등재와 사이트 유지보수"
     }
   ],
   "directions": [

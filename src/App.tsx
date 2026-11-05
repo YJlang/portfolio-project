@@ -6,7 +6,15 @@ import proofAssets from '../content/proof-assets.json';
 import research from '../content/research.json';
 import profilePhoto from '../images/프로필사진.png';
 import conferencePresentationVideo from '../images/학회발표영상.mp4';
-import type { Contact, ExperienceItem, Project, ProofAsset, ResearchPublication } from './types';
+import type {
+  Contact,
+  ExperienceItem,
+  LabProject,
+  Project,
+  ProofAsset,
+  PublicationVenueType,
+  ResearchPublication,
+} from './types';
 
 /* ------------------------------------------------------------------
  * Content
@@ -25,7 +33,17 @@ const publicationMediaMap: Record<string, string> = {
   'images/학회발표영상.mp4': conferencePresentationVideo,
 };
 
-const publications = research.publications as ResearchPublication[];
+// 최신순. publishedAt은 'YYYY-MM' 또는 'YYYY-MM-DD'라 문자열 비교로 충분하다.
+const publications = [...(research.publications as ResearchPublication[])].sort((a, b) =>
+  b.publishedAt.localeCompare(a.publishedAt),
+);
+const labProjects = research.labProjects as LabProject[];
+
+const venueTypeLabel: Record<Exclude<PublicationVenueType, 'journal'>, string> = {
+  'international-conference': '국제학술대회',
+  'international-workshop': '국제 워크숍 발표',
+  'domestic-conference': '국내학술대회',
+};
 
 // featured → index → archive 순, featured 안에서는 caseStudy.priority 순. 동순위는 JSON 순서 유지.
 const projectStatusOrder: Record<Project['status'], number> = { featured: 0, index: 1, archive: 2 };
@@ -48,6 +66,7 @@ const awardList = (proofAssets as ProofAsset[])
 const sections = [
   { id: 'about', label: 'About' },
   { id: 'publications', label: 'Publications' },
+  { id: 'research-projects', label: 'Research Projects', navLabel: 'Research' },
   { id: 'projects', label: 'Projects' },
   { id: 'experience', label: 'Experience & Awards', navLabel: 'Experience' },
   { id: 'skills', label: 'Skills' },
@@ -89,7 +108,7 @@ function AuthorList({ authors }: { authors: string[] }) {
       {authors.map((author, index) => (
         <Fragment key={author}>
           {index > 0 ? ', ' : null}
-          {author === person.name.ko ? <strong>{author}</strong> : author}
+          {author === person.name.ko || author === person.name.en ? <strong>{author}</strong> : author}
         </Fragment>
       ))}
     </>
@@ -151,6 +170,22 @@ function About() {
   );
 }
 
+function PublicationVenue({ paper }: { paper: ResearchPublication }) {
+  if (paper.venueType === 'journal') {
+    return (
+      <>
+        {paper.journal} ({paper.journalAbbr}), {paper.issue} · {paper.journalRank}
+      </>
+    );
+  }
+
+  return (
+    <>
+      {[paper.venue, paper.venueDetail].filter(Boolean).join(', ')} · {venueTypeLabel[paper.venueType]}
+    </>
+  );
+}
+
 function Publications() {
   return (
     <Section id="publications">
@@ -158,39 +193,81 @@ function Publications() {
         {publications.map((paper) => {
           const video = paper.presentationVideo;
           const videoUrl = video ? publicationMediaMap[video.src] : undefined;
+          const hasLinks = Boolean(paper.doi || paper.kciUrl || paper.link || (video && videoUrl));
 
           return (
             <li className="publication" key={paper.slug}>
-              <h3 className="entry-title">{paper.title}</h3>
-              <p className="publication-title-en" lang="en">
-                {paper.titleEn}
-              </p>
+              <h3 className="entry-title" lang={/[가-힣]/.test(paper.title) ? undefined : 'en'}>
+                {paper.title}
+              </h3>
+              {paper.titleEn ? (
+                <p className="publication-title-en" lang="en">
+                  {paper.titleEn}
+                </p>
+              ) : null}
               <p className="publication-authors">
                 <AuthorList authors={paper.authors} />
               </p>
               <p className="publication-venue">
-                {paper.journal} ({paper.journalAbbr}), {paper.issue} · {paper.journalRank}
-              </p>
-              <ul className="inline-links entry-links" aria-label={`${paper.title} 링크`}>
-                <li>
-                  <ExternalLink href={`https://doi.org/${paper.doi}`}>DOI {paper.doi}</ExternalLink>
-                </li>
-                <li>
-                  <ExternalLink href={paper.kciUrl}>KCI</ExternalLink>
-                </li>
-                {video && videoUrl ? (
-                  <li>
-                    <ExternalLink href={videoUrl}>{video.label}</ExternalLink>{' '}
-                    <span className="link-note">
-                      ({[video.conference, video.fileSize ? `mp4 ${video.fileSize}` : 'mp4'].join(', ')})
-                    </span>
-                  </li>
+                <PublicationVenue paper={paper} />
+                {paper.award ? (
+                  <>
+                    {' · '}
+                    <span className="publication-award">{paper.award}</span>
+                  </>
                 ) : null}
-              </ul>
+              </p>
+              {hasLinks ? (
+                <ul className="inline-links entry-links" aria-label={`${paper.title} 링크`}>
+                  {paper.doi ? (
+                    <li>
+                      <ExternalLink href={`https://doi.org/${paper.doi}`}>DOI {paper.doi}</ExternalLink>
+                    </li>
+                  ) : null}
+                  {paper.kciUrl ? (
+                    <li>
+                      <ExternalLink href={paper.kciUrl}>KCI</ExternalLink>
+                    </li>
+                  ) : null}
+                  {paper.link ? (
+                    <li>
+                      <ExternalLink href={paper.link}>{paper.linkLabel ?? 'Link'}</ExternalLink>
+                    </li>
+                  ) : null}
+                  {video && videoUrl ? (
+                    <li>
+                      <ExternalLink href={videoUrl}>{video.label}</ExternalLink>{' '}
+                      <span className="link-note">
+                        ({[video.conference, video.fileSize ? `mp4 ${video.fileSize}` : 'mp4'].join(', ')})
+                      </span>
+                    </li>
+                  ) : null}
+                </ul>
+              ) : null}
             </li>
           );
         })}
       </ol>
+    </Section>
+  );
+}
+
+function ResearchProjects() {
+  return (
+    <Section id="research-projects">
+      <ul className="entry-list project-list">
+        {labProjects.map((project) => (
+          <li className="project" key={project.slug}>
+            <div className="project-head">
+              <h3 className="entry-title">{project.title}</h3>
+              <span className="project-role">
+                {project.context} · {project.period} · 역할: {project.role}
+              </span>
+            </div>
+            <p className="project-summary">{project.summary}</p>
+          </li>
+        ))}
+      </ul>
     </Section>
   );
 }
@@ -324,6 +401,7 @@ function App() {
           <Intro />
           <About />
           <Publications />
+          <ResearchProjects />
           <Projects />
           <ExperienceAndAwards />
           <Skills />

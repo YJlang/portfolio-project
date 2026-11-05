@@ -76,7 +76,8 @@ export interface ProofAsset {
   title: string;
   type: string;
   evidenceGroup?: string;
-  src: string;
+  /** 증빙 이미지가 없는 텍스트 전용 기록은 생략한다. */
+  src?: string;
   thumbnailSrc?: string;
   public: PublicState;
   needsOptimization: boolean;
@@ -122,23 +123,38 @@ export interface ResearchDirection {
   portfolioEmphasis: string;
 }
 
+export type PublicationVenueType =
+  | 'journal'
+  | 'international-conference'
+  | 'international-workshop'
+  | 'domestic-conference';
+
 export interface ResearchPublication {
   slug: string;
+  venueType: PublicationVenueType;
   title: string;
-  titleEn: string;
   authors: string[];
-  journal: string;
-  journalEn: string;
-  journalAbbr: string;
-  journalRank: string;
-  publisher: string;
-  field: string;
-  issue: string;
   publishedAt: string;
-  pages: string;
-  doi: string;
-  kciUrl: string;
-  imageSrc: string;
+  /** 학회·워크숍 등 비저널 발표처. 저널은 journal 계열 필드를 쓴다. */
+  venue?: string;
+  /** 발표처 뒤에 붙는 부가 표기 (proceedings 쪽수, 발표 방식·날짜 등). */
+  venueDetail?: string;
+  award?: string;
+  link?: string;
+  linkLabel?: string;
+  /* 아래는 저널(KCI) 논문 전용 필드 */
+  titleEn?: string;
+  journal?: string;
+  journalEn?: string;
+  journalAbbr?: string;
+  journalRank?: string;
+  publisher?: string;
+  field?: string;
+  issue?: string;
+  pages?: string;
+  doi?: string;
+  kciUrl?: string;
+  imageSrc?: string;
   presentationVideo?: {
     src: string;
     conference: string;
@@ -146,17 +162,27 @@ export interface ResearchPublication {
     caption: string;
     fileSize?: string;
   };
-  summary: string;
-  researchQuestion: string;
-  problem: string;
-  method: string;
-  validation: string;
-  contribution: string;
-  outputs: string[];
-  metrics: Array<{
+  summary?: string;
+  researchQuestion?: string;
+  problem?: string;
+  method?: string;
+  validation?: string;
+  contribution?: string;
+  outputs?: string[];
+  metrics?: Array<{
     label: string;
     value: string;
   }>;
-  keywords: string[];
-  portfolioFit: string;
+  keywords?: string[];
+  portfolioFit?: string;
+}
+
+export interface LabProject {
+  slug: string;
+  title: string;
+  /** 발주·협력·소속 맥락을 비식별 표기로 쓴다. 기관·과제 실명은 넣지 않는다. */
+  context: string;
+  period: string;
+  role: string;
+  summary: string;
 }

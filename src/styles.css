@@ -314,6 +314,11 @@ a:hover {
   color: var(--ink);
 }
 
+.publication-award {
+  font-weight: 600;
+  color: var(--ink);
+}
+
 .entry-links {
   margin-top: 0.25rem;
 }
