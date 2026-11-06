@@ -155,6 +155,13 @@ export interface ResearchPublication {
   doi?: string;
   kciUrl?: string;
   imageSrc?: string;
+  /** 학회 발표 현장 사진. photoSrc는 원본, photoThumbnailSrc는 images/optimized/의 웹용본. */
+  photoSrc?: string;
+  photoThumbnailSrc?: string;
+  photoAlt?: string;
+  /** 웹용본(photoThumbnailSrc)의 가로·세로 px. 라이트박스·썸네일 비율 계산용. */
+  photoWidth?: number;
+  photoHeight?: number;
   presentationVideo?: {
     src: string;
     conference: string;

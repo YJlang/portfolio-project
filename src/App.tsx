@@ -434,6 +434,9 @@ function Publications() {
             const videoUrl = video ? publicationMediaMap[video.src] : undefined;
             const hasLinks = Boolean(paper.doi || paper.kciUrl || paper.link || (video && videoUrl));
             const venueType = paper.venueType === 'journal' ? paper.journalRank : venueTypeLabel[paper.venueType];
+            const photo = assetUrl(paper.photoThumbnailSrc);
+            const photoWidth = paper.photoWidth ?? 1200;
+            const photoHeight = paper.photoHeight ?? 900;
 
             return (
               <li
@@ -488,10 +491,23 @@ function Publications() {
                     </ul>
                   ) : null}
                 </div>
-                <p className="pub-type">
-                  <span>{venueType}</span>
-                  {paper.award ? <span className="pub-award">{paper.award}</span> : null}
-                </p>
+                <div className="pub-aside">
+                  <p className="pub-type">
+                    <span>{venueType}</span>
+                    {paper.award ? <span className="pub-award">{paper.award}</span> : null}
+                  </p>
+                  {photo && paper.photoThumbnailSrc ? (
+                    <ProofThumb
+                      className={photoWidth >= photoHeight ? 'thumb--photo' : 'thumb--photo thumb--photo-portrait'}
+                      large={photo}
+                      small={smallVariant(paper.photoThumbnailSrc) ?? photo}
+                      alt={paper.photoAlt ?? `${paper.title} 발표 현장`}
+                      caption={paper.photoAlt ?? `${paper.title} 발표 현장`}
+                      size={[photoWidth, photoHeight]}
+                      thumbSize={[360, Math.round((360 * photoHeight) / photoWidth)]}
+                    />
+                  ) : null}
+                </div>
               </li>
             );
           })}

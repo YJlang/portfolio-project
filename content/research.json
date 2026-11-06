@@ -10,7 +10,12 @@
       "publishedAt": "2026-08-20",
       "award": "Best Paper Award",
       "link": "https://pygeek.acin.kr/proceedings/2026",
-      "linkLabel": "Proceedings"
+      "linkLabel": "Proceedings",
+      "photoSrc": "images/pygeek2026-presentation.jpg",
+      "photoThumbnailSrc": "images/optimized/publication-pygeek-2026-photo.jpg",
+      "photoAlt": "PyGeek 2026 발표장에서 연단에 서서 구두 발표를 진행하는 모습. 대형 스크린에 논문의 Introduction 슬라이드가 떠 있다.",
+      "photoWidth": 1200,
+      "photoHeight": 1600
     },
     {
       "slug": "iwcs-2026-learner-engagement",
@@ -19,7 +24,12 @@
       "authors": ["Junha Yoon", "Ohhyeon Gwon", "Hyeonah Choi", "Sangsoon Lim"],
       "venue": "IWCS 2026 (International Workshop, Fukuoka, Japan)",
       "venueDetail": "2026-08-27",
-      "publishedAt": "2026-08-27"
+      "publishedAt": "2026-08-27",
+      "photoSrc": "images/iwcs2026-presentation.jpeg",
+      "photoThumbnailSrc": "images/optimized/publication-iwcs-2026-photo.jpg",
+      "photoAlt": "IWCS 2026 포스터 세션에서 Real-Time Learner Engagement Estimation 포스터 앞에 서서 다른 참석자와 이야기를 나누는 모습.",
+      "photoWidth": 1200,
+      "photoHeight": 900
     },
     {
       "slug": "kdcs-2026-facial-engagement-system",
@@ -28,7 +38,12 @@
       "authors": ["권오현", "윤준하", "임상순"],
       "venue": "2026 한국디지털콘텐츠학회 하계종합학술대회 및 대학생논문경진대회",
       "venueDetail": "2026-07",
-      "publishedAt": "2026-07"
+      "publishedAt": "2026-07",
+      "photoSrc": "images/dcs2026-poster-session.jpeg",
+      "photoThumbnailSrc": "images/optimized/publication-dcs-2026-photo.jpg",
+      "photoAlt": "한국디지털콘텐츠학회 하계종합학술대회 포스터 세션장에서 포스터 앞에 선 연구실 구성원들의 단체 사진.",
+      "photoWidth": 1200,
+      "photoHeight": 900
     },
     {
       "slug": "online-review-small-business-framework",
