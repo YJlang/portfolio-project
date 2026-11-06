@@ -1,0 +1,55 @@
+/* ------------------------------------------------------------------
+ * Tokens (Hallmark Almanac 테마 + 이 사이트 전용 값)
+ * 색·서체·간격은 이 파일만 고치면 전체에 반영된다.
+ * - 바탕: 차가운 슬레이트 종이(--color-paper) 위에 옅은 인쇄 시트(--color-sheet)를 깐다.
+ * - 강조색: 해도 마젠타 1색(--color-accent). 화면의 5% 아래로만 쓴다.
+ * - 서체: 제목 Hanken Grotesk(한글은 Pretendard로 이어짐), 본문 Pretendard, 숫자 IBM Plex Mono.
+ * ------------------------------------------------------------------ */
+
+:root {
+  color-scheme: light;
+  --space-3xs: 2px; --space-2xs: 4px; --space-xs: 8px; --space-sm: 12px; --space-md: 16px; --space-lg: 24px; --space-xl: 40px; --space-2xl: 64px; --space-3xl: 96px; --space-4xl: 144px;
+  --text-xs: 0.8125rem; --text-sm: 0.875rem; --text-md: 1rem; --text-lg: 1.25rem; --text-xl: 1.5625rem; --text-2xl: 1.953rem; --text-3xl: 2.441rem;
+  --text-display-s: clamp(2.25rem, 4vw + 0.5rem, 3.75rem); --text-display: clamp(2.75rem, 5vw + 1rem, 5.25rem);
+  --text-section: clamp(2rem, 2.5vw + 1rem, 3.5rem); --text-title: clamp(1.25rem, 0.75vw + 0.875rem, 1.625rem); --text-lead: clamp(1.125rem, 0.35vw + 1rem, 1.375rem);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); --ease-in: cubic-bezier(0.7, 0, 0.84, 0); --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 120ms; --dur-short: 220ms; --dur-long: 420ms;
+  --color-error: oklch(52% 0.19 27); --color-success: oklch(50% 0.12 150);
+  --container: 1440px; --gutter: 64px; --gap-columns: 32px; --section-gap-s: 120px; --section-gap: 144px; --section-gap-l: 176px;
+  --z-base: 1; --z-raised: 10; --z-dropdown: 100; --z-sticky: 200; --z-sticky-nav: 300; --z-modal: 400; --z-toast: 500; --z-tooltip: 600;
+
+  /* Color: 종이 · 잉크 · 규선 */
+  --color-paper: oklch(84% 0.012 245); --color-paper-2: oklch(81% 0.012 245); --color-paper-3: oklch(77% 0.012 245);
+  --color-ink: oklch(16% 0.020 245); --color-ink-2: oklch(24% 0.018 245); --color-muted: oklch(38% 0.016 245);
+  --color-rule: oklch(73% 0.013 240); --color-rule-2: oklch(32% 0.018 240);
+  --color-sheet: oklch(93.5% 0.008 245);
+
+  /* Color: 강조(마젠타) */
+  --color-accent: oklch(45% 0.180 350); --color-accent-2: oklch(37% 0.160 350); --color-accent-ink: oklch(97% 0.006 245); --color-focus: oklch(46% 0.190 350);
+
+  /* Color: 이 사이트 전용 파생값 */
+  --color-hover: oklch(88.5% 0.010 245);        /* 링크가 걸린 행·칸의 hover 바탕 (슬레이트보다 한 단계 밝게) */
+  --color-award: oklch(92% 0.016 350);          /* 수상 논문 행의 바탕 (시트 위 마젠타 틴트) */
+  --color-band: var(--color-ink);               /* 잉크 띠(Experience & Awards) 바탕 */
+  --color-band-text: var(--color-sheet);        /* 잉크 띠 위 본문 */
+  --color-band-muted: oklch(76% 0.012 245);     /* 잉크 띠 위 보조 텍스트 */
+  --color-band-rule: oklch(34% 0.016 245);      /* 잉크 띠 위 규선 */
+
+  /* Type */
+  --font-display: "Hanken Grotesk", "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", system-ui, sans-serif;
+  --font-body: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", system-ui, sans-serif;
+  --font-outlier: "IBM Plex Mono", "Pretendard Variable", Pretendard, ui-monospace, "SF Mono", Menlo, monospace;
+  --text-name: clamp(3.5rem, 6vw + 1rem, 6.5rem);   /* 히어로 이름(한글 한 단어) */
+  --text-contact: clamp(1.375rem, 1.6vw + 0.75rem, 2.25rem);
+
+  /* Surface */
+  --radius-card: 0; --radius-pill: 2px; --rule-hair: 1px; --rule-bar: 2px; --shadow-card: none;
+  --tracking-display: -0.02em; --display-weight: 600;
+
+  /* Frame */
+  --nav-h: 60px;
+}
+
+@media (max-width: 60rem) {
+  :root { --nav-h: 52px; }
+}
