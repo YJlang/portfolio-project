@@ -23,7 +23,9 @@
     "award": "Best Paper Award",
     "paper": "A Factor Decomposition Method for Separating Store Substitution and Embedding Placement Effects in Vector Database Migration",
     "conference": "2026 International Conference on PyGeek",
-    "note": "텍스트 기록만 공개. 증빙 이미지 없음."
+    "note": "시상 무대 사진(스크린에 수상명·논문 제목 표시). 원본은 연구실 갤러리 게재본.",
+    "src": "images/pygeek2026-best-paper-award.png",
+    "thumbnailSrc": "images/optimized/award-2026-pygeek-best-paper.jpg"
   },
   {
     "slug": "award-2026-ipact-best-paper",
@@ -40,7 +42,13 @@
     "paper": "광고 장면 구조 분석 기반 DSPy 프롬프트 생성 프레임워크 연구",
     "conference": "IPACT 2026 국내학술대회",
     "location": "한국과학기술관(역삼동)",
-    "coauthors": ["오해서", "윤준하", "김혜린", "노태경", "김정이"],
+    "coauthors": [
+      "오해서",
+      "윤준하",
+      "김혜린",
+      "노태경",
+      "김정이"
+    ],
     "description": "광고 장면의 구조를 분석해 DSPy 기반으로 프롬프트를 자동 생성하는 프레임워크를 제안한 공동연구입니다. IPACT 2026 국내학술대회 포스터 부문에서 우수논문상을 받았습니다.",
     "proves": "광고/콘텐츠 도메인의 구조 분석과 DSPy 기반 프롬프트 생성을 연결해, AIX·Agentic Software Development 관심사를 학술 성과로 확장한 기록.",
     "highlights": [
@@ -48,7 +56,13 @@
       "광고 장면 구조 분석 결과를 프롬프트 설계의 입력으로 활용.",
       "성결대학교 공동저자 5인, 제2저자로 참여."
     ],
-    "keywords": ["DSPy", "프롬프트 생성", "광고 장면 구조 분석", "AIX", "Agentic SW"],
+    "keywords": [
+      "DSPy",
+      "프롬프트 생성",
+      "광고 장면 구조 분석",
+      "AIX",
+      "Agentic SW"
+    ],
     "privacyRisk": "문서번호와 공동저자 성명, 기관 직인이 보인다. 공개용 이미지는 문서번호 마스킹을 검토한다.",
     "recommendedUse": "AIX/Agentic, 프롬프트 엔지니어링, 연구 적합성 핵심 증빙",
     "note": "상장 기준 제2026-BP08호 우수논문상. 개최 장소: 한국과학기술관(역삼동)."
